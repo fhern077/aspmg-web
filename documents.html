@@ -26,10 +26,13 @@
                     <i class='bx bx-envelope'></i> info@aspmg.com
                 </a>
             </div>
-            <div>
+            <div class="d-flex align-items-center gap-3">
                 <span class="d-none d-lg-inline text-white-65">
-                    <i class='bx bx-map'></i> 85 Grand Canal Dr, Unit 201, Miami, FL 33144
+                    <i class='bx bx-map'></i> <span data-i18n="topbar.address">85 Grand Canal Dr, Unit 201, Miami, FL 33144</span>
                 </span>
+                <button class="lang-toggle" aria-label="Toggle language">
+                    <i class='bx bx-globe'></i> <span class="lang-toggle-text" data-i18n="lang.toggle">ES</span>
+                </button>
             </div>
         </div>
     </div>
@@ -48,30 +51,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
+                        <a class="nav-link" href="index.html#home" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#aboutus">About</a>
+                        <a class="nav-link" href="index.html#aboutus" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#services">Services</a>
+                        <a class="nav-link" href="index.html#services" data-i18n="nav.services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
+                        <a class="nav-link" href="index.html#testimonials" data-i18n="nav.testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#faq">FAQ</a>
+                        <a class="nav-link" href="index.html#faq" data-i18n="nav.faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
+                        <a class="nav-link" href="index.html#contact" data-i18n="nav.contact">Contact</a>
                     </li>
                     <li class="nav-item dropdown ms-lg-2">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.resident_portal">
                             Resident Portal
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="payments.html"><i class='bx bx-credit-card me-2'></i>Make a Payment</a></li>
-                            <li><a class="dropdown-item active" href="documents.html"><i class='bx bx-file me-2'></i>Community Documents</a></li>
+                            <li><a class="dropdown-item" href="payments.html"><i class='bx bx-credit-card me-2'></i><span data-i18n="nav.make_payment">Make a Payment</span></a></li>
+                            <li><a class="dropdown-item active" href="documents.html"><i class='bx bx-file me-2'></i><span data-i18n="nav.community_docs">Community Documents</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item ms-lg-2 d-none d-lg-block">
@@ -88,9 +91,9 @@
     <section class="page-hero">
         <div class="page-hero-overlay"></div>
         <div class="container position-relative" style="z-index:2">
-            <p class="section-label text-white-50">Resident Resources</p>
-            <h1 class="text-white">Community Documents</h1>
-            <p class="text-white-75 mb-0">Download applications and banking forms for your community</p>
+            <p class="section-label text-white-50" data-i18n="docs.hero_label">Resident Resources</p>
+            <h1 class="text-white" data-i18n="docs.hero_title">Community Documents</h1>
+            <p class="text-white-75 mb-0" data-i18n="docs.hero_desc">Download applications and banking forms for your community</p>
         </div>
     </section>
 
@@ -102,13 +105,13 @@
                 <div class="col-lg-6 mx-auto">
                     <div class="search-bar">
                         <i class='bx bx-search'></i>
-                        <input type="text" id="docSearch" class="form-control" placeholder="Search documents by community name...">
+                        <input type="text" id="docSearch" class="form-control" placeholder="Search documents by community name..." data-i18n-placeholder="docs.search_placeholder">
                     </div>
                 </div>
             </div>
 
             <!-- Applications Section -->
-            <h3 class="mb-4"><i class='bx bx-file text-accent me-2'></i> Community Applications</h3>
+            <h3 class="mb-4"><i class='bx bx-file text-accent me-2'></i> <span data-i18n="docs.applications_title">Community Applications</span></h3>
             <div class="row g-3 mb-5">
                 <div class="col-md-6 col-lg-4 doc-item" data-name="bleau fontaine bf1">
                     <a href="./docs/1. BF1 Application.pdf" target="_blank" class="doc-card">
@@ -223,7 +226,7 @@
             </div>
 
             <!-- Bank Forms Section -->
-            <h3 class="mb-4"><i class='bx bx-credit-card text-accent me-2'></i> ACH / Banking Forms</h3>
+            <h3 class="mb-4"><i class='bx bx-credit-card text-accent me-2'></i> <span data-i18n="docs.ach_title">ACH / Banking Forms</span></h3>
             <div class="row g-3">
                 <div class="col-md-6 col-lg-4 doc-item" data-name="bleau fontaine bf1 ach">
                     <a href="./docs/1. ACH Form- BF1.pdf" target="_blank" class="doc-card">
@@ -326,31 +329,31 @@
                 <div class="row gy-5">
                     <div class="col-lg-4">
                         <img class="logo mb-4" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
-                        <p class="text-white-65" style="font-size: 14px;">
+                        <p class="text-white-65" style="font-size: 14px;" data-i18n="footer.desc">
                             Full-service HOA and condominium association management
                             serving Miami-Dade and Broward County for over 20 years.
                         </p>
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <h6 class="footer-heading">Quick Links</h6>
+                        <h6 class="footer-heading" data-i18n="footer.quick_links">Quick Links</h6>
                         <ul class="footer-links list-unstyled">
-                            <li><a href="index.html#home">Home</a></li>
-                            <li><a href="index.html#aboutus">About Us</a></li>
-                            <li><a href="index.html#services">Services</a></li>
-                            <li><a href="index.html#testimonials">Testimonials</a></li>
-                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="index.html#home" data-i18n="footer.home">Home</a></li>
+                            <li><a href="index.html#aboutus" data-i18n="footer.about">About Us</a></li>
+                            <li><a href="index.html#services" data-i18n="footer.services">Services</a></li>
+                            <li><a href="index.html#testimonials" data-i18n="footer.testimonials">Testimonials</a></li>
+                            <li><a href="index.html#contact" data-i18n="footer.contact_link">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-heading">Resident Resources</h6>
+                        <h6 class="footer-heading" data-i18n="footer.resident_resources">Resident Resources</h6>
                         <ul class="footer-links list-unstyled">
-                            <li><a href="payments.html">Make a Payment</a></li>
-                            <li><a href="documents.html">Community Documents</a></li>
-                            <li><a href="index.html#faq">FAQ</a></li>
+                            <li><a href="payments.html" data-i18n="footer.payments">Make a Payment</a></li>
+                            <li><a href="documents.html" data-i18n="footer.documents">Community Documents</a></li>
+                            <li><a href="index.html#faq" data-i18n="footer.faq">FAQ</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-heading">Contact</h6>
+                        <h6 class="footer-heading" data-i18n="footer.contact">Contact</h6>
                         <ul class="footer-contact list-unstyled">
                             <li><i class='bx bx-map me-2'></i> 85 Grand Canal Dr, Unit 201<br>
                                 <span style="margin-left: 26px;">Miami, FL 33144</span></li>
@@ -368,11 +371,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <p class="mb-0 text-white-50" style="font-size: 13px;">
-                            &copy; <span class="copyright-year">2026</span> A Solid Property Management Group. All rights reserved.
+                            &copy; <span class="copyright-year">2026</span> <span data-i18n="footer.copyright">A Solid Property Management Group. All rights reserved.</span>
                         </p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                        <p class="mb-0 text-white-50" style="font-size: 13px;" data-i18n="footer.serving">
                             Serving Miami-Dade &amp; Broward County
                         </p>
                     </div>
@@ -383,5 +386,6 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>

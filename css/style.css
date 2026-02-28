@@ -63,6 +63,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 120px;
+    --animate-duration: 0.6s;
 }
 
 body {
@@ -298,6 +299,27 @@ h3, h4, h5, h6 {
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
     color: var(--primary) !important;
+}
+
+/* Hide the underline on dropdown toggle (Resident Portal) */
+.navbar .nav-link.dropdown-toggle::after {
+    content: '';
+    position: static;
+    display: inline-block;
+    width: 0.3em;
+    height: 0.3em;
+    border: none;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    background: none;
+    vertical-align: 0.15em;
+    margin-left: 0.35em;
+    transition: transform var(--transition-fast);
+}
+.navbar .nav-link.dropdown-toggle:hover::after,
+.navbar .nav-link.dropdown-toggle.show::after {
+    width: 0.3em;
 }
 
 .navbar .dropdown-menu {
@@ -960,18 +982,116 @@ footer {
    ======================================== */
 .fade-in-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .fade-in-up.fade-in-visible {
     opacity: 1;
     transform: translateY(0);
 }
-.fade-in-up:nth-child(2) { transition-delay: 0.1s; }
-.fade-in-up:nth-child(3) { transition-delay: 0.2s; }
-.fade-in-up:nth-child(4) { transition-delay: 0.3s; }
-.fade-in-up:nth-child(5) { transition-delay: 0.4s; }
-.fade-in-up:nth-child(6) { transition-delay: 0.5s; }
+.fade-in-up:nth-child(2) { transition-delay: 0.05s; }
+.fade-in-up:nth-child(3) { transition-delay: 0.1s; }
+.fade-in-up:nth-child(4) { transition-delay: 0.15s; }
+.fade-in-up:nth-child(5) { transition-delay: 0.2s; }
+.fade-in-up:nth-child(6) { transition-delay: 0.25s; }
+
+/* Subtle micro-interactions */
+.trust-stat {
+    transition: transform var(--transition-fast);
+}
+.trust-stat:hover {
+    transform: scale(1.05);
+}
+.about-experience-badge {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.about-experience-badge:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+}
+.feature-icon {
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.feature-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-gold);
+}
+.testimonial-card {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+.faq-item {
+    transition: box-shadow var(--transition-fast);
+}
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+}
+.contact-info-card {
+    transition: all var(--transition-base);
+}
+.contact-info-card:hover {
+    transform: translateY(-2px);
+}
+.diff-card {
+    cursor: default;
+}
+.diff-number {
+    transition: transform var(--transition-fast);
+}
+.diff-card:hover .diff-number {
+    transform: scale(1.1);
+}
+.btn-accent {
+    position: relative;
+    overflow: hidden;
+}
+.btn-accent::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+.btn-accent:hover::before {
+    width: 300px;
+    height: 300px;
+}
+.footer-links a {
+    display: inline-block;
+}
+
+/* Language Toggle */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 3px 12px;
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-transform: uppercase;
+}
+.lang-toggle:hover {
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+}
+.lang-toggle i {
+    font-size: 14px;
+}
 
 /* Scroll to top button */
 .scroll-to-top {

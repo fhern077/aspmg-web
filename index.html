@@ -32,10 +32,13 @@
                     <i class='bx bx-envelope'></i> info@aspmg.com
                 </a>
             </div>
-            <div>
+            <div class="d-flex align-items-center gap-3">
                 <span class="d-none d-lg-inline text-white-65">
-                    <i class='bx bx-map'></i> 85 Grand Canal Dr, Unit 201, Miami, FL 33144
+                    <i class='bx bx-map'></i> <span data-i18n="topbar.address">85 Grand Canal Dr, Unit 201, Miami, FL 33144</span>
                 </span>
+                <button class="lang-toggle" aria-label="Toggle language">
+                    <i class='bx bx-globe'></i> <span class="lang-toggle-text" data-i18n="lang.toggle">ES</span>
+                </button>
             </div>
         </div>
     </div>
@@ -54,30 +57,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#home" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#aboutus">About</a>
+                        <a class="nav-link" href="#aboutus" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="#services" data-i18n="nav.services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                        <a class="nav-link" href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
+                        <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
                     </li>
                     <li class="nav-item dropdown ms-lg-2">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.resident_portal">
                             Resident Portal
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="payments.html"><i class='bx bx-credit-card me-2'></i>Make a Payment</a></li>
-                            <li><a class="dropdown-item" href="documents.html"><i class='bx bx-file me-2'></i>Community Documents</a></li>
+                            <li><a class="dropdown-item" href="payments.html"><i class='bx bx-credit-card me-2'></i><span data-i18n="nav.make_payment">Make a Payment</span></a></li>
+                            <li><a class="dropdown-item" href="documents.html"><i class='bx bx-file me-2'></i><span data-i18n="nav.community_docs">Community Documents</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item ms-lg-2 d-none d-lg-block">
@@ -97,47 +100,47 @@
         <div class="container position-relative" style="z-index: 3;">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <p class="section-label text-white-50 mb-3 animate__animated animate__fadeInUp">
+                    <p class="section-label text-white-50 mb-3 animate__animated animate__fadeInUp" data-i18n="hero.label">
                         Miami &amp; Broward County's Trusted Partner
                     </p>
-                    <h1 class="display-3 text-white fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-                        Your Community.<br>
-                        <span class="text-accent">Our Commitment.</span>
+                    <h1 class="display-3 text-white fw-bold mb-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                        <span data-i18n="hero.title_1">Your Community.</span><br>
+                        <span class="text-accent" data-i18n="hero.title_2">Our Commitment.</span>
                     </h1>
-                    <p class="lead text-white-75 mb-5 animate__animated animate__fadeInUp animate__delay-2s" style="max-width: 540px;">
+                    <p class="lead text-white-75 mb-5 animate__animated animate__fadeInUp" style="max-width: 540px; animation-delay: 0.4s;" data-i18n="hero.desc">
                         Full-service HOA and condominium association management with 20+ years
                         of dedicated experience protecting and enhancing your property investment.
                     </p>
-                    <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
                         <a href="#contact" class="btn btn-accent btn-lg">
-                            Request a Proposal <i class='bx bx-right-arrow-alt ms-2'></i>
+                            <span data-i18n="hero.cta_proposal">Request a Proposal</span> <i class='bx bx-right-arrow-alt ms-2'></i>
                         </a>
-                        <a href="#services" class="btn btn-outline-light btn-lg">
+                        <a href="#services" class="btn btn-outline-light btn-lg" data-i18n="hero.cta_services">
                             Our Services
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block">
-                    <div class="hero-cards animate__animated animate__fadeInRight animate__delay-2s">
+                    <div class="hero-cards animate__animated animate__fadeInRight" style="animation-delay: 0.5s;">
                         <div class="hero-card">
                             <div class="hero-card-icon"><i class='bx bx-shield-quarter'></i></div>
                             <div>
-                                <h6>Trusted Management</h6>
-                                <p>20+ years protecting property investments across South Florida</p>
+                                <h6 data-i18n="hero.card1_title">Trusted Management</h6>
+                                <p data-i18n="hero.card1_desc">20+ years protecting property investments across South Florida</p>
                             </div>
                         </div>
                         <div class="hero-card">
                             <div class="hero-card-icon"><i class='bx bx-home-heart'></i></div>
                             <div>
-                                <h6>20+ Communities</h6>
-                                <p>HOA &amp; condo associations throughout Miami-Dade &amp; Broward</p>
+                                <h6 data-i18n="hero.card2_title">20+ Communities</h6>
+                                <p data-i18n="hero.card2_desc">HOA &amp; condo associations throughout Miami-Dade &amp; Broward</p>
                             </div>
                         </div>
                         <div class="hero-card">
                             <div class="hero-card-icon"><i class='bx bx-time-five'></i></div>
                             <div>
-                                <h6>24/7 Emergency Service</h6>
-                                <p>Round-the-clock support when your community needs it most</p>
+                                <h6 data-i18n="hero.card3_title">24/7 Emergency Service</h6>
+                                <p data-i18n="hero.card3_desc">Round-the-clock support when your community needs it most</p>
                             </div>
                         </div>
                     </div>
@@ -153,19 +156,19 @@
                 <div class="col-4">
                     <div class="trust-stat">
                         <span class="trust-number" data-count="20">0</span><span class="trust-suffix">+</span>
-                        <p class="trust-label">Years of Experience</p>
+                        <p class="trust-label" data-i18n="trust.years">Years of Experience</p>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="trust-stat">
                         <span class="trust-number" data-count="20">0</span><span class="trust-suffix">+</span>
-                        <p class="trust-label">Communities Managed</p>
+                        <p class="trust-label" data-i18n="trust.communities">Communities Managed</p>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="trust-stat">
                         <span class="trust-number" data-count="24">0</span><span class="trust-suffix">/7</span>
-                        <p class="trust-label">Emergency Support</p>
+                        <p class="trust-label" data-i18n="trust.emergency">Emergency Support</p>
                     </div>
                 </div>
             </div>
@@ -182,15 +185,15 @@
                         <div class="about-image-accent"></div>
                         <div class="about-experience-badge">
                             <span class="badge-number">20+</span>
-                            <span class="badge-text">Years of<br>Excellence</span>
+                            <span class="badge-text" data-i18n="about.badge_text">Years of<br>Excellence</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 fade-in-up">
-                    <p class="section-label">About ASPMG</p>
-                    <h2 class="mb-4">Dedicated Property Management<br>in Miami &amp; Broward County</h2>
-                    <p class="lead mb-4">ASPMG delivers professional and cost-effective property management with your goals in mind.</p>
-                    <p>Our property management team develops strategic plans to enhance common areas, make effective repairs, reduce costs, and plan for major projects &mdash; all while managing daily operations seamlessly.</p>
+                    <p class="section-label" data-i18n="about.label">About ASPMG</p>
+                    <h2 class="mb-4" data-i18n="about.title">Dedicated Property Management<br>in Miami &amp; Broward County</h2>
+                    <p class="lead mb-4" data-i18n="about.lead">ASPMG delivers professional and cost-effective property management with your goals in mind.</p>
+                    <p data-i18n="about.desc">Our property management team develops strategic plans to enhance common areas, make effective repairs, reduce costs, and plan for major projects &mdash; all while managing daily operations seamlessly.</p>
 
                     <div class="mt-5">
                         <div class="d-flex mb-4">
@@ -198,8 +201,8 @@
                                 <i class='bx bxs-message-rounded-check'></i>
                             </div>
                             <div>
-                                <h5>Transparent Communication</h5>
-                                <p class="mb-0">Regular updates so you are never surprised by what is happening with your properties.</p>
+                                <h5 data-i18n="about.feat1_title">Transparent Communication</h5>
+                                <p class="mb-0" data-i18n="about.feat1_desc">Regular updates so you are never surprised by what is happening with your properties.</p>
                             </div>
                         </div>
                         <div class="d-flex mb-4">
@@ -207,8 +210,8 @@
                                 <i class='bx bxs-user-check'></i>
                             </div>
                             <div>
-                                <h5>Personalized Service</h5>
-                                <p class="mb-0">To us you are not "just another client." We provide customized management solutions.</p>
+                                <h5 data-i18n="about.feat2_title">Personalized Service</h5>
+                                <p class="mb-0" data-i18n="about.feat2_desc">To us you are not "just another client." We provide customized management solutions.</p>
                             </div>
                         </div>
                         <div class="d-flex">
@@ -216,8 +219,8 @@
                                 <i class='bx bxs-phone-call'></i>
                             </div>
                             <div>
-                                <h5>24/7 Emergency Response</h5>
-                                <p class="mb-0">Round-the-clock service to handle any emergency repairs that may arise.</p>
+                                <h5 data-i18n="about.feat3_title">24/7 Emergency Response</h5>
+                                <p class="mb-0" data-i18n="about.feat3_desc">Round-the-clock service to handle any emergency repairs that may arise.</p>
                             </div>
                         </div>
                     </div>
@@ -231,9 +234,9 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-6 mx-auto text-center">
-                    <p class="section-label">Our Services</p>
-                    <h2>Comprehensive Property<br>Management Solutions</h2>
-                    <p class="mt-3">End-to-end management tailored to your community's needs</p>
+                    <p class="section-label" data-i18n="services.label">Our Services</p>
+                    <h2 data-i18n="services.title">Comprehensive Property<br>Management Solutions</h2>
+                    <p class="mt-3" data-i18n="services.subtitle">End-to-end management tailored to your community's needs</p>
                 </div>
             </div>
             <div class="row g-4">
@@ -242,9 +245,9 @@
                         <div class="service-card-icon">
                             <i class='bx bx-dollar-circle'></i>
                         </div>
-                        <h5>Financial Management</h5>
-                        <p>Annual CAM reconciliation, accounts receivable and payable management, monthly statements, audits, annual budget preparation, and financial reporting.</p>
-                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                        <h5 data-i18n="services.financial_title">Financial Management</h5>
+                        <p data-i18n="services.financial_desc">Annual CAM reconciliation, accounts receivable and payable management, monthly statements, audits, annual budget preparation, and financial reporting.</p>
+                        <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 fade-in-up">
@@ -252,9 +255,9 @@
                         <div class="service-card-icon">
                             <i class='bx bx-wrench'></i>
                         </div>
-                        <h5>Maintenance</h5>
-                        <p>Customized maintenance plans, vendor supervision, bid/selection process management, repair notices, and 24-hour emergency service at your disposal.</p>
-                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                        <h5 data-i18n="services.maintenance_title">Maintenance</h5>
+                        <p data-i18n="services.maintenance_desc">Customized maintenance plans, vendor supervision, bid/selection process management, repair notices, and 24-hour emergency service at your disposal.</p>
+                        <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 fade-in-up">
@@ -262,9 +265,9 @@
                         <div class="service-card-icon">
                             <i class='bx bx-buildings'></i>
                         </div>
-                        <h5>Property Management</h5>
-                        <p>Strategic community plans for long-term property value, meetings, elections, budgets, guard services, violations, parking, and day-to-day operations.</p>
-                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                        <h5 data-i18n="services.property_title">Property Management</h5>
+                        <p data-i18n="services.property_desc">Strategic community plans for long-term property value, meetings, elections, budgets, guard services, violations, parking, and day-to-day operations.</p>
+                        <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 fade-in-up">
@@ -272,9 +275,9 @@
                         <div class="service-card-icon">
                             <i class='bx bx-laptop'></i>
                         </div>
-                        <h5>Technology</h5>
-                        <p>Online accounts, payment portals, electronic forms, website construction, and electronic communications for modern, efficient management.</p>
-                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                        <h5 data-i18n="services.tech_title">Technology</h5>
+                        <p data-i18n="services.tech_desc">Online accounts, payment portals, electronic forms, website construction, and electronic communications for modern, efficient management.</p>
+                        <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 fade-in-up">
@@ -282,9 +285,9 @@
                         <div class="service-card-icon">
                             <i class='bx bx-message-rounded-dots'></i>
                         </div>
-                        <h5>Communications</h5>
-                        <p>Private client accounts with regular updates on inspections, financial reports, notices, maintenance, and projects. Stay informed at all times.</p>
-                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                        <h5 data-i18n="services.comms_title">Communications</h5>
+                        <p data-i18n="services.comms_desc">Private client accounts with regular updates on inspections, financial reports, notices, maintenance, and projects. Stay informed at all times.</p>
+                        <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 fade-in-up">
@@ -292,9 +295,9 @@
                         <div class="service-card-icon">
                             <i class='bx bx-search-alt'></i>
                         </div>
-                        <h5>Inspections</h5>
-                        <p>Regular property walks and thorough documentation. Preventive maintenance plans that have led to significant savings and lowered property insurance.</p>
-                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
+                        <h5 data-i18n="services.inspect_title">Inspections</h5>
+                        <p data-i18n="services.inspect_desc">Regular property walks and thorough documentation. Preventive maintenance plans that have led to significant savings and lowered property insurance.</p>
+                        <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
             </div>
@@ -307,37 +310,37 @@
         <div class="container position-relative" style="z-index:2">
             <div class="row mb-5">
                 <div class="col-lg-6">
-                    <p class="section-label">Why Choose ASPMG</p>
-                    <h2 class="text-white mb-0">We Treat Your Community<br>Like Our Own</h2>
+                    <p class="section-label" data-i18n="diff.label">Why Choose ASPMG</p>
+                    <h2 class="text-white mb-0" data-i18n="diff.title">We Treat Your Community<br>Like Our Own</h2>
                 </div>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">01</div>
-                        <h5>Local Expertise</h5>
-                        <p>Deep knowledge of Miami-Dade and Broward County regulations, vendors, and community needs.</p>
+                        <h5 data-i18n="diff.1_title">Local Expertise</h5>
+                        <p data-i18n="diff.1_desc">Deep knowledge of Miami-Dade and Broward County regulations, vendors, and community needs.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">02</div>
-                        <h5>Cost Savings</h5>
-                        <p>Strategic financial planning that has eliminated the need for special assessments in our communities.</p>
+                        <h5 data-i18n="diff.2_title">Cost Savings</h5>
+                        <p data-i18n="diff.2_desc">Strategic financial planning that has eliminated the need for special assessments in our communities.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">03</div>
-                        <h5>Proactive Inspections</h5>
-                        <p>Regular property walks and preventive maintenance leading to significant savings on costly repairs.</p>
+                        <h5 data-i18n="diff.3_title">Proactive Inspections</h5>
+                        <p data-i18n="diff.3_desc">Regular property walks and preventive maintenance leading to significant savings on costly repairs.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">04</div>
-                        <h5>Technology Forward</h5>
-                        <p>Online accounts, payment portals, electronic forms, and digital communications for modern management.</p>
+                        <h5 data-i18n="diff.4_title">Technology Forward</h5>
+                        <p data-i18n="diff.4_desc">Online accounts, payment portals, electronic forms, and digital communications for modern management.</p>
                     </div>
                 </div>
             </div>
@@ -349,8 +352,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-6 mx-auto text-center">
-                    <p class="section-label">Testimonials</p>
-                    <h2>What Our Communities<br>Say About Us</h2>
+                    <p class="section-label" data-i18n="testimonials.label">Testimonials</p>
+                    <h2 data-i18n="testimonials.title">What Our Communities<br>Say About Us</h2>
                 </div>
             </div>
             <div class="row g-4">
@@ -363,14 +366,14 @@
                             <i class='bx bxs-star'></i>
                             <i class='bx bxs-star'></i>
                         </div>
-                        <blockquote class="testimonial-text">
+                        <blockquote class="testimonial-text" data-i18n="testimonial.1">
                             "ASPMG has provided nothing but excellent service for three years. They have managed several of my units. Being in the Real Estate industry I deal with 10+ associations a year and few are as attentive and diligent. I highly recommend their services."
                         </blockquote>
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-1.jpg" alt="Nick Cachaldora">
                             <div class="ms-3">
                                 <h6>Nick Cachaldora</h6>
-                                <small>Association Board Member</small>
+                                <small data-i18n="testimonial.1_role">Association Board Member</small>
                             </div>
                         </div>
                     </div>
@@ -384,14 +387,14 @@
                             <i class='bx bxs-star'></i>
                             <i class='bx bxs-star'></i>
                         </div>
-                        <blockquote class="testimonial-text">
+                        <blockquote class="testimonial-text" data-i18n="testimonial.2">
                             "This is a very reliable management company. They work very hard in our association, looking for smart solutions to our problems. Thanks to this company, the financials in our community have improved 200%. I recommend this management company for anyone who wants a peaceful community and smart solutions."
                         </blockquote>
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-2.jpg" alt="Massiel Ortega">
                             <div class="ms-3">
                                 <h6>Massiel Ortega</h6>
-                                <small>Association Board Member</small>
+                                <small data-i18n="testimonial.2_role">Association Board Member</small>
                             </div>
                         </div>
                     </div>
@@ -405,14 +408,14 @@
                             <i class='bx bxs-star'></i>
                             <i class='bx bxs-star'></i>
                         </div>
-                        <blockquote class="testimonial-text">
+                        <blockquote class="testimonial-text" data-i18n="testimonial.3">
                             "I absolutely love this management group! In this crazy condo world you need people who care and are willing to go the extra mile. They walk the property almost daily, stay late problem solving, and offer suggestions that better our community. Their honesty is undeniable!"
                         </blockquote>
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-3.jpg" alt="Nilsa Bravo">
                             <div class="ms-3">
                                 <h6>Nilsa Bravo</h6>
-                                <small>Association Board Member</small>
+                                <small data-i18n="testimonial.3_role">Association Board Member</small>
                             </div>
                         </div>
                     </div>
@@ -426,14 +429,14 @@
                             <i class='bx bxs-star'></i>
                             <i class='bx bxs-star'></i>
                         </div>
-                        <blockquote class="testimonial-text">
+                        <blockquote class="testimonial-text" data-i18n="testimonial.4">
                             "A Solid Property Management has been working for my association for 4 and a half years and we have had a great experience. We have had no increase in maintenance costs, redone our roofing, obtained our 40-year re-certification, and repainted our community &mdash; all without a special assessment."
                         </blockquote>
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-4.png" alt="Ramiro Gomez">
                             <div class="ms-3">
                                 <h6>Ramiro Gomez</h6>
-                                <small>Resident</small>
+                                <small data-i18n="testimonial.4_role">Resident</small>
                             </div>
                         </div>
                     </div>
@@ -447,8 +450,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-6 mx-auto text-center">
-                    <p class="section-label">FAQ</p>
-                    <h2>Frequently Asked Questions</h2>
+                    <p class="section-label" data-i18n="faq.label">FAQ</p>
+                    <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -458,12 +461,12 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
-                                    What services does ASPMG provide?
+                                    <span data-i18n="faq.q1">What services does ASPMG provide?</span>
                                 </button>
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse show"
                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
+                                <div class="accordion-body" data-i18n="faq.a1">
                                     ASPMG provides full-service property management including financial management,
                                     maintenance coordination, property inspections, technology solutions,
                                     and 24/7 emergency response for HOA and condominium associations
@@ -475,12 +478,12 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    How do I make a payment for my community?
+                                    <span data-i18n="faq.q2">How do I make a payment for my community?</span>
                                 </button>
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse"
                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
+                                <div class="accordion-body" data-i18n="faq.a2">
                                     You can make secure online payments through our <a href="payments.html">Payments portal</a>.
                                     Simply find your community name and click to be directed to our secure payment processor, DirectBiller.
                                 </div>
@@ -490,12 +493,12 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq3">
-                                    What areas does ASPMG serve?
+                                    <span data-i18n="faq.q3">What areas does ASPMG serve?</span>
                                 </button>
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse"
                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
+                                <div class="accordion-body" data-i18n="faq.a3">
                                     We serve communities throughout Miami-Dade County and Broward County, Florida.
                                     Our local expertise allows us to provide responsive, hands-on management with deep
                                     knowledge of regional regulations and vendors.
@@ -506,12 +509,12 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq4">
-                                    How can I submit a maintenance request?
+                                    <span data-i18n="faq.q4">How can I submit a maintenance request?</span>
                                 </button>
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse"
                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
+                                <div class="accordion-body" data-i18n="faq.a4">
                                     You can submit maintenance requests by contacting our office at
                                     <a href="tel:3056618400">(305) 661-8400</a> or emailing
                                     <a href="mailto:info@aspmg.com">info@aspmg.com</a>.
@@ -523,12 +526,12 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq5">
-                                    How do I apply to rent or purchase in a managed community?
+                                    <span data-i18n="faq.q5">How do I apply to rent or purchase in a managed community?</span>
                                 </button>
                             </h2>
                             <div id="faq5" class="accordion-collapse collapse"
                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
+                                <div class="accordion-body" data-i18n="faq.a5">
                                     Visit our <a href="documents.html">Community Documents</a> page to download
                                     the application for your specific community. Completed applications can be
                                     submitted to our office along with any required documentation.
@@ -539,12 +542,12 @@
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq6">
-                                    What makes ASPMG different from larger management companies?
+                                    <span data-i18n="faq.q6">What makes ASPMG different from larger management companies?</span>
                                 </button>
                             </h2>
                             <div id="faq6" class="accordion-collapse collapse"
                                 data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
+                                <div class="accordion-body" data-i18n="faq.a6">
                                     At ASPMG, you are never "just another client." We provide personalized,
                                     hands-on service with direct access to your management team. Our boutique
                                     approach means your community gets the dedicated attention it deserves,
@@ -561,13 +564,13 @@
     <!-- CTA BANNER -->
     <section class="cta-banner">
         <div class="container text-center">
-            <h2 class="text-white mb-4">Is Your Community Lost Within<br>a Giant Management Company?</h2>
-            <p class="text-white-75 mb-5" style="max-width: 600px; margin: 0 auto;">
+            <h2 class="text-white mb-4" data-i18n="cta.title">Is Your Community Lost Within<br>a Giant Management Company?</h2>
+            <p class="text-white-75 mb-5" style="max-width: 600px; margin: 0 auto;" data-i18n="cta.desc">
                 At ASPMG, you are never "just another client." Let us show you what personalized,
                 dedicated property management looks like.
             </p>
             <a href="#contact" class="btn btn-accent btn-lg">
-                Request a Free Consultation <i class='bx bx-right-arrow-alt ms-2'></i>
+                <span data-i18n="cta.btn">Request a Free Consultation</span> <i class='bx bx-right-arrow-alt ms-2'></i>
             </a>
         </div>
     </section>
@@ -577,8 +580,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-6 mx-auto text-center">
-                    <p class="section-label">Contact Us</p>
-                    <h2>Ready to Elevate Your<br>Community Management?</h2>
+                    <p class="section-label" data-i18n="contact.label">Contact Us</p>
+                    <h2 data-i18n="contact.title">Ready to Elevate Your<br>Community Management?</h2>
                 </div>
             </div>
             <div class="row g-5">
@@ -590,7 +593,7 @@
                                 <i class='bx bx-map'></i>
                             </div>
                             <div>
-                                <h6 class="mb-1">Our Office</h6>
+                                <h6 class="mb-1" data-i18n="contact.office">Our Office</h6>
                                 <p class="mb-0">85 Grand Canal Dr, Unit 201<br>Miami, FL 33144</p>
                             </div>
                         </div>
@@ -601,7 +604,7 @@
                                 <i class='bx bx-phone'></i>
                             </div>
                             <div>
-                                <h6 class="mb-1">Phone</h6>
+                                <h6 class="mb-1" data-i18n="contact.phone">Phone</h6>
                                 <p class="mb-0"><a href="tel:3056618400">(305) 661-8400</a></p>
                             </div>
                         </div>
@@ -612,7 +615,7 @@
                                 <i class='bx bx-envelope'></i>
                             </div>
                             <div>
-                                <h6 class="mb-1">Email</h6>
+                                <h6 class="mb-1" data-i18n="contact.email">Email</h6>
                                 <p class="mb-0"><a href="mailto:info@aspmg.com">info@aspmg.com</a></p>
                             </div>
                         </div>
@@ -630,39 +633,39 @@
                         <form action="" method="POST" class="contact-form">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label">Full Name *</label>
-                                    <input type="text" class="form-control" name="name" required placeholder="John Smith">
+                                    <label class="form-label" data-i18n="contact.form_name">Full Name *</label>
+                                    <input type="text" class="form-control" name="name" required placeholder="John Smith" data-i18n-placeholder="contact.form_placeholder_name">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label">Email *</label>
-                                    <input type="email" class="form-control" name="email" required placeholder="john@example.com">
+                                    <label class="form-label" data-i18n="contact.form_email">Email *</label>
+                                    <input type="email" class="form-control" name="email" required placeholder="john@example.com" data-i18n-placeholder="contact.form_placeholder_email">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label">Phone</label>
-                                    <input type="tel" class="form-control" name="phone" placeholder="(305) 555-0000">
+                                    <label class="form-label" data-i18n="contact.form_phone">Phone</label>
+                                    <input type="tel" class="form-control" name="phone" placeholder="(305) 555-0000" data-i18n-placeholder="contact.form_placeholder_phone">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label">Community Name</label>
-                                    <input type="text" class="form-control" name="community" placeholder="Your community">
+                                    <label class="form-label" data-i18n="contact.form_community">Community Name</label>
+                                    <input type="text" class="form-control" name="community" placeholder="Your community" data-i18n-placeholder="contact.form_placeholder_community">
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label">Subject *</label>
+                                    <label class="form-label" data-i18n="contact.form_subject">Subject *</label>
                                     <select class="form-select" name="subject" required>
-                                        <option value="">Select a topic...</option>
-                                        <option>Request a Management Proposal</option>
-                                        <option>Maintenance Request</option>
-                                        <option>Billing Question</option>
-                                        <option>General Inquiry</option>
+                                        <option value="" data-i18n="contact.form_subject_default">Select a topic...</option>
+                                        <option data-i18n="contact.form_subject_1">Request a Management Proposal</option>
+                                        <option data-i18n="contact.form_subject_2">Maintenance Request</option>
+                                        <option data-i18n="contact.form_subject_3">Billing Question</option>
+                                        <option data-i18n="contact.form_subject_4">General Inquiry</option>
                                     </select>
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label">Message *</label>
+                                    <label class="form-label" data-i18n="contact.form_message">Message *</label>
                                     <textarea class="form-control" name="message" rows="5" required
-                                        placeholder="How can we help you?"></textarea>
+                                        placeholder="How can we help you?" data-i18n-placeholder="contact.form_placeholder_message"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-accent btn-lg w-100">
-                                        Send Message <i class='bx bx-send ms-2'></i>
+                                        <span data-i18n="contact.form_submit">Send Message</span> <i class='bx bx-send ms-2'></i>
                                     </button>
                                 </div>
                             </div>
@@ -680,31 +683,31 @@
                 <div class="row gy-5">
                     <div class="col-lg-4">
                         <img class="logo mb-4" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
-                        <p class="text-white-65" style="font-size: 14px;">
+                        <p class="text-white-65" style="font-size: 14px;" data-i18n="footer.desc">
                             Full-service HOA and condominium association management
                             serving Miami-Dade and Broward County for over 20 years.
                         </p>
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <h6 class="footer-heading">Quick Links</h6>
+                        <h6 class="footer-heading" data-i18n="footer.quick_links">Quick Links</h6>
                         <ul class="footer-links list-unstyled">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#aboutus">About Us</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#home" data-i18n="footer.home">Home</a></li>
+                            <li><a href="#aboutus" data-i18n="footer.about">About Us</a></li>
+                            <li><a href="#services" data-i18n="footer.services">Services</a></li>
+                            <li><a href="#testimonials" data-i18n="footer.testimonials">Testimonials</a></li>
+                            <li><a href="#contact" data-i18n="footer.contact_link">Contact</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-heading">Resident Resources</h6>
+                        <h6 class="footer-heading" data-i18n="footer.resident_resources">Resident Resources</h6>
                         <ul class="footer-links list-unstyled">
-                            <li><a href="payments.html">Make a Payment</a></li>
-                            <li><a href="documents.html">Community Documents</a></li>
-                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="payments.html" data-i18n="footer.payments">Make a Payment</a></li>
+                            <li><a href="documents.html" data-i18n="footer.documents">Community Documents</a></li>
+                            <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-heading">Contact</h6>
+                        <h6 class="footer-heading" data-i18n="footer.contact">Contact</h6>
                         <ul class="footer-contact list-unstyled">
                             <li><i class='bx bx-map me-2'></i> 85 Grand Canal Dr, Unit 201<br>
                                 <span style="margin-left: 26px;">Miami, FL 33144</span></li>
@@ -722,11 +725,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <p class="mb-0 text-white-50" style="font-size: 13px;">
-                            &copy; <span class="copyright-year">2026</span> A Solid Property Management Group. All rights reserved.
+                            &copy; <span class="copyright-year">2026</span> <span data-i18n="footer.copyright">A Solid Property Management Group. All rights reserved.</span>
                         </p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                        <p class="mb-0 text-white-50" style="font-size: 13px;" data-i18n="footer.serving">
                             Serving Miami-Dade &amp; Broward County
                         </p>
                     </div>
@@ -765,5 +768,6 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>
