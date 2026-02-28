@@ -41,6 +41,8 @@
             'hero.cta_services': 'Our Services',
             'hero.card1_title': 'Trusted Management',
             'hero.card1_desc': '20+ years protecting property investments across South Florida',
+            'hero.card2_title': '30+ Communities',
+            'hero.card2_desc': 'HOA and condo associations across Miami-Dade and Broward trust us',
             'hero.card3_title': '24/7 Emergency Service',
             'hero.card3_desc': 'Round-the-clock support when your community needs it most',
 
@@ -215,6 +217,8 @@
             'hero.cta_services': 'Nuestros Servicios',
             'hero.card1_title': 'Administraci\u00f3n de Confianza',
             'hero.card1_desc': 'M\u00e1s de 20 a\u00f1os cuidando inversiones inmobiliarias en el sur de la Florida',
+            'hero.card2_title': '30+ Comunidades',
+            'hero.card2_desc': 'Asociaciones HOA y condominios en Miami-Dade y Broward conf\u00edan en nosotros',
             'hero.card3_title': 'Emergencias 24/7',
             'hero.card3_desc': 'Estamos a su disposici\u00f3n las 24 horas cuando su comunidad m\u00e1s lo necesita',
 
