@@ -29,7 +29,6 @@
 
             // Hero pills (mobile)
             'hero.pill_trusted': '20+ Years Trusted',
-            'hero.pill_communities': '20+ Communities',
             'hero.pill_emergency': '24/7 Support',
 
             // Hero
@@ -41,14 +40,11 @@
             'hero.cta_services': 'Our Services',
             'hero.card1_title': 'Trusted Management',
             'hero.card1_desc': '20+ years protecting property investments across South Florida',
-            'hero.card2_title': '20+ Communities',
-            'hero.card2_desc': 'HOA & condo associations throughout Miami-Dade & Broward',
             'hero.card3_title': '24/7 Emergency Service',
             'hero.card3_desc': 'Round-the-clock support when your community needs it most',
 
             // Trust Bar
             'trust.years': 'Years of Experience',
-            'trust.communities': 'Communities Managed',
             'trust.emergency': 'Emergency Support',
 
             // About
@@ -206,7 +202,6 @@
 
             // Hero pills (mobile)
             'hero.pill_trusted': '20+ A\u00f1os de Confianza',
-            'hero.pill_communities': '20+ Comunidades',
             'hero.pill_emergency': 'Soporte 24/7',
 
             // Hero
@@ -218,14 +213,11 @@
             'hero.cta_services': 'Nuestros Servicios',
             'hero.card1_title': 'Gesti\u00f3n de Confianza',
             'hero.card1_desc': 'M\u00e1s de 20 a\u00f1os protegiendo inversiones inmobiliarias en el sur de la Florida',
-            'hero.card2_title': '20+ Comunidades',
-            'hero.card2_desc': 'Asociaciones HOA y condominios en Miami-Dade y Broward',
             'hero.card3_title': 'Emergencias 24/7',
             'hero.card3_desc': 'Atenci\u00f3n las 24 horas cuando su comunidad m\u00e1s lo necesita',
 
             // Trust Bar
             'trust.years': 'A\u00f1os de Experiencia',
-            'trust.communities': 'Comunidades Administradas',
             'trust.emergency': 'Soporte de Emergencia',
 
             // About

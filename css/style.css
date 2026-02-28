@@ -3,7 +3,7 @@
    Custom Stylesheet
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap');
 
 /* ========================================
    1. CSS CUSTOM PROPERTIES
@@ -39,7 +39,7 @@
     --shadow-gold: 0 4px 20px rgba(168, 144, 96, 0.25);
 
     /* Typography */
-    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-heading: 'DM Serif Display', Georgia, serif;
     --font-body: 'Sora', 'Inter', sans-serif;
 
     /* Spacing */
@@ -1255,6 +1255,71 @@ footer {
     .contact-form-wrapper { padding: 24px; }
     .topbar .d-flex { font-size: 12px; }
     html { scroll-padding-top: 80px; }
+
+    /* Mobile Navbar Menu */
+    .navbar-collapse {
+        background: linear-gradient(165deg, var(--primary), var(--primary-dark));
+        margin: 16px -12px 0;
+        padding: 16px 20px 20px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-xl);
+    }
+    .navbar-collapse .navbar-nav .nav-link {
+        color: rgba(255,255,255,0.85) !important;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 14px 16px !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        letter-spacing: 0.3px;
+    }
+    .navbar-collapse .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    .navbar-collapse .navbar-nav .nav-link:hover,
+    .navbar-collapse .navbar-nav .nav-link.active {
+        color: var(--accent-light) !important;
+        background: rgba(255,255,255,0.05);
+        border-radius: var(--radius-sm);
+    }
+    .navbar-collapse .navbar-nav .nav-link::after {
+        display: none !important;
+    }
+    .navbar-collapse .navbar-nav .nav-link.dropdown-toggle::after {
+        display: inline-block !important;
+        border-color: rgba(255,255,255,0.5);
+    }
+    .navbar-collapse .dropdown-menu {
+        background: rgba(0,0,0,0.15);
+        box-shadow: none;
+        border: none;
+        border-radius: var(--radius-sm);
+        padding: 4px 0;
+        margin-top: 0;
+    }
+    .navbar-collapse .dropdown-item {
+        color: rgba(255,255,255,0.7);
+        font-size: 14px;
+        padding: 12px 32px;
+    }
+    .navbar-collapse .dropdown-item:hover,
+    .navbar-collapse .dropdown-item:focus {
+        background: rgba(255,255,255,0.08);
+        color: var(--accent-light);
+    }
+    .navbar-collapse .dropdown-item.active {
+        background: rgba(168,144,96,0.15);
+        color: var(--accent-light);
+    }
+    .navbar-collapse .dropdown-item i {
+        color: var(--accent);
+    }
+    .navbar-collapse .d-lg-none {
+        border-color: rgba(255,255,255,0.12) !important;
+    }
+    .navbar-collapse .d-lg-none .btn-accent {
+        background: var(--accent);
+        border-color: var(--accent);
+    }
 }
 
 /* Mobile */
@@ -1291,10 +1356,15 @@ footer {
         z-index: 3;
     }
 
-    /* Section headings tighter */
-    .section-label { font-size: 11px; letter-spacing: 2px; margin-bottom: 8px; }
-    h2 { font-size: 1.6rem; }
+    /* Section headings tighter + centered on mobile */
+    .section-label { font-size: 11px; letter-spacing: 2px; margin-bottom: 8px; text-align: center; }
+    h2 { font-size: 1.6rem; text-align: center; }
     .row.mb-5 { margin-bottom: 1.5rem !important; }
+    .swipe-hint { text-align: center; }
+    .differentiators .section-label,
+    .differentiators h2 { text-align: center; }
+    #services .lead,
+    .cta-banner p { text-align: center; }
 
     /* Horizontal scroll: Services */
     #services .row.g-4 {
