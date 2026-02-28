@@ -29,6 +29,7 @@
 
             // Hero pills (mobile)
             'hero.pill_trusted': '20+ Years Trusted',
+            'hero.pill_communities': '30+ Managed Communities',
             'hero.pill_emergency': '24/7 Support',
 
             // Hero
@@ -202,6 +203,7 @@
 
             // Hero pills (mobile)
             'hero.pill_trusted': '20+ A\u00f1os de Confianza',
+            'hero.pill_communities': '30+ Comunidades',
             'hero.pill_emergency': 'Atenci\u00f3n 24/7',
 
             // Hero
