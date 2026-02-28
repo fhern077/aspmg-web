@@ -2,38 +2,56 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Make secure online payments for your ASPMG managed community in Miami-Dade and Broward County.">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css">
 
-
-    <title>ASPMG</title>
+    <title>Online Payments | ASPMG - A Solid Property Management Group</title>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar text-white py-2 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <a href="tel:3056618400" class="text-white text-decoration-none">
+                    <i class='bx bx-phone'></i> (305) 661-8400
+                </a>
+                <a href="mailto:info@aspmg.com" class="text-white text-decoration-none d-none d-lg-inline">
+                    <i class='bx bx-envelope'></i> info@aspmg.com
+                </a>
+            </div>
+            <div>
+                <span class="d-none d-lg-inline text-white-65">
+                    <i class='bx bx-map'></i> 85 Grand Canal Dr, Unit 201, Miami, FL 33144
+                </span>
+            </div>
+        </div>
+    </div>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="img/logo.png" alt="">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
+                <span class="brand-name">ASPMG</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#aboutus">About Us</a>
+                        <a class="nav-link" href="index.html#aboutus">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#services">Services</a>
@@ -42,284 +60,308 @@
                         <a class="nav-link" href="index.html#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="index.html#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html#contact">Contact</a>
                     </li>
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resident Portal
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item active" href="payments.html"><i class='bx bx-credit-card me-2'></i>Make a Payment</a></li>
+                            <li><a class="dropdown-item" href="documents.html"><i class='bx bx-file me-2'></i>Community Documents</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-none d-lg-block">
+                        <a href="tel:3056618400" class="btn btn-accent">
+                            <i class='bx bx-phone me-1'></i> (305) 661-8400
+                        </a>
+                    </li>
                 </ul>
-                <a  href="payments.html"><button class="btn btn-success ms-lg-3">Payments</button></a>
-                    <a  href="documents.html"><button class="btn btn-primary ms-lg-3">Documents</button></a>
             </div>
         </div>
-    </nav><!-- //NAVBAR -->
+    </nav>
 
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container position-relative" style="z-index:2">
+            <p class="section-label text-white-50">Resident Resources</p>
+            <h1 class="text-white">Online Payments</h1>
+            <p class="text-white-75 mb-0">Make convenient and secure online payments for your community</p>
+        </div>
+    </section>
 
-    <!-- SERVICES -->
-    <section id="services">
+    <!-- PAYMENTS -->
+    <section class="section-padding">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">Make Payments For Your Community</h6>
-                    <h1>Payments</h1>
-                    <p>Make convenient and secure online payments </p>
+            <!-- Search Bar -->
+            <div class="row mb-4">
+                <div class="col-lg-6 mx-auto">
+                    <div class="search-bar">
+                        <i class='bx bx-search'></i>
+                        <input type="text" id="communitySearch" class="form-control" placeholder="Find your community...">
+                    </div>
                 </div>
             </div>
-            <div class="row g-5">
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mt11eggt3z5">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">1560 Coral Terrace</p>
-                            </div>
+            <p class="text-center mb-5" style="color: var(--body-light);">
+                Select your community below to make a secure online payment via DirectBiller
+            </p>
+
+            <!-- Community Payment Cards - Alphabetical -->
+            <div class="row g-3" id="paymentGrid">
+                <div class="col-md-6 col-lg-4 community-item" data-name="1560 coral terrace">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mt11eggt3z5" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">1560 Coral Terrace</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m11g5zn57tf">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">29 Santillane</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="29 santillane">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m11g5zn57tf" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">29 Santillane</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1n717g75f">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Bleau Fontaine No 1</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="bleau fontaine no 1">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1n717g75f" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Bleau Fontaine No. 1</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1n717g73e">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Bleau Fontaine No 2</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="bleau fontaine no 2">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1n717g73e" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Bleau Fontaine No. 2</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m1n5157eezn">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Diamond Condominium</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="diamond condominium">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m1n5157eezn" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Diamond Condominium</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m11znngnzf1">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Doral Grand</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="doral grand">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m11znngnzf1" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Doral Grand</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=175fnf77ne">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">El Camino Real North</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="el camino real north">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=175fnf77ne" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">El Camino Real North</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mnz3g33gn1">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Garden Front Villas</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="garden front villas">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mnz3g33gn1" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Garden Front Villas</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1331g5zf1n">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Hallandale Oaks</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="hallandale oaks">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1331g5zf1n" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Hallandale Oaks</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1zfgfefg5z">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Havana Grove</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="havana grove">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1zfgfefg5z" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Havana Grove</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m7nng753">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Laguna Club</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="laguna club">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m7nng753" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Laguna Club</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m7nng77z">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Laguna Club East</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="laguna club east">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m7nng77z" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Laguna Club East</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mnge17gegz">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Los Palacios</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="los palacios">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mnge17gegz" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Los Palacios</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m73geg3f73">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Los Pinos Townhomes</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="los pinos townhomes">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=m73geg3f73" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Los Pinos Townhomes</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1en3f73nnn">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">North Garden Villas</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="north garden villas">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1en3f73nnn" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">North Garden Villas</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=ftngn1z77">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Pine Lake Village</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="pine lake village">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=ftngn1z77" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Pine Lake Village</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mentg1fzze">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Sweetwater Creek</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="sweetwater creek">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=mentg1fzze" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Sweetwater Creek</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1t1egeftft">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">The Seasons Villas</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="the seasons villas">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1t1egeftft" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">The Seasons Villas</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=13zf3n5ef7">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">The Shamrock</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="the shamrock">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=13zf3n5ef7" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">The Shamrock</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1713ee7f71">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Third Avenue</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="third avenue">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1713ee7f71" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Third Avenue</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=11g51177g">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Varadero En La Pequena Habana</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="varadero en la pequena habana">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=11g51177g" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Varadero En La Pequena Habana</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=13zfzgtzz5">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">West Gardens Village</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="west gardens village">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=13zfzgtzz5" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">West Gardens Village</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
-                <div class="col-md-6 col-sm-12 col-lg-3 mx-auto text-center">
-                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1fg1tz131e">
-                        <div class="card text-white bg-success mb-4">
-                            <div class="card-body">
-                                <i class='bx bx-credit-card lgicon'></i>
-                                <p class="card-text">Westland Park</p>
-                            </div>
+                <div class="col-md-6 col-lg-4 community-item" data-name="westland park">
+                    <a href="https://secure.directbiller.com/pbills/payer/welcomeDirect.do?h=1fg1tz131e" target="_blank" rel="noopener" class="payment-card">
+                        <div class="payment-icon"><i class='bx bx-building-house'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6 class="mb-0">Westland Park</h6>
                         </div>
+                        <span class="payment-badge">Pay Now <i class='bx bx-link-external'></i></span>
                     </a>
                 </div>
             </div>
         </div>
-    </section><!-- SERVICES -->
+    </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-top">
             <div class="container">
-                <div class="row gy-4">
+                <div class="row gy-5">
                     <div class="col-lg-4">
-                        <img class="logo" src="img/logo.png" alt="">
+                        <img class="logo mb-4" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
+                        <p class="text-white-65" style="font-size: 14px;">
+                            Full-service HOA and condominium association management
+                            serving Miami-Dade and Broward County for over 20 years.
+                        </p>
                     </div>
-                    <div class="col-lg-6">
-                        <h5 class="text-white">Contact</h5>
-                        <ul class="list-unstyled">
-                            <li>Address: 85 Grand Canal Dr Unit 201</li>
-                            <li>Email: info@aspmg.com</li>
-                            <li>Phone: (305) 661-8400</li>
+                    <div class="col-lg-2 col-md-4">
+                        <h6 class="footer-heading">Quick Links</h6>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="index.html#aboutus">About Us</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h6 class="footer-heading">Resident Resources</h6>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="payments.html">Make a Payment</a></li>
+                            <li><a href="documents.html">Community Documents</a></li>
+                            <li><a href="index.html#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h6 class="footer-heading">Contact</h6>
+                        <ul class="footer-contact list-unstyled">
+                            <li><i class='bx bx-map me-2'></i> 85 Grand Canal Dr, Unit 201<br>
+                                <span style="margin-left: 26px;">Miami, FL 33144</span></li>
+                            <li><i class='bx bx-phone me-2'></i>
+                                <a href="tel:3056618400">(305) 661-8400</a></li>
+                            <li><i class='bx bx-envelope me-2'></i>
+                                <a href="mailto:info@aspmg.com">info@aspmg.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -327,18 +369,23 @@
         </div>
         <div class="footer-bottom py-3">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">© 2020 copyright all right reserved
-                        <div class="col-md-6">
-
-                        </div>
+                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                            &copy; <span class="copyright-year">2026</span> A Solid Property Management Group. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                            Serving Miami-Dade &amp; Broward County
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
     </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>

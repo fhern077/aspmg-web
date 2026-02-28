@@ -2,297 +2,716 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ASPMG delivers full-service HOA and condominium association management in Miami-Dade and Broward County. 20+ years of dedicated experience.">
+    <meta property="og:title" content="ASPMG - A Solid Property Management Group">
+    <meta property="og:description" content="Full-service HOA & condominium management in Miami and Broward County. 20+ years of experience.">
+    <meta property="og:image" content="https://aspmg.com/img/cover.jpg">
+    <meta property="og:url" content="https://aspmg.com">
+    <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css">
 
-
-    <title>ASPMG</title>
+    <title>ASPMG - A Solid Property Management Group | Miami HOA & Condo Management</title>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar text-white py-2 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <a href="tel:3056618400" class="text-white text-decoration-none">
+                    <i class='bx bx-phone'></i> (305) 661-8400
+                </a>
+                <a href="mailto:info@aspmg.com" class="text-white text-decoration-none d-none d-lg-inline">
+                    <i class='bx bx-envelope'></i> info@aspmg.com
+                </a>
+            </div>
+            <div>
+                <span class="d-none d-lg-inline text-white-65">
+                    <i class='bx bx-map'></i> 85 Grand Canal Dr, Unit 201, Miami, FL 33144
+                </span>
+            </div>
+        </div>
+    </div>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="img/logo.png" alt="">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
+                <span class="brand-name">ASPMG</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
+                        <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#aboutus">About Us</a>
+                        <a class="nav-link" href="#aboutus">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#services">Services</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#testimonials">Testimonials</a>
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resident Portal
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="payments.html"><i class='bx bx-credit-card me-2'></i>Make a Payment</a></li>
+                            <li><a class="dropdown-item" href="documents.html"><i class='bx bx-file me-2'></i>Community Documents</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-none d-lg-block">
+                        <a href="tel:3056618400" class="btn btn-accent">
+                            <i class='bx bx-phone me-1'></i> (305) 661-8400
+                        </a>
                     </li>
                 </ul>
-                <a  href="payments.html"><button class="btn btn-success ms-lg-3">Payments</button></a>
-                    <a  href="documents.html"><button class="btn btn-primary ms-lg-3">Documents</button></a>
             </div>
         </div>
-    </nav><!-- //NAVBAR -->
+    </nav>
 
     <!-- HERO -->
-    <div class="hero vh-100 d-flex align-items-center" id="home">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 mx-auto text-center">
-                    <h1 class="display-4 text-white">A Solid Property Management Group</h1>
-                    <p class="text-white my-3">ASPMG is a full service Property Management Company.<br> Specializing in Home Owner Assocation (HOA) & Condominuim Assocation Management</p>
-                    <a href="#" class="btn me-2 btn-primary">Find Out More</a>
+    <section class="hero d-flex align-items-center" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
+        <div class="container position-relative" style="z-index: 3;">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p class="section-label text-white-50 mb-3 animate__animated animate__fadeInUp">
+                        Miami &amp; Broward County's Trusted Partner
+                    </p>
+                    <h1 class="display-3 text-white fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                        Your Community.<br>
+                        <span class="text-accent">Our Commitment.</span>
+                    </h1>
+                    <p class="lead text-white-75 mb-5 animate__animated animate__fadeInUp animate__delay-2s" style="max-width: 540px;">
+                        Full-service HOA and condominium association management with 20+ years
+                        of dedicated experience protecting and enhancing your property investment.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-3s">
+                        <a href="#contact" class="btn btn-accent btn-lg">
+                            Request a Proposal <i class='bx bx-right-arrow-alt ms-2'></i>
+                        </a>
+                        <a href="#services" class="btn btn-outline-light btn-lg">
+                            Our Services
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div><!-- //HERO -->
-
-        <!-- Why Us -->
-        <section class="row w-100 py-5 bg-light" id="aboutus">
-            <div class="col-2"></div>
-            <div class="col-8 py-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 offset-md-2">
-                            <h6 class="text-primary center">About ASPMG</h6>
-                            <h1>20+ Years Of Experience in Property Management in Miami & Broward County</h1>
-                            <p>ASPMG delivers the utmost professional and affordable cost-effective property management available. With your goals in mind, our property management team will develop a strategic plan to better common areas, make effective repairs, cut costs and plan for big projects all while effectively handling daily operations.  </p>
-    
-                            <div class="feature d-flex mt-5">
-                                <div class="iconbox me-3">
-                                    <i class='bx bxs-briefcase'></i>
-                                </div>
-                                <div>
-                                    <h5>We're Here for you</h5>
-                                    <p>At ASPMG, our staff understands the importance of maintaining regular communication with all of our clients so that they are never surprised by what is happening with their properties.</p>
-                                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-cards animate__animated animate__fadeInRight animate__delay-2s">
+                        <div class="hero-card">
+                            <div class="hero-card-icon"><i class='bx bx-shield-quarter'></i></div>
+                            <div>
+                                <h6>Trusted Management</h6>
+                                <p>20+ years protecting property investments across South Florida</p>
                             </div>
-                            <div class="feature d-flex">
-                                <div class="iconbox me-3">
-                                    <i class='bx bxs-phone'></i>
-                                </div>
-                                <div>
-                                    <h5>We're Here for you</h5>
-                                    <p>At ASPMG, our staff understands the importance of maintaining regular communication with all of our clients so that they are never surprised by what is happening with their properties.</p>
-                                </div>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hero-card-icon"><i class='bx bx-home-heart'></i></div>
+                            <div>
+                                <h6>20+ Communities</h6>
+                                <p>HOA &amp; condo associations throughout Miami-Dade &amp; Broward</p>
                             </div>
-                            <div class="feature d-flex">
-                                <div class="iconbox me-3">
-                                    <i class='bx bxs-building'></i>
-                                </div>
-                                <div>
-                                    <h5>Is your community lost within a giant management company?</h5>
-                                    <p>To us you're not “just another client.” We are here to provide personable customized service. </p>
-                                </div>
+                        </div>
+                        <div class="hero-card">
+                            <div class="hero-card-icon"><i class='bx bx-time-five'></i></div>
+                            <div>
+                                <h6>24/7 Emergency Service</h6>
+                                <p>Round-the-clock support when your community needs it most</p>
                             </div>
-    
                         </div>
                     </div>
                 </div>
-           
-           
             </div>
-            <div class="col-2"></div>
-        </section><!-- Why Us -->
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar py-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-4">
+                    <div class="trust-stat">
+                        <span class="trust-number" data-count="20">0</span><span class="trust-suffix">+</span>
+                        <p class="trust-label">Years of Experience</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="trust-stat">
+                        <span class="trust-number" data-count="20">0</span><span class="trust-suffix">+</span>
+                        <p class="trust-label">Communities Managed</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="trust-stat">
+                        <span class="trust-number" data-count="24">0</span><span class="trust-suffix">/7</span>
+                        <p class="trust-label">Emergency Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="aboutus" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 fade-in-up">
+                    <div class="about-image-wrapper">
+                        <img src="img/co.jpg" alt="Aerial view of Miami residential community managed by ASPMG" class="about-image">
+                        <div class="about-image-accent"></div>
+                        <div class="about-experience-badge">
+                            <span class="badge-number">20+</span>
+                            <span class="badge-text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in-up">
+                    <p class="section-label">About ASPMG</p>
+                    <h2 class="mb-4">Dedicated Property Management<br>in Miami &amp; Broward County</h2>
+                    <p class="lead mb-4">ASPMG delivers professional and cost-effective property management with your goals in mind.</p>
+                    <p>Our property management team develops strategic plans to enhance common areas, make effective repairs, reduce costs, and plan for major projects &mdash; all while managing daily operations seamlessly.</p>
+
+                    <div class="mt-5">
+                        <div class="d-flex mb-4">
+                            <div class="feature-icon me-3">
+                                <i class='bx bxs-message-rounded-check'></i>
+                            </div>
+                            <div>
+                                <h5>Transparent Communication</h5>
+                                <p class="mb-0">Regular updates so you are never surprised by what is happening with your properties.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="feature-icon me-3">
+                                <i class='bx bxs-user-check'></i>
+                            </div>
+                            <div>
+                                <h5>Personalized Service</h5>
+                                <p class="mb-0">To us you are not "just another client." We provide customized management solutions.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="feature-icon me-3">
+                                <i class='bx bxs-phone-call'></i>
+                            </div>
+                            <div>
+                                <h5>24/7 Emergency Response</h5>
+                                <p class="mb-0">Round-the-clock service to handle any emergency repairs that may arise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- SERVICES -->
-    <section id="services">
+    <section id="services" class="section-padding bg-light-custom">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">SERIVCES</h6>
-                    <h1>Our Services</h1>
-                    <p>Featured Service contact us to findout more</p>
+                <div class="col-lg-6 mx-auto text-center">
+                    <p class="section-label">Our Services</p>
+                    <h2>Comprehensive Property<br>Management Solutions</h2>
+                    <p class="mt-3">End-to-end management tailored to your community's needs</p>
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect bounceInUp">
-                        <div class="iconbox">
-                            <i class='bx bx-money'></i>
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="service-card">
+                        <div class="service-card-icon">
+                            <i class='bx bx-dollar-circle'></i>
                         </div>
-                        <h5 class="mt-4 mb-2">Finance</h5>
-                        <p>We offer a extensive support for a variety of financial activities, such as annual CAM reconciliation, 
-                            accounts receivable & accounts payable management, monthly statements, audits, annual budget preparation and reporting </p>
+                        <h5>Financial Management</h5>
+                        <p>Annual CAM reconciliation, accounts receivable and payable management, monthly statements, audits, annual budget preparation, and financial reporting.</p>
+                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="service-card">
+                        <div class="service-card-icon">
                             <i class='bx bx-wrench'></i>
                         </div>
-                        <h5 class="mt-4 mb-2">Maintenance</h5>
-                        <p> We will customize your maintenance plan to fit your goals and budget, supervise vendors and assist in the bid/selection process, 
-                            create timelines and deadlines , send extensive notice of repairs to tenants, and we have a 24 hours a day service at 
-                            your disposal to handle any emergency repairs that may arise.</p>
+                        <h5>Maintenance</h5>
+                        <p>Customized maintenance plans, vendor supervision, bid/selection process management, repair notices, and 24-hour emergency service at your disposal.</p>
+                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="service-card">
+                        <div class="service-card-icon">
                             <i class='bx bx-buildings'></i>
                         </div>
-                        <h5 class="mt-4 mb-2">Property Management</h5>
-                        <p> With your goals in mind, our property management team will develop a strategic plan to better your community. 
-                             ASPMG will put into action said customized plan to ensure long-term increased property value, deliver excellent service, refine management of finances 
-                            and handle all community proceedings meetings, elections, budgets, guard services, maintenance 
-                            teams, violations, parking, technology portals, etc</p>
+                        <h5>Property Management</h5>
+                        <p>Strategic community plans for long-term property value, meetings, elections, budgets, guard services, violations, parking, and day-to-day operations.</p>
+                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="service-card">
+                        <div class="service-card-icon">
                             <i class='bx bx-laptop'></i>
                         </div>
-                        <h5 class="mt-4 mb-2">Technology</h5>
-                        <p>At ASPMG we understand the importance of technology. That is why we have rolled out a new set of affordable services 
-                            to our clients including online accounts, payment portals, electronic forms, website construction and electronic 
-                            communications.</p>
+                        <h5>Technology</h5>
+                        <p>Online accounts, payment portals, electronic forms, website construction, and electronic communications for modern, efficient management.</p>
+                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="service-card">
+                        <div class="service-card-icon">
                             <i class='bx bx-message-rounded-dots'></i>
                         </div>
-                        <h5 class="mt-4 mb-2">Communications</h5>
-                        <p>At ASPMG, our staff understands the importance of maintaining regular communication with all of our clients . We maintain and operate a 
-                            private account for each of our clients so that you can be regularly in touch with our staff and stay 
-                            updated on inspections, financial reports, notices, maintenance, and projects.</p>
+                        <h5>Communications</h5>
+                        <p>Private client accounts with regular updates on inspections, financial reports, notices, maintenance, and projects. Stay informed at all times.</p>
+                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bx-search'></i>
+                <div class="col-lg-4 col-md-6 fade-in-up">
+                    <div class="service-card">
+                        <div class="service-card-icon">
+                            <i class='bx bx-search-alt'></i>
                         </div>
-                        <h5 class="mt-4 mb-2">Inspection</h5>
-                        <p>We regularly inspect properties and thoroughly document the process. Our experience allows us to indentify key areas that need upkeep
-                            and put in place a preventive maintenance plans. Our timely inspections have led to huge savings on otherwise costly repairs and 
-                            has consistenly helped lowered property insurance.</p>
+                        <h5>Inspections</h5>
+                        <p>Regular property walks and thorough documentation. Preventive maintenance plans that have led to significant savings and lowered property insurance.</p>
+                        <a href="#contact" class="btn-ghost">Learn More <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- SERVICES -->
+    </section>
 
+    <!-- WHY CHOOSE US -->
+    <section class="differentiators">
+        <div class="differentiators-overlay"></div>
+        <div class="container position-relative" style="z-index:2">
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <p class="section-label">Why Choose ASPMG</p>
+                    <h2 class="text-white mb-0">We Treat Your Community<br>Like Our Own</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 fade-in-up">
+                    <div class="diff-card">
+                        <div class="diff-number">01</div>
+                        <h5>Local Expertise</h5>
+                        <p>Deep knowledge of Miami-Dade and Broward County regulations, vendors, and community needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in-up">
+                    <div class="diff-card">
+                        <div class="diff-number">02</div>
+                        <h5>Cost Savings</h5>
+                        <p>Strategic financial planning that has eliminated the need for special assessments in our communities.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in-up">
+                    <div class="diff-card">
+                        <div class="diff-number">03</div>
+                        <h5>Proactive Inspections</h5>
+                        <p>Regular property walks and preventive maintenance leading to significant savings on costly repairs.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in-up">
+                    <div class="diff-card">
+                        <div class="diff-number">04</div>
+                        <h5>Technology Forward</h5>
+                        <p>Online accounts, payment portals, electronic forms, and digital communications for modern management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-    <!-- testimonial -->
-    <section id="testimonials">
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section-padding">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">Testimonials</h6>
-                    <h1>Highlighted Online Reviews</h1>
+                <div class="col-lg-6 mx-auto text-center">
+                    <p class="section-label">Testimonials</p>
+                    <h2>What Our Communities<br>Say About Us</h2>
                 </div>
             </div>
-            <div class="row text-center g-4">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="img/testimonial-1.jpg" alt="">
-                        <h5 class="mb-0 mt-4">Nick Cachaldora</h5>
-                        <p>Assocation Board Memeber</p>
-                        <p>ASPMG has provided nothing but excellent service for the three years. They have managed several of my units. Being in the Real Estate industry I deal with 10+ associations a year and few are as attentive and diligent. I highly recommend their services.</p>
+            <div class="row g-4">
+                <div class="col-lg-6 fade-in-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars mb-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "ASPMG has provided nothing but excellent service for three years. They have managed several of my units. Being in the Real Estate industry I deal with 10+ associations a year and few are as attentive and diligent. I highly recommend their services."
+                        </blockquote>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                            <img src="img/testimonial-1.jpg" alt="Nick Cachaldora">
+                            <div class="ms-3">
+                                <h6>Nick Cachaldora</h6>
+                                <small>Association Board Member</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="img/testimonial-2.jpg" alt="">
-                        <h5 class="mb-0 mt-4">Massiel Ortega</h5>
-                        <p>Assocation Board Memeber</p>
-                        <p>This is a very reliable management company. They work very hard in our association, looking for smart solutions to our problems. Thanks to this company, the financials in our community have improved 200%. I recommend this management company for anyone who wants to have a peaceful community, smart solutions to emergencies and also you want to increase the value of your property.</p>
+                <div class="col-lg-6 fade-in-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars mb-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "This is a very reliable management company. They work very hard in our association, looking for smart solutions to our problems. Thanks to this company, the financials in our community have improved 200%. I recommend this management company for anyone who wants a peaceful community and smart solutions."
+                        </blockquote>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                            <img src="img/testimonial-2.jpg" alt="Massiel Ortega">
+                            <div class="ms-3">
+                                <h6>Massiel Ortega</h6>
+                                <small>Association Board Member</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="img/testimonial-3.jpg" alt="">
-                        <h5 class="mb-0 mt-4">Nilsa Bravo</h5>
-                        <p>Assocation Board Memeber</p>
-                        <p> absolutely love this management group!! In this crazy condo world you need people who care and are willing to go the extra mile. They walk the property almost on a daily basis making sure that the maintenance staff is taking care of the daily work orders. They stay late problem solving… they really do all the leg work between inspections and county visits. Through their experience, they offer suggestions that better our community. If we call with a complaint, it’s noted and usually within 24 hours they have some kind of resolution. These ladies have turned our community around… they offer solutions to our problems and their honesty is undeniable! They are organized and diligent, you won’t be disappointed!</p>
-    
+                <div class="col-lg-6 fade-in-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars mb-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "I absolutely love this management group! In this crazy condo world you need people who care and are willing to go the extra mile. They walk the property almost daily, stay late problem solving, and offer suggestions that better our community. Their honesty is undeniable!"
+                        </blockquote>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                            <img src="img/testimonial-3.jpg" alt="Nilsa Bravo">
+                            <div class="ms-3">
+                                <h6>Nilsa Bravo</h6>
+                                <small>Association Board Member</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-member card-effect">
-                        <img src="img/testimonial-4.png" alt="">
-                        <h5 class="mb-0 mt-4">Ramiro Gomez</h5>
-                        <p>Resident</p>
-                        <p>A Solid Property Management has been working for my association for 4 and a half years and we have had a great experience with them. We have had no increase in maintenance costs and in their time with us we have accomplished to redo our roofing, get our 40 years re-certification without extra cost and we also recently repainted our community without a need for a special assessment; thanks to careful financial planning. </p>
+                <div class="col-lg-6 fade-in-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars mb-3">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <blockquote class="testimonial-text">
+                            "A Solid Property Management has been working for my association for 4 and a half years and we have had a great experience. We have had no increase in maintenance costs, redone our roofing, obtained our 40-year re-certification, and repainted our community &mdash; all without a special assessment."
+                        </blockquote>
+                        <div class="testimonial-author d-flex align-items-center mt-4">
+                            <img src="img/testimonial-4.png" alt="Ramiro Gomez">
+                            <div class="ms-3">
+                                <h6>Ramiro Gomez</h6>
+                                <small>Resident</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- testimonial -->
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6 mx-auto text-center">
+                    <p class="section-label">FAQ</p>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    What services does ASPMG provide?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    ASPMG provides full-service property management including financial management,
+                                    maintenance coordination, property inspections, technology solutions,
+                                    and 24/7 emergency response for HOA and condominium associations
+                                    in Miami-Dade and Broward County.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How do I make a payment for my community?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can make secure online payments through our <a href="payments.html">Payments portal</a>.
+                                    Simply find your community name and click to be directed to our secure payment processor, DirectBiller.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What areas does ASPMG serve?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We serve communities throughout Miami-Dade County and Broward County, Florida.
+                                    Our local expertise allows us to provide responsive, hands-on management with deep
+                                    knowledge of regional regulations and vendors.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    How can I submit a maintenance request?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can submit maintenance requests by contacting our office at
+                                    <a href="tel:3056618400">(305) 661-8400</a> or emailing
+                                    <a href="mailto:info@aspmg.com">info@aspmg.com</a>.
+                                    For emergencies, our 24/7 service line is always available.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    How do I apply to rent or purchase in a managed community?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Visit our <a href="documents.html">Community Documents</a> page to download
+                                    the application for your specific community. Completed applications can be
+                                    submitted to our office along with any required documentation.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    What makes ASPMG different from larger management companies?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    At ASPMG, you are never "just another client." We provide personalized,
+                                    hands-on service with direct access to your management team. Our boutique
+                                    approach means your community gets the dedicated attention it deserves,
+                                    backed by 20+ years of local expertise.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="container text-center">
+            <h2 class="text-white mb-4">Is Your Community Lost Within<br>a Giant Management Company?</h2>
+            <p class="text-white-75 mb-5" style="max-width: 600px; margin: 0 auto;">
+                At ASPMG, you are never "just another client." Let us show you what personalized,
+                dedicated property management looks like.
+            </p>
+            <a href="#contact" class="btn btn-accent btn-lg">
+                Request a Free Consultation <i class='bx bx-right-arrow-alt ms-2'></i>
+            </a>
+        </div>
+    </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="section-padding">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">CONTACT</h6>
-                    <h1>Get In Touch</h1>
-                    <p>We'd love to hear from you</p>
-                    <ul class="list-unstyled">
-                        <li>Address: 85 Grand Canal Dr Unit 201</li>
-                        <li>Email: info@aspmg.com</li>
-                        <li>Phone: (305) 661-8400</li>
-                    </ul>
+                <div class="col-lg-6 mx-auto text-center">
+                    <p class="section-label">Contact Us</p>
+                    <h2>Ready to Elevate Your<br>Community Management?</h2>
                 </div>
             </div>
-
-            <form action="" class="row g-3 justify-content-center">
-                <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Full Name">
+            <div class="row g-5">
+                <!-- Left: Contact Info -->
+                <div class="col-lg-5 fade-in-up">
+                    <div class="contact-info-card mb-4">
+                        <div class="d-flex align-items-start">
+                            <div class="contact-icon me-3">
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Our Office</h6>
+                                <p class="mb-0">85 Grand Canal Dr, Unit 201<br>Miami, FL 33144</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info-card mb-4">
+                        <div class="d-flex align-items-start">
+                            <div class="contact-icon me-3">
+                                <i class='bx bx-phone'></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Phone</h6>
+                                <p class="mb-0"><a href="tel:3056618400">(305) 661-8400</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info-card mb-4">
+                        <div class="d-flex align-items-start">
+                            <div class="contact-icon me-3">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Email</h6>
+                                <p class="mb-0"><a href="mailto:info@aspmg.com">info@aspmg.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-embed mt-4">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.3!2d-80.3!3d25.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b7e1c0a5c9b7%3A0x4d5b4c3e5f7a8d9!2s85%20Grand%20Canal%20Dr%2C%20Miami%2C%20FL%2033144!5e0!3m2!1sen!2sus!4v1"
+                            width="100%" height="220" style="border:0; border-radius: 16px;"
+                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Enter E-mail">
+                <!-- Right: Contact Form -->
+                <div class="col-lg-7 fade-in-up">
+                    <div class="contact-form-wrapper">
+                        <form action="" method="POST" class="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" name="name" required placeholder="John Smith">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email *</label>
+                                    <input type="email" class="form-control" name="email" required placeholder="john@example.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" name="phone" placeholder="(305) 555-0000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Community Name</label>
+                                    <input type="text" class="form-control" name="community" placeholder="Your community">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Subject *</label>
+                                    <select class="form-select" name="subject" required>
+                                        <option value="">Select a topic...</option>
+                                        <option>Request a Management Proposal</option>
+                                        <option>Maintenance Request</option>
+                                        <option>Billing Question</option>
+                                        <option>General Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Message *</label>
+                                    <textarea class="form-control" name="message" rows="5" required
+                                        placeholder="How can we help you?"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-accent btn-lg w-100">
+                                        Send Message <i class='bx bx-send ms-2'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" placeholder="Enter Subject">
-                </div>
-                <div class="col-md-10">
-                    <textarea name="" id="" cols="30" rows="5" class="form-control"
-                        placeholder="Enter Message"></textarea>
-                </div>
-                <div class="col-md-10 d-grid">
-                    <button class="btn btn-primary">Contact</button>
-                </div>
-            </form>
-
+            </div>
         </div>
-    </section><!-- CONTACT -->
+    </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-top">
             <div class="container">
-                <div class="row gy-4">
+                <div class="row gy-5">
                     <div class="col-lg-4">
-                        <img class="logo" src="img/logo.png" alt="">
+                        <img class="logo mb-4" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
+                        <p class="text-white-65" style="font-size: 14px;">
+                            Full-service HOA and condominium association management
+                            serving Miami-Dade and Broward County for over 20 years.
+                        </p>
                     </div>
-                    <div class="col-lg-6">
-                        <h5 class="text-white">Contact</h5>
-                        <ul class="list-unstyled">
-                            <li>Address: 85 Grand Canal Dr Unit 201</li>
-                            <li>Email: info@aspmg.com</li>
-                            <li>Phone: (305) 661-8400</li>
+                    <div class="col-lg-2 col-md-4">
+                        <h6 class="footer-heading">Quick Links</h6>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#aboutus">About Us</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h6 class="footer-heading">Resident Resources</h6>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="payments.html">Make a Payment</a></li>
+                            <li><a href="documents.html">Community Documents</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h6 class="footer-heading">Contact</h6>
+                        <ul class="footer-contact list-unstyled">
+                            <li><i class='bx bx-map me-2'></i> 85 Grand Canal Dr, Unit 201<br>
+                                <span style="margin-left: 26px;">Miami, FL 33144</span></li>
+                            <li><i class='bx bx-phone me-2'></i>
+                                <a href="tel:3056618400">(305) 661-8400</a></li>
+                            <li><i class='bx bx-envelope me-2'></i>
+                                <a href="mailto:info@aspmg.com">info@aspmg.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -300,17 +719,51 @@
         </div>
         <div class="footer-bottom py-3">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">© 2020 copyright all right reserved
-                    <div class="col-md-6">
-                       
+                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                            &copy; <span class="copyright-year">2026</span> A Solid Property Management Group. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                            Serving Miami-Dade &amp; Broward County
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "A Solid Property Management Group (ASPMG)",
+        "description": "Full-service HOA and condominium association property management company serving Miami-Dade and Broward County.",
+        "url": "https://aspmg.com",
+        "telephone": "+1-305-661-8400",
+        "email": "info@aspmg.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "85 Grand Canal Dr, Unit 201",
+            "addressLocality": "Miami",
+            "addressRegion": "FL",
+            "postalCode": "33144",
+            "addressCountry": "US"
+        },
+        "areaServed": [
+            { "@type": "AdministrativeArea", "name": "Miami-Dade County" },
+            { "@type": "AdministrativeArea", "name": "Broward County" }
+        ],
+        "openingHours": "Mo-Fr 09:00-17:00",
+        "image": "https://aspmg.com/img/cover.jpg",
+        "logo": "https://aspmg.com/img/logo.png"
+    }
+    </script>
+
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

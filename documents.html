@@ -2,38 +2,56 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Download community applications and banking forms for ASPMG managed properties in Miami-Dade and Broward County.">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.css">
 
-
-    <title>ASPMG</title>
+    <title>Community Documents | ASPMG - A Solid Property Management Group</title>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+<body>
 
-     <!-- NAVBAR -->
-     <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
+    <!-- TOPBAR -->
+    <div class="topbar text-white py-2 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <a href="tel:3056618400" class="text-white text-decoration-none">
+                    <i class='bx bx-phone'></i> (305) 661-8400
+                </a>
+                <a href="mailto:info@aspmg.com" class="text-white text-decoration-none d-none d-lg-inline">
+                    <i class='bx bx-envelope'></i> info@aspmg.com
+                </a>
+            </div>
+            <div>
+                <span class="d-none d-lg-inline text-white-65">
+                    <i class='bx bx-map'></i> 85 Grand Canal Dr, Unit 201, Miami, FL 33144
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="img/logo.png" alt="">
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
+                <span class="brand-name">ASPMG</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#aboutus">About Us</a>
+                        <a class="nav-link" href="index.html#aboutus">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#services">Services</a>
@@ -42,82 +60,304 @@
                         <a class="nav-link" href="index.html#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="index.html#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html#contact">Contact</a>
                     </li>
+                    <li class="nav-item dropdown ms-lg-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resident Portal
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="payments.html"><i class='bx bx-credit-card me-2'></i>Make a Payment</a></li>
+                            <li><a class="dropdown-item active" href="documents.html"><i class='bx bx-file me-2'></i>Community Documents</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2 d-none d-lg-block">
+                        <a href="tel:3056618400" class="btn btn-accent">
+                            <i class='bx bx-phone me-1'></i> (305) 661-8400
+                        </a>
+                    </li>
                 </ul>
-                <a  href="payments.html"><button class="btn btn-success ms-lg-3">Payments</button></a>
-                    <a  href="documents.html"><button class="btn btn-primary ms-lg-3">Documents</button></a>
             </div>
         </div>
-    </nav><!-- //NAVBAR -->
+    </nav>
 
-        <!-- Documents -->
-        <section id="documents">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-md-8 mx-auto text-center">
-                        <h6 class="text-primary"></h6>
-                        <h1>Assocation/Community Docs</h1>
-                    </div>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-6 col-sm-6">
-                        <div class=" card-effect bounceInUp">
-                            <div class="iconbox">
-                                <i class='bx bx-file'></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Applications</h5>
-                            <ul>
-                                <a href="./docs/1. BF1 Application.pdf"><li> BF1 Application</li></a>
-                                <a href="./docs/2. BF2 Application.pdf"><li> BF2 Application</li></a>
-                                <a href="./docs/3. PLV Application.pdf"><li> PLV Application</li></a>
-                                <a href="./docs/4. CT Application.pdf"><li> CT Application</li></a>
-                                <a href="./docs/5. VTC Application.pdf"><li> VT Application</li></a>
-                                <a href="./docs/6. VSM Application.pdf"><li> VSM Application</li></a>
-                                <a href="./docs/7. SHAM Application.pdf"><li>SHAM Application</li></a>
-                                <a href="./docs/8. Gen. Application LCE.pdf"><li>LCE Application</li></a>
-                                <a href="./docs/9. Gen. Application.pdf"><li> General Application</li></a>
-                                <a href="./docs/10. GFV Application.pdf"><li> GFV Application</li></a>
-                                <a href="./docs/11. LCC Application and R&R.pdf"><li> LCC Application</li></a>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="card-effect">
-                            <div class="iconbox">
-                                <i class='bx bx-card'></i>
-                            </div>
-                            <h5 class="mt-4 mb-2">Bank Forms</h5>
-                            <ul>
-                                    <a href="./docs/1. ACH Form- BF1.pdf"><li>ACH-Form-BF1</li></a>
-                                    <a href="./docs/2. ACH Form - BF2.pdf"><li>ACH-Form-BF2</li></a>
-                                    <a href="./docs/3. ACH Form - PLV.pdf"><li>ACH-Form-PLV</li></a>
-                                    <a href="./docs/4. ACH Form - LCE.pdf"><li>ACH-Form-LCE</li></a>
-                                    <a href="./docs/5. ACH Form-SHAM.pdf"><li>ACH Form-SHAM</li></a>
-                                    <a href="./docs/ACH-Form VSM Starting January 1.pdf"><li>ACH Form-VSM</li></a>
-                                    <a href="./docs/ACH-FORM-1560 coral terrace BB&T.pdf"><li>ACH Form-1560CT</li></a>
-                                    <a href="./docs/ECR ACH FORM  BB&T.pdf"><li>ACH Form-BB&T</li></a>
-                                    <a href="./docs/LAGUNA CLUB.pdf"><li>ACH LCC</li></a>
-                            </ul>
-                        </div>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="container position-relative" style="z-index:2">
+            <p class="section-label text-white-50">Resident Resources</p>
+            <h1 class="text-white">Community Documents</h1>
+            <p class="text-white-75 mb-0">Download applications and banking forms for your community</p>
+        </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section class="section-padding">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mx-auto">
+                    <div class="search-bar">
+                        <i class='bx bx-search'></i>
+                        <input type="text" id="docSearch" class="form-control" placeholder="Search documents by community name...">
                     </div>
                 </div>
             </div>
-        </section><!-- SERVICES -->
 
+            <!-- Applications Section -->
+            <h3 class="mb-4"><i class='bx bx-file text-accent me-2'></i> Community Applications</h3>
+            <div class="row g-3 mb-5">
+                <div class="col-md-6 col-lg-4 doc-item" data-name="bleau fontaine bf1">
+                    <a href="./docs/1. BF1 Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>BF1 Application</h6>
+                            <small>Bleau Fontaine No. 1</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="bleau fontaine bf2">
+                    <a href="./docs/2. BF2 Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>BF2 Application</h6>
+                            <small>Bleau Fontaine No. 2</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="pine lake village plv">
+                    <a href="./docs/3. PLV Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>PLV Application</h6>
+                            <small>Pine Lake Village</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="coral terrace ct">
+                    <a href="./docs/4. CT Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>CT Application</h6>
+                            <small>Coral Terrace</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="varadero townhomes vtc">
+                    <a href="./docs/5. VTC Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>VTC Application</h6>
+                            <small>Varadero Townhomes</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="villas at sweetwater meadows vsm">
+                    <a href="./docs/6. VSM Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>VSM Application</h6>
+                            <small>Villas at Sweetwater Meadows</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="shamrock sham">
+                    <a href="./docs/7. SHAM Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>SHAM Application</h6>
+                            <small>The Shamrock</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="laguna club east lce">
+                    <a href="./docs/8. Gen. Application LCE.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>LCE Application</h6>
+                            <small>Laguna Club East</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="general application">
+                    <a href="./docs/9. Gen. Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>General Application</h6>
+                            <small>Standard Application Form</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="garden front villas gfv">
+                    <a href="./docs/10. GFV Application.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>GFV Application</h6>
+                            <small>Garden Front Villas</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="laguna club condominium lcc">
+                    <a href="./docs/11. LCC Application and R&R.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon"><i class='bx bxs-file-pdf'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>LCC Application &amp; R&amp;R</h6>
+                            <small>Laguna Club Condominium</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bank Forms Section -->
+            <h3 class="mb-4"><i class='bx bx-credit-card text-accent me-2'></i> ACH / Banking Forms</h3>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4 doc-item" data-name="bleau fontaine bf1 ach">
+                    <a href="./docs/1. ACH Form- BF1.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - BF1</h6>
+                            <small>Bleau Fontaine No. 1</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="bleau fontaine bf2 ach">
+                    <a href="./docs/2. ACH Form - BF2.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - BF2</h6>
+                            <small>Bleau Fontaine No. 2</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="pine lake village plv ach">
+                    <a href="./docs/3. ACH Form - PLV.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - PLV</h6>
+                            <small>Pine Lake Village</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="laguna club east lce ach">
+                    <a href="./docs/4. ACH Form - LCE.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - LCE</h6>
+                            <small>Laguna Club East</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="shamrock sham ach">
+                    <a href="./docs/5. ACH Form-SHAM.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - SHAM</h6>
+                            <small>The Shamrock</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="villas sweetwater meadows vsm ach">
+                    <a href="./docs/ACH-Form VSM Starting January 1.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - VSM</h6>
+                            <small>Villas at Sweetwater Meadows</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="coral terrace 1560 ct ach">
+                    <a href="./docs/ACH-FORM-1560 coral terrace BB&T.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - 1560 CT</h6>
+                            <small>1560 Coral Terrace</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="el camino real ecr ach">
+                    <a href="./docs/ECR ACH FORM  BB&T.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - ECR</h6>
+                            <small>El Camino Real</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 doc-item" data-name="laguna club condominium lcc ach">
+                    <a href="./docs/LAGUNA CLUB.pdf" target="_blank" class="doc-card">
+                        <div class="doc-icon" style="background: #DBEAFE; color: #2563EB;"><i class='bx bxs-bank'></i></div>
+                        <div class="ms-3 flex-grow-1">
+                            <h6>ACH Form - LCC</h6>
+                            <small>Laguna Club Condominium</small>
+                        </div>
+                        <i class='bx bx-download ms-auto'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="footer-top">
             <div class="container">
-                <div class="row gy-4">
+                <div class="row gy-5">
                     <div class="col-lg-4">
-                        <img class="logo" src="img/logo.png" alt="">
+                        <img class="logo mb-4" src="img/logo.png" alt="ASPMG - A Solid Property Management Group">
+                        <p class="text-white-65" style="font-size: 14px;">
+                            Full-service HOA and condominium association management
+                            serving Miami-Dade and Broward County for over 20 years.
+                        </p>
                     </div>
-                    <div class="col-lg-6">
-                        <h5 class="text-white">Contact</h5>
-                        <ul class="list-unstyled">
-                            <li>Address: 85 Grand Canal Dr Unit 201</li>
-                            <li>Email: info@aspmg.com</li>
-                            <li>Phone: (305) 661-8400</li>
+                    <div class="col-lg-2 col-md-4">
+                        <h6 class="footer-heading">Quick Links</h6>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="index.html#aboutus">About Us</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h6 class="footer-heading">Resident Resources</h6>
+                        <ul class="footer-links list-unstyled">
+                            <li><a href="payments.html">Make a Payment</a></li>
+                            <li><a href="documents.html">Community Documents</a></li>
+                            <li><a href="index.html#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h6 class="footer-heading">Contact</h6>
+                        <ul class="footer-contact list-unstyled">
+                            <li><i class='bx bx-map me-2'></i> 85 Grand Canal Dr, Unit 201<br>
+                                <span style="margin-left: 26px;">Miami, FL 33144</span></li>
+                            <li><i class='bx bx-phone me-2'></i>
+                                <a href="tel:3056618400">(305) 661-8400</a></li>
+                            <li><i class='bx bx-envelope me-2'></i>
+                                <a href="mailto:info@aspmg.com">info@aspmg.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -125,18 +365,23 @@
         </div>
         <div class="footer-bottom py-3">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">© 2020 copyright all right reserved
-                        <div class="col-md-6">
-
-                        </div>
+                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                            &copy; <span class="copyright-year">2026</span> A Solid Property Management Group. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0 text-white-50" style="font-size: 13px;">
+                            Serving Miami-Dade &amp; Broward County
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
     </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
