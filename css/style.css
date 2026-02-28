@@ -256,7 +256,7 @@ h3, h4, h5, h6 {
 }
 
 .logo {
-    width: 140px;
+    width: 50px;
     transition: all var(--transition-base);
 }
 
@@ -267,12 +267,7 @@ h3, h4, h5, h6 {
     text-decoration: none;
 }
 .brand-name {
-    font-family: var(--font-heading);
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--primary);
-    letter-spacing: 3px;
-    line-height: 1;
+    display: none;
 }
 
 /* Custom Hamburger Toggler */
@@ -1405,12 +1400,18 @@ footer {
     body { padding-bottom: 56px; }
 
     .hero {
-        min-height: 90vh;
+        min-height: auto;
+        padding-top: 60px;
+        padding-bottom: 40px;
         background-attachment: scroll;
     }
+    .hero .container { text-align: center; }
     .hero .display-3 { font-size: 2rem; }
-    .hero .d-flex.flex-wrap { flex-direction: column; }
+    .hero .lead { font-size: 0.95rem; max-width: 100% !important; margin-left: auto; margin-right: auto; }
+    .hero .d-flex.flex-wrap { flex-direction: column; align-items: center; }
     .hero .btn-lg { width: 100%; text-align: center; }
+    .hero-trust-pills { justify-content: center; flex-wrap: wrap; overflow-x: visible; }
+    .hero-pill { white-space: normal; text-align: center; }
 
     /* Trust bar */
     .trust-stat { padding: 16px 8px; }
@@ -1592,7 +1593,8 @@ footer {
 
 /* Small mobile */
 @media (max-width: 575.98px) {
-    .hero .display-3 { font-size: 1.75rem; }
+    .hero .display-3 { font-size: 1.6rem; }
+    .hero .lead { font-size: 0.9rem; }
     .payment-badge {
         padding: 6px 10px;
         font-size: 11px;
