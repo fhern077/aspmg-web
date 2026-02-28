@@ -254,9 +254,14 @@ h3, h4, h5, h6 {
     padding-top: 8px !important;
     padding-bottom: 8px !important;
 }
+.navbar.navbar-scrolled .logo {
+    width: 50px;
+    margin: -8px 0;
+}
 
 .logo {
-    width: 50px;
+    width: 60px;
+    margin: -10px 0;
     transition: all var(--transition-base);
 }
 
@@ -267,7 +272,12 @@ h3, h4, h5, h6 {
     text-decoration: none;
 }
 .brand-name {
-    display: none;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--primary);
+    letter-spacing: 3px;
+    line-height: 1;
 }
 
 /* Custom Hamburger Toggler */
@@ -1308,10 +1318,12 @@ footer {
     }
     .navbar .brand-name {
         color: var(--white);
-        font-size: 22px;
+        font-size: 20px;
+        letter-spacing: 2px;
     }
     .navbar .logo {
-        width: 100px;
+        width: 44px;
+        margin: -6px 0;
         filter: brightness(1.2) contrast(1.05);
     }
     .hamburger-line {
@@ -1323,7 +1335,7 @@ footer {
         padding: 6px 0 !important;
     }
     .navbar.navbar-scrolled .logo {
-        width: 80px;
+        width: 38px;
     }
 
     /* Mobile Navbar Menu */
