@@ -3,7 +3,7 @@
    Custom Stylesheet
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap');
+/* Google Fonts loaded via HTML <link> tags for better performance */
 
 /* ========================================
    1. CSS CUSTOM PROPERTIES
@@ -915,7 +915,7 @@ footer {
     border-radius: var(--radius-sm);
     flex-shrink: 0;
 }
-.doc-card h6 {
+.doc-card .h6 {
     margin-bottom: 0;
     font-size: 14px;
 }
@@ -1520,7 +1520,7 @@ footer {
         padding: 6px 10px;
         font-size: 11px;
     }
-    .payment-card h6 { font-size: 13px; }
+    .payment-card .h6 { font-size: 13px; }
     .payment-icon { width: 40px; height: 40px; font-size: 20px; }
     .about-experience-badge { padding: 16px 20px; }
     .badge-number { font-size: 2rem; }
