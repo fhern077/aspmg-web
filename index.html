@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="ASPMG delivers full-service HOA and condominium association management in Miami-Dade and Broward County. 20+ years of dedicated experience.">
     <meta property="og:title" content="ASPMG - A Solid Property Management Group">
     <meta property="og:description" content="Full-service HOA & condominium management in Miami and Broward County. 20+ years of experience.">
@@ -89,6 +89,12 @@
                         </a>
                     </li>
                 </ul>
+                <!-- Mobile phone link inside hamburger menu -->
+                <div class="d-lg-none border-top mt-3 pt-3 text-center">
+                    <a href="tel:3056618400" class="btn btn-accent btn-sm w-100">
+                        <i class='bx bx-phone me-1'></i> (305) 661-8400
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -118,6 +124,21 @@
                         <a href="#services" class="btn btn-outline-light btn-lg" data-i18n="hero.cta_services">
                             Our Services
                         </a>
+                    </div>
+                    <!-- Mobile Trust Pills -->
+                    <div class="hero-trust-pills d-lg-none mt-4 animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                        <div class="hero-pill">
+                            <i class='bx bx-shield-quarter'></i>
+                            <span data-i18n="hero.pill_trusted">20+ Years Trusted</span>
+                        </div>
+                        <div class="hero-pill">
+                            <i class='bx bx-home-heart'></i>
+                            <span data-i18n="hero.pill_communities">20+ Communities</span>
+                        </div>
+                        <div class="hero-pill">
+                            <i class='bx bx-time-five'></i>
+                            <span data-i18n="hero.pill_emergency">24/7 Support</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block">
@@ -155,18 +176,21 @@
             <div class="row text-center g-4">
                 <div class="col-4">
                     <div class="trust-stat">
+                        <i class='bx bx-calendar-check trust-stat-icon d-md-none'></i>
                         <span class="trust-number" data-count="20">0</span><span class="trust-suffix">+</span>
                         <p class="trust-label" data-i18n="trust.years">Years of Experience</p>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="trust-stat">
+                        <i class='bx bx-buildings trust-stat-icon d-md-none'></i>
                         <span class="trust-number" data-count="20">0</span><span class="trust-suffix">+</span>
                         <p class="trust-label" data-i18n="trust.communities">Communities Managed</p>
                     </div>
                 </div>
                 <div class="col-4">
                     <div class="trust-stat">
+                        <i class='bx bx-phone-call trust-stat-icon d-md-none'></i>
                         <span class="trust-number" data-count="24">0</span><span class="trust-suffix">/7</span>
                         <p class="trust-label" data-i18n="trust.emergency">Emergency Support</p>
                     </div>
@@ -239,6 +263,7 @@
                     <p class="mt-3" data-i18n="services.subtitle">End-to-end management tailored to your community's needs</p>
                 </div>
             </div>
+            <p class="text-end d-md-none swipe-hint mb-2"><i class='bx bx-chevrons-right'></i> <span data-i18n="mobile.swipe_hint">Swipe to see more</span></p>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 fade-in-up">
                     <div class="service-card">
@@ -314,6 +339,7 @@
                     <h2 class="text-white mb-0" data-i18n="diff.title">We Treat Your Community<br>Like Our Own</h2>
                 </div>
             </div>
+            <p class="text-end d-md-none swipe-hint mb-2" style="color: rgba(255,255,255,0.4);"><i class='bx bx-chevrons-right'></i> <span data-i18n="mobile.swipe_hint">Swipe to see more</span></p>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
@@ -356,6 +382,7 @@
                     <h2 data-i18n="testimonials.title">What Our Communities<br>Say About Us</h2>
                 </div>
             </div>
+            <p class="text-end d-md-none swipe-hint mb-2"><i class='bx bx-chevrons-right'></i> <span data-i18n="mobile.swipe_hint">Swipe to see more</span></p>
             <div class="row g-4">
                 <div class="col-lg-6 fade-in-up">
                     <div class="testimonial-card">
@@ -587,39 +614,48 @@
             <div class="row g-5">
                 <!-- Left: Contact Info -->
                 <div class="col-lg-5 fade-in-up">
-                    <div class="contact-info-card mb-4">
-                        <div class="d-flex align-items-start">
-                            <div class="contact-icon me-3">
-                                <i class='bx bx-map'></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-1" data-i18n="contact.office">Our Office</h6>
-                                <p class="mb-0">85 Grand Canal Dr, Unit 201<br>Miami, FL 33144</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-info-card mb-4">
-                        <div class="d-flex align-items-start">
-                            <div class="contact-icon me-3">
-                                <i class='bx bx-phone'></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-1" data-i18n="contact.phone">Phone</h6>
-                                <p class="mb-0"><a href="tel:3056618400">(305) 661-8400</a></p>
+                    <a href="https://maps.google.com/?q=85+Grand+Canal+Dr+Unit+201+Miami+FL+33144" target="_blank" rel="noopener" class="contact-info-card-link">
+                        <div class="contact-info-card mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-3">
+                                    <i class='bx bx-map'></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1" data-i18n="contact.office">Our Office</h6>
+                                    <p class="mb-0">85 Grand Canal Dr, Unit 201<br>Miami, FL 33144</p>
+                                </div>
+                                <i class='bx bx-chevron-right d-md-none ms-2' style="color: var(--accent); font-size: 20px;"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="contact-info-card mb-4">
-                        <div class="d-flex align-items-start">
-                            <div class="contact-icon me-3">
-                                <i class='bx bx-envelope'></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-1" data-i18n="contact.email">Email</h6>
-                                <p class="mb-0"><a href="mailto:info@aspmg.com">info@aspmg.com</a></p>
+                    </a>
+                    <a href="tel:3056618400" class="contact-info-card-link">
+                        <div class="contact-info-card mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-3">
+                                    <i class='bx bx-phone'></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1" data-i18n="contact.phone">Phone</h6>
+                                    <p class="mb-0">(305) 661-8400</p>
+                                </div>
+                                <i class='bx bx-chevron-right d-md-none ms-2' style="color: var(--accent); font-size: 20px;"></i>
                             </div>
                         </div>
-                    </div>
+                    </a>
+                    <a href="mailto:info@aspmg.com" class="contact-info-card-link">
+                        <div class="contact-info-card mb-4">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon me-3">
+                                    <i class='bx bx-envelope'></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1" data-i18n="contact.email">Email</h6>
+                                    <p class="mb-0">info@aspmg.com</p>
+                                </div>
+                                <i class='bx bx-chevron-right d-md-none ms-2' style="color: var(--accent); font-size: 20px;"></i>
+                            </div>
+                        </div>
+                    </a>
                     <div class="map-embed mt-4">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.3!2d-80.3!3d25.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b7e1c0a5c9b7%3A0x4d5b4c3e5f7a8d9!2s85%20Grand%20Canal%20Dr%2C%20Miami%2C%20FL%2033144!5e0!3m2!1sen!2sus!4v1"
@@ -765,6 +801,18 @@
         "logo": "https://aspmg.com/img/logo.png"
     }
     </script>
+
+    <!-- MOBILE BOTTOM BAR -->
+    <div class="mobile-bottom-bar d-md-none">
+        <a href="tel:3056618400" class="mobile-bottom-btn mobile-bottom-call">
+            <i class='bx bx-phone-call'></i>
+            <span data-i18n="mobile.call_us">Call Us</span>
+        </a>
+        <button class="mobile-bottom-btn mobile-bottom-lang lang-toggle" aria-label="Toggle language">
+            <i class='bx bx-globe'></i>
+            <span class="lang-toggle-text" data-i18n="lang.toggle">ES</span>
+        </button>
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

@@ -1127,7 +1127,119 @@ footer {
 }
 
 /* ========================================
-   22. RESPONSIVE BREAKPOINTS
+   22. MOBILE BOTTOM BAR
+   ======================================== */
+.mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    display: flex;
+    background: var(--primary);
+    border-top: 1px solid rgba(168, 144, 96, 0.3);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.mobile-bottom-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 0;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    min-height: 56px;
+}
+.mobile-bottom-btn i { font-size: 20px; }
+.mobile-bottom-call {
+    background: var(--accent);
+    color: var(--white);
+}
+.mobile-bottom-call:hover,
+.mobile-bottom-call:active {
+    background: var(--accent-dark);
+    color: var(--white);
+}
+.mobile-bottom-lang:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   23. HERO TRUST PILLS (Mobile)
+   ======================================== */
+.hero-trust-pills {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 4px;
+}
+.hero-trust-pills::-webkit-scrollbar { display: none; }
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    padding: 10px 18px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.hero-pill i {
+    color: var(--accent-light);
+    font-size: 18px;
+}
+.hero-pill span {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Trust stat icons (visible on mobile via d-md-none) */
+.trust-stat-icon {
+    display: block;
+    font-size: 28px;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+}
+
+/* Tappable contact cards */
+.contact-info-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.contact-info-card-link:hover,
+.contact-info-card-link:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Swipe hint */
+.swipe-hint {
+    font-size: 12px;
+    color: var(--body-light);
+}
+
+/* ========================================
+   24. RESPONSIVE BREAKPOINTS
    ======================================== */
 
 /* Tablet */
@@ -1147,29 +1259,233 @@ footer {
 
 /* Mobile */
 @media (max-width: 767.98px) {
-    :root { --section-py: 60px; }
+    :root { --section-py: 48px; }
+    body { padding-bottom: 56px; }
+
     .hero {
         min-height: 90vh;
         background-attachment: scroll;
     }
     .hero .display-3 { font-size: 2rem; }
-    .trust-number { font-size: 2rem; }
-    .trust-suffix { font-size: 1.5rem; }
-    .service-card { padding: 28px 20px; }
+    .hero .d-flex.flex-wrap { flex-direction: column; }
+    .hero .btn-lg { width: 100%; text-align: center; }
+
+    /* Trust bar */
+    .trust-stat { padding: 16px 8px; }
+    .trust-number { font-size: 2.2rem; }
+    .trust-suffix { font-size: 1.6rem; }
+    .trust-label { font-size: 11px; letter-spacing: 0.5px; }
+    .trust-bar {
+        position: relative;
+        padding-bottom: 30px;
+    }
+    .trust-bar::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,20 C360,60 1080,0 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom center;
+        background-size: 100% 100%;
+        z-index: 3;
+    }
+
+    /* Section headings tighter */
+    .section-label { font-size: 11px; letter-spacing: 2px; margin-bottom: 8px; }
+    h2 { font-size: 1.6rem; }
+    .row.mb-5 { margin-bottom: 1.5rem !important; }
+
+    /* Horizontal scroll: Services */
+    #services .row.g-4 {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 0;
+        margin-left: -12px;
+        margin-right: -12px;
+        padding: 0 12px 16px;
+    }
+    #services .row.g-4::-webkit-scrollbar { display: none; }
+    #services .row.g-4 > [class*="col-"] {
+        flex: 0 0 80vw;
+        max-width: 80vw;
+        scroll-snap-align: start;
+        padding: 0 8px;
+    }
+    .service-card { padding: 28px 20px; height: auto; min-height: 100%; }
+
+    /* Wave divider: services → differentiators */
+    #services {
+        position: relative;
+        padding-bottom: calc(var(--section-py) + 20px);
+    }
+    #services::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%231B2A4A' d='M0,30 C480,0 960,60 1440,20 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom center;
+        background-size: 100% 100%;
+        z-index: 3;
+    }
+
+    /* Horizontal scroll: Differentiators */
+    .differentiators .row.g-4 {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 0;
+        margin-left: -12px;
+        margin-right: -12px;
+        padding: 0 12px 16px;
+    }
+    .differentiators .row.g-4::-webkit-scrollbar { display: none; }
+    .differentiators .row.g-4 > [class*="col-"] {
+        flex: 0 0 75vw;
+        max-width: 75vw;
+        scroll-snap-align: start;
+        padding: 0 8px;
+    }
+    .diff-card { height: auto; min-height: 100%; }
+
+    /* Wave divider: differentiators → testimonials */
+    .differentiators {
+        padding-bottom: calc(var(--section-py) + 20px);
+    }
+    .differentiators::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23ffffff' d='M0,40 C320,10 720,50 1440,20 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom center;
+        background-size: 100% 100%;
+        z-index: 3;
+    }
+
+    /* Horizontal scroll: Testimonials */
+    #testimonials .row.g-4 {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: 0;
+        margin-left: -12px;
+        margin-right: -12px;
+        padding: 0 12px 16px;
+    }
+    #testimonials .row.g-4::-webkit-scrollbar { display: none; }
+    #testimonials .row.g-4 > [class*="col-"] {
+        flex: 0 0 88vw;
+        max-width: 88vw;
+        scroll-snap-align: center;
+        padding: 0 8px;
+    }
     .testimonial-card { padding: 24px; }
+
+    /* Angle divider before CTA banner */
+    .cta-banner { position: relative; }
+    .cta-banner::before {
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: 0;
+        right: 0;
+        height: 24px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48'%3E%3Cpath fill='%23F4F6FA' d='M0,0 L1440,0 L1440,48 L0,0 Z'/%3E%3C/svg%3E") no-repeat top center;
+        background-size: 100% 100%;
+        z-index: 3;
+    }
+
+    /* Contact cards tappable */
+    .contact-info-card {
+        padding: 18px 20px;
+        border: 2px solid var(--light);
+        border-radius: var(--radius-md);
+        background: var(--white);
+    }
+    .contact-info-card-link:active .contact-info-card {
+        border-color: var(--accent);
+        transform: scale(0.98);
+    }
+
+    /* Touch-friendly tap targets */
+    .btn { min-height: 48px; padding: 12px 24px; }
+    .navbar .nav-link { min-height: 44px; display: flex; align-items: center; }
+    .faq-item .accordion-button { min-height: 52px; padding: 16px 20px; }
+    .footer-links a { padding: 8px 0; min-height: 44px; display: inline-flex; align-items: center; }
+    .doc-card, .payment-card { min-height: 64px; }
+
+    /* Payment cards touch feedback */
+    .payment-card { padding: 18px 16px; }
+    .payment-card:active { transform: scale(0.98); border-color: var(--success); }
+
+    /* Page elements */
     .page-hero { min-height: 200px; }
     .topbar { display: none !important; }
     .footer-top { padding: 50px 0 30px; }
-    .hero .d-flex.flex-wrap { flex-direction: column; }
-    .hero .btn-lg { width: 100%; text-align: center; }
+    .scroll-to-top { bottom: 76px; }
     html { scroll-padding-top: 70px; }
 }
 
 /* Small mobile */
 @media (max-width: 575.98px) {
     .hero .display-3 { font-size: 1.75rem; }
-    .payment-badge { display: none; }
-    .payment-card h6 { font-size: 14px; }
+    .payment-badge {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    .payment-card h6 { font-size: 13px; }
+    .payment-icon { width: 40px; height: 40px; font-size: 20px; }
     .about-experience-badge { padding: 16px 20px; }
     .badge-number { font-size: 2rem; }
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+    .service-card:hover::before { transform: scaleX(0); }
+    .service-card:hover .service-card-icon {
+        background: var(--light);
+        color: var(--primary);
+    }
+    .testimonial-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+    .diff-card:hover {
+        transform: none;
+        background: rgba(255,255,255,0.08);
+    }
+    .trust-stat:hover { transform: none; }
+    .about-experience-badge:hover { transform: none; }
+    .btn-primary:hover,
+    .btn-primary:focus { transform: none; }
+    .btn-accent:hover { transform: none; }
+    .btn-outline-light:hover { transform: none; }
+    .contact-info-card:hover { transform: none; }
+    .doc-card:hover { transform: none; }
+
+    /* Active/pressed states for touch */
+    .service-card:active { transform: scale(0.98); box-shadow: var(--shadow-md); }
+    .testimonial-card:active { transform: scale(0.98); }
+    .doc-card:active { border-color: var(--accent); }
 }

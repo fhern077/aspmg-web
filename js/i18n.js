@@ -23,6 +23,15 @@
             'nav.make_payment': 'Make a Payment',
             'nav.community_docs': 'Community Documents',
 
+            // Mobile
+            'mobile.call_us': 'Call Us',
+            'mobile.swipe_hint': 'Swipe to see more',
+
+            // Hero pills (mobile)
+            'hero.pill_trusted': '20+ Years Trusted',
+            'hero.pill_communities': '20+ Communities',
+            'hero.pill_emergency': '24/7 Support',
+
             // Hero
             'hero.label': "Miami & Broward County's Trusted Partner",
             'hero.title_1': 'Your Community.',
@@ -190,6 +199,15 @@
             'nav.resident_portal': 'Portal de Residentes',
             'nav.make_payment': 'Realizar un Pago',
             'nav.community_docs': 'Documentos',
+
+            // Mobile
+            'mobile.call_us': 'Llamar',
+            'mobile.swipe_hint': 'Desliza para ver m\u00e1s',
+
+            // Hero pills (mobile)
+            'hero.pill_trusted': '20+ A\u00f1os de Confianza',
+            'hero.pill_communities': '20+ Comunidades',
+            'hero.pill_emergency': 'Soporte 24/7',
 
             // Hero
             'hero.label': 'Su Aliado de Confianza en Miami y Broward',

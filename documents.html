@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Download community applications and banking forms for ASPMG managed properties in Miami-Dade and Broward County.">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -83,6 +83,11 @@
                         </a>
                     </li>
                 </ul>
+                <div class="d-lg-none border-top mt-3 pt-3 text-center">
+                    <a href="tel:3056618400" class="btn btn-accent btn-sm w-100">
+                        <i class='bx bx-phone me-1'></i> (305) 661-8400
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -383,6 +388,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- MOBILE BOTTOM BAR -->
+    <div class="mobile-bottom-bar d-md-none">
+        <a href="tel:3056618400" class="mobile-bottom-btn mobile-bottom-call">
+            <i class='bx bx-phone-call'></i>
+            <span data-i18n="mobile.call_us">Call Us</span>
+        </a>
+        <button class="mobile-bottom-btn mobile-bottom-lang lang-toggle" aria-label="Toggle language">
+            <i class='bx bx-globe'></i>
+            <span class="lang-toggle-text" data-i18n="lang.toggle">ES</span>
+        </button>
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
