@@ -670,7 +670,7 @@
                 <!-- Right: Contact Form -->
                 <div class="col-lg-7 fade-in-up">
                     <div class="contact-form-wrapper">
-                        <form action="" method="POST" class="contact-form">
+                        <form id="contactForm" class="contact-form" novalidate>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label" data-i18n="contact.form_name">Full Name *</label>
@@ -703,11 +703,16 @@
                                     <textarea class="form-control" name="message" rows="5" required
                                         placeholder="How can we help you?" data-i18n-placeholder="contact.form_placeholder_message"></textarea>
                                 </div>
+                                <!-- Honeypot - hidden from users, bots auto-fill -->
+                                <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                                    <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
+                                </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-accent btn-lg w-100">
+                                    <button type="submit" class="btn btn-accent btn-lg w-100" id="contactSubmitBtn">
                                         <span data-i18n="contact.form_submit">Send Message</span> <i class='bx bx-send ms-2'></i>
                                     </button>
                                 </div>
+                                <div id="contactAlert" class="col-12" style="display:none;"></div>
                             </div>
                         </form>
                     </div>

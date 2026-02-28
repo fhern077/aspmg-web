@@ -119,4 +119,78 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEls.forEach(function (el) {
         el.textContent = new Date().getFullYear();
     });
+
+    // 8. Contact Form Submission
+    var contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var btn = document.getElementById('contactSubmitBtn');
+            var alert = document.getElementById('contactAlert');
+            var form = this;
+
+            // Gather fields
+            var name = form.querySelector('[name="name"]').value.trim();
+            var email = form.querySelector('[name="email"]').value.trim();
+            var phone = form.querySelector('[name="phone"]').value.trim();
+            var community = form.querySelector('[name="community"]').value.trim();
+            var subject = form.querySelector('[name="subject"]').value.trim();
+            var message = form.querySelector('[name="message"]').value.trim();
+            var website = form.querySelector('[name="website"]').value;
+
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                showAlert('Please fill in all required fields.', 'danger');
+                return;
+            }
+
+            // Build message with subject and community context
+            var fullMessage = '[' + subject + ']';
+            if (community) fullMessage += ' Community: ' + community;
+            fullMessage += '\n\n' + message;
+
+            // Disable button
+            var originalHTML = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Sending...';
+
+            fetch('https://applyhoa.com/api/contact/aspmg', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phone: phone || '',
+                    message: fullMessage,
+                    website: website
+                })
+            })
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                if (data.data && data.data.success) {
+                    showAlert('Message sent successfully! We\'ll get back to you soon.', 'success');
+                    form.reset();
+                } else {
+                    showAlert(data.error ? data.error.message : 'Something went wrong. Please try again.', 'danger');
+                }
+            })
+            .catch(function () {
+                showAlert('Unable to send message. Please call us at (305) 661-8400.', 'danger');
+            })
+            .finally(function () {
+                btn.disabled = false;
+                btn.innerHTML = originalHTML;
+            });
+
+            function showAlert(msg, type) {
+                alert.style.display = 'block';
+                alert.className = 'col-12 alert alert-' + type;
+                alert.textContent = msg;
+                if (type === 'success') {
+                    setTimeout(function () { alert.style.display = 'none'; }, 6000);
+                }
+            }
+        });
+    }
 });
