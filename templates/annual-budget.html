@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPMG - Annual Budget</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: letter; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Sora', Arial, sans-serif; font-size: 10pt; color: #333; line-height: 1.5; background: #fff; }
+        .page { width: 8.5in; min-height: 11in; margin: 0 auto; display: flex; flex-direction: column; }
+
+        .header { background: #1B2A4A; padding: 22px 50px 18px; display: flex; align-items: center; justify-content: space-between; }
+        .header-left { display: flex; align-items: center; gap: 14px; }
+        .header-logo { width: 48px; }
+        .header-brand h1 { font-family: 'DM Serif Display', serif; font-size: 17pt; font-weight: 400; color: #fff; letter-spacing: 2px; margin-bottom: 1px; }
+        .header-brand p { font-size: 7pt; color: #A89060; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+        .header-right { text-align: right; color: rgba(255,255,255,0.7); font-size: 7.5pt; line-height: 1.7; }
+        .header-right strong { color: #A89060; }
+        .gold-bar { height: 3px; background: linear-gradient(90deg, #A89060, #BDA87A, #A89060); }
+
+        .body { flex: 1; padding: 28px 50px 20px; }
+
+        .doc-title-row { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; }
+        .doc-title { font-family: 'DM Serif Display', serif; font-size: 18pt; color: #1B2A4A; }
+        .doc-subtitle { font-size: 10pt; color: #A89060; font-weight: 600; }
+        .doc-meta { text-align: right; font-size: 9pt; color: #666; }
+        .doc-meta strong { color: #1B2A4A; }
+
+        .summary-row { display: flex; gap: 12px; margin-bottom: 22px; }
+        .summary-box { flex: 1; background: #F4F6FA; border-radius: 6px; padding: 14px 16px; text-align: center; }
+        .summary-box.income { border-bottom: 3px solid #2E7D5B; }
+        .summary-box.expense { border-bottom: 3px solid #C0392B; }
+        .summary-box.net { border-bottom: 3px solid #A89060; }
+        .summary-label { font-size: 7pt; text-transform: uppercase; letter-spacing: 1.5px; color: #888; font-weight: 600; margin-bottom: 4px; }
+        .summary-value { font-size: 16pt; font-weight: 700; color: #1B2A4A; }
+        .summary-box.income .summary-value { color: #2E7D5B; }
+        .summary-box.expense .summary-value { color: #C0392B; }
+        .summary-box.net .summary-value { color: #A89060; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 18px; }
+        .table-title { font-family: 'DM Serif Display', serif; font-size: 12pt; color: #1B2A4A; margin: 18px 0 8px; padding-bottom: 6px; border-bottom: 1px solid #E0E0E0; }
+        thead th { background: #1B2A4A; color: #fff; padding: 7px 12px; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; text-align: left; }
+        thead th.num { text-align: right; }
+        tbody td { padding: 6px 12px; border-bottom: 1px solid #F0F0F0; font-size: 9.5pt; }
+        tbody td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
+        tbody tr:nth-child(even) { background: #FAFBFC; }
+        tbody tr.subtotal { background: #F4F6FA; font-weight: 600; }
+        tbody tr.subtotal td { border-top: 1px solid #D0D0D0; border-bottom: 1px solid #D0D0D0; color: #1B2A4A; }
+        tfoot td { padding: 8px 12px; font-weight: 700; font-size: 10pt; border-top: 2px solid #1B2A4A; color: #1B2A4A; }
+        tfoot td.num { text-align: right; }
+
+        .notes { background: #FFFBF3; border: 1px solid #E8DCC8; border-radius: 6px; padding: 14px 18px; margin-top: 16px; font-size: 9pt; color: #666; }
+        .notes strong { color: #A89060; }
+
+        .footer { border-top: 1px solid #E0E0E0; padding: 12px 50px; display: flex; justify-content: space-between; font-size: 7pt; color: #999; }
+        .footer-left { display: flex; align-items: center; gap: 6px; }
+        .footer-diamond { width: 8px; height: 8px; background: #A89060; transform: rotate(45deg); flex-shrink: 0; }
+
+        @media print { body { background: none; } .page { margin: 0; box-shadow: none; } }
+        @media screen { body { background: #E8E8E8; padding: 20px 0; } .page { box-shadow: 0 2px 20px rgba(0,0,0,0.15); margin: 20px auto; } }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <img class="header-logo" src="../img/logo.png" alt="ASPMG">
+                <div class="header-brand">
+                    <h1>ASPMG</h1>
+                    <p>A Solid Property Management Group</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <strong>Phone</strong> (305) 661-8400<br>
+                <strong>Email</strong> info@aspmg.com
+            </div>
+        </div>
+        <div class="gold-bar"></div>
+
+        <div class="body">
+            <div class="doc-title-row">
+                <div>
+                    <div class="doc-title">Annual Operating Budget</div>
+                    <div class="doc-subtitle">[Community Name] Association</div>
+                </div>
+                <div class="doc-meta">
+                    <strong>Fiscal Year:</strong> [Year]<br>
+                    <strong>Prepared:</strong> [Date]<br>
+                    <strong>Units:</strong> [#]
+                </div>
+            </div>
+
+            <div class="summary-row">
+                <div class="summary-box income">
+                    <div class="summary-label">Total Income</div>
+                    <div class="summary-value">$0.00</div>
+                </div>
+                <div class="summary-box expense">
+                    <div class="summary-label">Total Expenses</div>
+                    <div class="summary-value">$0.00</div>
+                </div>
+                <div class="summary-box net">
+                    <div class="summary-label">Net Surplus / (Deficit)</div>
+                    <div class="summary-value">$0.00</div>
+                </div>
+            </div>
+
+            <!-- INCOME -->
+            <div class="table-title">Income</div>
+            <table>
+                <thead><tr><th>Category</th><th class="num">Monthly</th><th class="num">Annual</th></tr></thead>
+                <tbody>
+                    <tr><td>Maintenance Assessments</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Special Assessments</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Late Fees &amp; Interest</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Application Fees</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Laundry / Vending Income</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Other Income</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                </tbody>
+                <tfoot><tr><td>Total Income</td><td class="num">$0.00</td><td class="num">$0.00</td></tr></tfoot>
+            </table>
+
+            <!-- EXPENSES -->
+            <div class="table-title">Expenses</div>
+            <table>
+                <thead><tr><th>Category</th><th class="num">Monthly</th><th class="num">Annual</th></tr></thead>
+                <tbody>
+                    <!-- Administration -->
+                    <tr class="subtotal"><td colspan="3">Administration</td></tr>
+                    <tr><td>Management Fee</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Insurance (Property &amp; Liability)</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Legal &amp; Accounting</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Audit</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Office &amp; Postage</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Licenses &amp; Permits</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <!-- Utilities -->
+                    <tr class="subtotal"><td colspan="3">Utilities</td></tr>
+                    <tr><td>Electric (Common Areas)</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Water &amp; Sewer</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Cable / Internet</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Trash Removal</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <!-- Maintenance -->
+                    <tr class="subtotal"><td colspan="3">Maintenance &amp; Repairs</td></tr>
+                    <tr><td>General Maintenance</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Landscaping</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Pool Maintenance</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Elevator Maintenance</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Pest Control</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Painting / Pressure Cleaning</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <!-- Security -->
+                    <tr class="subtotal"><td colspan="3">Security &amp; Safety</td></tr>
+                    <tr><td>Security / Guard Service</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <tr><td>Fire Alarm / Safety Systems</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                    <!-- Reserves -->
+                    <tr class="subtotal"><td colspan="3">Reserves</td></tr>
+                    <tr><td>Reserve Fund Contribution</td><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+                </tbody>
+                <tfoot><tr><td>Total Expenses</td><td class="num">$0.00</td><td class="num">$0.00</td></tr></tfoot>
+            </table>
+
+            <div class="notes">
+                <strong>Notes:</strong> This budget is prepared for planning purposes. Actual results may vary. Reserve fund contributions are based on the most recent reserve study. The board may adjust line items as needed throughout the fiscal year. Monthly assessment per unit: $0.00
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <div class="footer-diamond"></div>
+                <span>85 Grand Canal Dr, Unit 201, Miami, FL 33144</span>
+            </div>
+            <div>aspmg.com &nbsp;|&nbsp; (305) 661-8400</div>
+        </div>
+    </div>
+</body>
+</html>

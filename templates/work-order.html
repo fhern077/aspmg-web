@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPMG - Maintenance Work Order</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: letter; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Sora', Arial, sans-serif; font-size: 10pt; color: #333; line-height: 1.5; background: #fff; }
+        .page { width: 8.5in; min-height: 11in; margin: 0 auto; display: flex; flex-direction: column; }
+
+        .header { background: #1B2A4A; padding: 22px 50px 18px; display: flex; align-items: center; justify-content: space-between; }
+        .header-left { display: flex; align-items: center; gap: 14px; }
+        .header-logo { width: 48px; }
+        .header-brand h1 { font-family: 'DM Serif Display', serif; font-size: 17pt; font-weight: 400; color: #fff; letter-spacing: 2px; margin-bottom: 1px; }
+        .header-brand p { font-size: 7pt; color: #A89060; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+        .header-right { text-align: right; }
+        .wo-label { font-family: 'DM Serif Display', serif; font-size: 18pt; color: #A89060; }
+        .wo-number { font-size: 8pt; color: rgba(255,255,255,0.6); margin-top: 2px; }
+        .gold-bar { height: 3px; background: linear-gradient(90deg, #A89060, #BDA87A, #A89060); }
+
+        .body { flex: 1; padding: 28px 50px 20px; }
+
+        .priority-badge { display: inline-block; font-size: 8pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 10px; }
+        .priority-badge.low { background: #E8F5EE; color: #2E7D5B; }
+        .priority-badge.medium { background: #FFF8E1; color: #D4A017; }
+        .priority-badge.high { background: #FDE8E8; color: #C0392B; }
+        .priority-badge.emergency { background: #C0392B; color: #fff; }
+
+        .doc-title { font-family: 'DM Serif Display', serif; font-size: 18pt; color: #1B2A4A; margin-bottom: 4px; }
+        .community-line { font-size: 10pt; color: #A89060; font-weight: 600; margin-bottom: 20px; }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 22px; }
+        .info-cell { padding: 10px 16px; border-bottom: 1px solid #E0E0E0; }
+        .info-cell:nth-child(odd) { border-right: 1px solid #E0E0E0; }
+        .info-cell:nth-last-child(-n+2) { border-bottom: none; }
+        .info-cell .label { font-size: 7pt; text-transform: uppercase; letter-spacing: 1.5px; color: #A89060; font-weight: 600; margin-bottom: 2px; }
+        .info-cell .value { font-size: 10pt; color: #1B2A4A; font-weight: 500; }
+
+        .section-title { font-family: 'DM Serif Display', serif; font-size: 12pt; color: #1B2A4A; margin: 20px 0 8px; padding-bottom: 6px; border-bottom: 1px solid #E5E5E5; }
+
+        .description-box { background: #F4F6FA; border-radius: 6px; padding: 16px 20px; min-height: 80px; margin-bottom: 16px; font-size: 10pt; color: #555; }
+
+        .checklist { list-style: none; }
+        .checklist li { padding: 7px 0; padding-left: 28px; position: relative; border-bottom: 1px solid #F0F0F0; font-size: 10pt; }
+        .checklist li::before { content: ''; position: absolute; left: 0; top: 9px; width: 16px; height: 16px; border: 2px solid #D0D0D0; border-radius: 3px; }
+
+        .cost-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .cost-table th { background: #1B2A4A; color: #fff; padding: 7px 12px; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; text-align: left; }
+        .cost-table th.num { text-align: right; }
+        .cost-table td { padding: 8px 12px; border-bottom: 1px solid #F0F0F0; font-size: 9.5pt; }
+        .cost-table td.num { text-align: right; font-weight: 500; }
+        .cost-table tfoot td { font-weight: 700; border-top: 2px solid #1B2A4A; color: #1B2A4A; padding: 8px 12px; }
+
+        .signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+        .sig-block { border-top: 1px solid #999; padding-top: 6px; }
+        .sig-label { font-size: 8pt; color: #888; }
+
+        .footer { border-top: 1px solid #E0E0E0; padding: 12px 50px; display: flex; justify-content: space-between; font-size: 7pt; color: #999; }
+        .footer-left { display: flex; align-items: center; gap: 6px; }
+        .footer-diamond { width: 8px; height: 8px; background: #A89060; transform: rotate(45deg); flex-shrink: 0; }
+
+        @media print { body { background: none; } .page { margin: 0; box-shadow: none; } }
+        @media screen { body { background: #E8E8E8; padding: 20px 0; } .page { box-shadow: 0 2px 20px rgba(0,0,0,0.15); margin: 20px auto; } }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <img class="header-logo" src="../img/logo.png" alt="ASPMG">
+                <div class="header-brand">
+                    <h1>ASPMG</h1>
+                    <p>A Solid Property Management Group</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="wo-label">Work Order</div>
+                <div class="wo-number">#WO-[000000]</div>
+            </div>
+        </div>
+        <div class="gold-bar"></div>
+
+        <div class="body">
+            <div class="priority-badge medium">Medium Priority</div>
+            <div class="doc-title">Maintenance Work Order</div>
+            <div class="community-line">[Community Name] Association</div>
+
+            <div class="info-grid">
+                <div class="info-cell">
+                    <div class="label">Date Submitted</div>
+                    <div class="value">[Month Day, Year]</div>
+                </div>
+                <div class="info-cell">
+                    <div class="label">Requested By</div>
+                    <div class="value">[Name / Unit #]</div>
+                </div>
+                <div class="info-cell">
+                    <div class="label">Location</div>
+                    <div class="value">[Unit / Common Area / Building]</div>
+                </div>
+                <div class="info-cell">
+                    <div class="label">Category</div>
+                    <div class="value">[Plumbing / Electrical / HVAC / General / Landscape]</div>
+                </div>
+                <div class="info-cell">
+                    <div class="label">Assigned Vendor</div>
+                    <div class="value">[Vendor Name]</div>
+                </div>
+                <div class="info-cell">
+                    <div class="label">Target Completion</div>
+                    <div class="value">[Date]</div>
+                </div>
+            </div>
+
+            <div class="section-title">Description of Work</div>
+            <div class="description-box">
+                [Detailed description of the maintenance issue or work to be performed.]
+            </div>
+
+            <div class="section-title">Completion Checklist</div>
+            <ul class="checklist">
+                <li>Work area inspected and issue confirmed</li>
+                <li>Vendor / contractor contacted and scheduled</li>
+                <li>Work completed per specifications</li>
+                <li>Area cleaned and restored</li>
+                <li>Resident / board notified of completion</li>
+                <li>Photos taken (before &amp; after)</li>
+            </ul>
+
+            <div class="section-title">Cost Summary</div>
+            <table class="cost-table">
+                <thead><tr><th>Item</th><th class="num">Amount</th></tr></thead>
+                <tbody>
+                    <tr><td>Labor</td><td class="num">$0.00</td></tr>
+                    <tr><td>Materials</td><td class="num">$0.00</td></tr>
+                    <tr><td>Permits / Fees</td><td class="num">$0.00</td></tr>
+                </tbody>
+                <tfoot><tr><td>Total Cost</td><td class="num">$0.00</td></tr></tfoot>
+            </table>
+
+            <div class="signatures">
+                <div class="sig-block">
+                    <div class="sig-label">Property Manager Signature / Date</div>
+                </div>
+                <div class="sig-block">
+                    <div class="sig-label">Vendor / Contractor Signature / Date</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <div class="footer-diamond"></div>
+                <span>85 Grand Canal Dr, Unit 201, Miami, FL 33144</span>
+            </div>
+            <div>aspmg.com &nbsp;|&nbsp; (305) 661-8400</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPMG - Property Inspection Checklist</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page { size: letter; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Sora', Arial, sans-serif; font-size: 9.5pt; color: #333; line-height: 1.4; background: #fff; }
+        .page { width: 8.5in; min-height: 11in; margin: 0 auto; display: flex; flex-direction: column; }
+
+        .header { background: #1B2A4A; padding: 20px 50px 16px; display: flex; align-items: center; justify-content: space-between; }
+        .header-left { display: flex; align-items: center; gap: 14px; }
+        .header-logo { width: 44px; }
+        .header-brand h1 { font-family: 'DM Serif Display', serif; font-size: 16pt; font-weight: 400; color: #fff; letter-spacing: 2px; margin-bottom: 1px; }
+        .header-brand p { font-size: 7pt; color: #A89060; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+        .header-right { text-align: right; color: rgba(255,255,255,0.7); font-size: 7.5pt; line-height: 1.7; }
+        .header-right strong { color: #A89060; }
+        .gold-bar { height: 3px; background: linear-gradient(90deg, #A89060, #BDA87A, #A89060); }
+
+        .body { flex: 1; padding: 22px 50px 16px; }
+
+        .doc-title { font-family: 'DM Serif Display', serif; font-size: 17pt; color: #1B2A4A; margin-bottom: 4px; }
+        .community-line { font-size: 10pt; color: #A89060; font-weight: 600; margin-bottom: 16px; }
+
+        .meta-row { display: flex; gap: 16px; margin-bottom: 18px; padding: 10px 16px; background: #F4F6FA; border-radius: 6px; }
+        .meta-item .label { font-size: 7pt; text-transform: uppercase; letter-spacing: 1.5px; color: #A89060; font-weight: 600; margin-bottom: 1px; }
+        .meta-item .value { font-size: 9.5pt; color: #1B2A4A; font-weight: 500; }
+
+        .section-title { font-family: 'DM Serif Display', serif; font-size: 11pt; color: #1B2A4A; margin: 14px 0 6px; padding-bottom: 4px; border-bottom: 1px solid #E5E5E5; }
+
+        .check-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+        .check-table th { background: #1B2A4A; color: #fff; padding: 5px 10px; font-size: 7pt; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; text-align: left; }
+        .check-table th.status { text-align: center; width: 50px; }
+        .check-table td { padding: 5px 10px; border-bottom: 1px solid #F0F0F0; font-size: 9pt; }
+        .check-table td.status { text-align: center; width: 50px; }
+        .check-table tr:nth-child(even) { background: #FAFBFC; }
+        .checkbox { width: 14px; height: 14px; border: 1.5px solid #C0C0C0; border-radius: 3px; display: inline-block; vertical-align: middle; }
+        .notes-col { color: #999; font-style: italic; }
+
+        .overall-notes { border: 1px solid #E0E0E0; border-radius: 6px; padding: 12px 16px; min-height: 60px; margin: 12px 0; font-size: 9pt; color: #999; }
+
+        .signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        .sig-block { border-top: 1px solid #999; padding-top: 5px; }
+        .sig-label { font-size: 7.5pt; color: #888; }
+
+        .footer { border-top: 1px solid #E0E0E0; padding: 10px 50px; display: flex; justify-content: space-between; font-size: 7pt; color: #999; }
+        .footer-left { display: flex; align-items: center; gap: 6px; }
+        .footer-diamond { width: 8px; height: 8px; background: #A89060; transform: rotate(45deg); flex-shrink: 0; }
+
+        @media print { body { background: none; } .page { margin: 0; box-shadow: none; } }
+        @media screen { body { background: #E8E8E8; padding: 20px 0; } .page { box-shadow: 0 2px 20px rgba(0,0,0,0.15); margin: 20px auto; } }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header-left">
+                <img class="header-logo" src="../img/logo.png" alt="ASPMG">
+                <div class="header-brand">
+                    <h1>ASPMG</h1>
+                    <p>A Solid Property Management Group</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <strong>Phone</strong> (305) 661-8400<br>
+                <strong>Email</strong> info@aspmg.com
+            </div>
+        </div>
+        <div class="gold-bar"></div>
+
+        <div class="body">
+            <div class="doc-title">Property Inspection Checklist</div>
+            <div class="community-line">[Community Name] Association</div>
+
+            <div class="meta-row">
+                <div class="meta-item">
+                    <div class="label">Inspector</div>
+                    <div class="value">[Name]</div>
+                </div>
+                <div class="meta-item">
+                    <div class="label">Date</div>
+                    <div class="value">[Month Day, Year]</div>
+                </div>
+                <div class="meta-item">
+                    <div class="label">Inspection Type</div>
+                    <div class="value">[Routine / Annual / Special]</div>
+                </div>
+                <div class="meta-item">
+                    <div class="label">Weather</div>
+                    <div class="value">[Conditions]</div>
+                </div>
+            </div>
+
+            <!-- Exterior -->
+            <div class="section-title">Building Exterior</div>
+            <table class="check-table">
+                <thead><tr><th class="status">OK</th><th class="status">Issue</th><th>Item</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Roof / Roofing Materials</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Exterior Walls / Paint</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Windows / Sliding Doors</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Balconies / Railings</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Gutters / Downspouts</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Walkways / Sidewalks</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Parking Lot / Driveways</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Signage / Address Numbers</td><td class="notes-col"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- Grounds -->
+            <div class="section-title">Grounds &amp; Landscaping</div>
+            <table class="check-table">
+                <thead><tr><th class="status">OK</th><th class="status">Issue</th><th>Item</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Lawn / Grass Areas</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Trees / Hedges / Bushes</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Irrigation System</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Fencing / Gates</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Exterior Lighting</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Trash / Dumpster Area</td><td class="notes-col"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- Common Areas -->
+            <div class="section-title">Common Areas &amp; Amenities</div>
+            <table class="check-table">
+                <thead><tr><th class="status">OK</th><th class="status">Issue</th><th>Item</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Lobby / Hallways</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Elevators</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Stairwells</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Pool / Pool Deck</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Clubhouse / Community Room</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Laundry Room</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Mailbox Area</td><td class="notes-col"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- Safety -->
+            <div class="section-title">Safety &amp; Fire</div>
+            <table class="check-table">
+                <thead><tr><th class="status">OK</th><th class="status">Issue</th><th>Item</th><th>Notes</th></tr></thead>
+                <tbody>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Fire Extinguishers</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Smoke / CO Detectors</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Emergency Exit Signs / Lighting</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>Fire Alarm System</td><td class="notes-col"></td></tr>
+                    <tr><td class="status"><span class="checkbox"></span></td><td class="status"><span class="checkbox"></span></td><td>AED / First Aid Kit</td><td class="notes-col"></td></tr>
+                </tbody>
+            </table>
+
+            <div class="section-title">Additional Notes</div>
+            <div class="overall-notes">[General observations, follow-up items, or recommended actions]</div>
+
+            <div class="signatures">
+                <div class="sig-block">
+                    <div class="sig-label">Inspector Signature / Date</div>
+                </div>
+                <div class="sig-block">
+                    <div class="sig-label">Board Representative / Date</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-left">
+                <div class="footer-diamond"></div>
+                <span>85 Grand Canal Dr, Unit 201, Miami, FL 33144</span>
+            </div>
+            <div>aspmg.com &nbsp;|&nbsp; (305) 661-8400</div>
+        </div>
+    </div>
+</body>
+</html>

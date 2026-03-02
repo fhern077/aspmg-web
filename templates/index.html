@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>ASPMG Brand Kit</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -12,279 +13,523 @@
             background: #F4F6FA;
             color: #333;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+        .container { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
 
-        /* Header */
-        .brand-header {
-            background: #1B2A4A;
-            border-radius: 16px;
-            padding: 48px 40px;
+        /* ============ HERO HEADER ============ */
+        .brand-hero {
+            background: linear-gradient(135deg, #1B2A4A 0%, #0F1A32 100%);
+            border-radius: 20px;
+            padding: 60px 48px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
+            position: relative;
+            overflow: hidden;
         }
-        .brand-header img { width: 80px; margin-bottom: 16px; }
-        .brand-header h1 {
+        .brand-hero::before {
+            content: '';
+            position: absolute;
+            top: -60%; right: -20%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(168,144,96,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .brand-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%; left: -10%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(168,144,96,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .brand-hero > * { position: relative; z-index: 1; }
+        .brand-hero img { width: 90px; margin-bottom: 20px; }
+        .brand-hero h1 {
             font-family: 'DM Serif Display', serif;
-            color: #fff;
-            font-size: 32px;
-            font-weight: 400;
-            letter-spacing: 3px;
-            margin-bottom: 4px;
+            color: #fff; font-size: 36px;
+            font-weight: 400; letter-spacing: 4px;
+            margin-bottom: 6px;
         }
-        .brand-header p {
-            color: #A89060;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 500;
+        .brand-hero .tagline {
+            color: #A89060; font-size: 11px;
+            letter-spacing: 3px; text-transform: uppercase;
+            font-weight: 600;
         }
-        .brand-header .subtitle {
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
-            margin-top: 16px;
-            letter-spacing: 0;
-            text-transform: none;
+        .brand-hero .subtitle {
+            color: rgba(255,255,255,0.5); font-size: 14px;
+            margin-top: 20px;
+        }
+        .gold-divider {
+            width: 60px; height: 3px; margin: 16px auto 0;
+            background: linear-gradient(90deg, #A89060, #BDA87A);
+            border-radius: 2px;
         }
 
-        /* Colors */
+        /* ============ SECTION STYLES ============ */
+        .section { margin-bottom: 48px; }
+        .section-header {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 20px;
+        }
+        .section-number {
+            width: 32px; height: 32px;
+            background: #1B2A4A; color: #A89060;
+            border-radius: 8px; font-size: 13px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
         .section-title {
             font-family: 'DM Serif Display', serif;
-            font-size: 22px;
-            color: #1B2A4A;
-            margin: 36px 0 16px;
+            font-size: 24px; color: #1B2A4A;
         }
+        .section-desc {
+            color: #888; font-size: 14px;
+            margin: -12px 0 20px 44px;
+        }
+
+        /* ============ COLORS ============ */
         .color-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-bottom: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
         }
         .color-card {
-            border-radius: 10px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-radius: 12px; overflow: hidden;
+            background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
-        .color-swatch { height: 80px; }
-        .color-info { padding: 10px 14px; }
-        .color-name { font-size: 12px; font-weight: 600; color: #1B2A4A; }
+        .color-swatch { height: 90px; position: relative; }
+        .color-swatch .copy-hex {
+            position: absolute; bottom: 8px; right: 8px;
+            background: rgba(0,0,0,0.4); color: #fff;
+            font-size: 10px; padding: 3px 8px; border-radius: 4px;
+            font-family: monospace; backdrop-filter: blur(4px);
+        }
+        .color-info { padding: 12px 16px; }
+        .color-name { font-size: 12px; font-weight: 600; color: #1B2A4A; margin-bottom: 2px; }
         .color-hex { font-size: 11px; color: #999; font-family: monospace; }
+        .color-use { font-size: 10px; color: #A89060; margin-top: 4px; }
 
-        /* Typography */
-        .type-sample {
-            background: #fff;
-            border-radius: 10px;
-            padding: 28px;
-            margin-bottom: 16px;
+        /* ============ TYPOGRAPHY ============ */
+        .type-card {
+            background: #fff; border-radius: 12px;
+            padding: 32px; margin-bottom: 14px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
         .type-label {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #A89060;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 9px; text-transform: uppercase;
+            letter-spacing: 2px; color: #A89060;
+            font-weight: 700; margin-bottom: 12px;
         }
-        .type-heading {
+        .type-heading-demo {
             font-family: 'DM Serif Display', serif;
-            font-size: 28px;
             color: #1B2A4A;
         }
-        .type-body {
+        .type-body-demo {
             font-family: 'Sora', sans-serif;
-            font-size: 15px;
             color: #5A6275;
         }
+        .type-specimens {
+            display: flex; gap: 14px; margin-top: 14px;
+        }
+        .type-specimen {
+            background: #F4F6FA; border-radius: 8px;
+            padding: 16px 20px; flex: 1; text-align: center;
+        }
+        .type-specimen .weight { font-size: 11px; color: #A89060; margin-top: 6px; }
 
-        /* Templates */
+        /* ============ LOGO DOWNLOADS ============ */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+        .logo-card {
+            background: #fff; border-radius: 12px;
+            padding: 24px; text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-decoration: none; color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
+        }
+        .logo-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .logo-card.dark { background: #1B2A4A; }
+        .logo-card img { width: 72px; margin-bottom: 12px; }
+        .logo-card .name { font-size: 13px; font-weight: 600; color: #1B2A4A; }
+        .logo-card.dark .name { color: #fff; }
+        .logo-card .meta { font-size: 11px; color: #999; margin-top: 2px; }
+        .logo-card.dark .meta { color: rgba(255,255,255,0.5); }
+        .logo-card .dl {
+            display: inline-block; margin-top: 10px;
+            font-size: 11px; color: #A89060; font-weight: 600;
+            padding: 4px 12px; border: 1px solid #E8DCC8;
+            border-radius: 6px;
+        }
+        .logo-card.dark .dl { border-color: rgba(168,144,96,0.3); }
+
+        /* ============ TEMPLATES ============ */
         .template-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
+            gap: 14px;
         }
         .template-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            text-decoration: none;
-            color: inherit;
+            background: #fff; border-radius: 12px;
+            padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            text-decoration: none; color: inherit;
             transition: transform 0.2s, box-shadow 0.2s;
+            display: block;
         }
         .template-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
         .template-icon {
-            width: 40px;
-            height: 40px;
-            background: #F4F6FA;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-bottom: 12px;
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, #1B2A4A, #2C4270);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; margin-bottom: 14px; color: #A89060;
         }
         .template-card h3 {
             font-family: 'DM Serif Display', serif;
-            font-size: 16px;
-            color: #1B2A4A;
-            margin-bottom: 4px;
+            font-size: 16px; color: #1B2A4A; margin-bottom: 4px;
         }
-        .template-card p {
-            font-size: 13px;
-            color: #888;
-        }
+        .template-card p { font-size: 13px; color: #888; }
         .template-card .link {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #A89060;
-            font-weight: 600;
+            display: inline-block; margin-top: 12px;
+            font-size: 11px; color: #A89060; font-weight: 600;
         }
 
-        /* Logo downloads */
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            margin-bottom: 32px;
+        /* ============ USAGE GUIDELINES ============ */
+        .guidelines-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 14px;
         }
-        .logo-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 24px;
-            text-align: center;
+        .guideline-card {
+            background: #fff; border-radius: 12px; padding: 24px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
-        .logo-card.dark { background: #1B2A4A; }
-        .logo-card img { width: 70px; margin-bottom: 10px; }
-        .logo-card .label { font-size: 11px; color: #888; }
-        .logo-card.dark .label { color: rgba(255,255,255,0.6); }
+        .guideline-card.do { border-top: 3px solid #2E7D5B; }
+        .guideline-card.dont { border-top: 3px solid #C0392B; }
+        .guideline-badge {
+            display: inline-block; font-size: 9px; font-weight: 700;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
+        }
+        .guideline-card.do .guideline-badge { background: #E8F5EE; color: #2E7D5B; }
+        .guideline-card.dont .guideline-badge { background: #FDE8E8; color: #C0392B; }
+        .guideline-card ul {
+            list-style: none; padding: 0;
+        }
+        .guideline-card li {
+            font-size: 13px; color: #555;
+            padding: 5px 0; padding-left: 20px; position: relative;
+        }
+        .guideline-card.do li::before { content: '✓'; position: absolute; left: 0; color: #2E7D5B; font-weight: 700; }
+        .guideline-card.dont li::before { content: '✕'; position: absolute; left: 0; color: #C0392B; font-weight: 700; }
+
+        /* ============ CONTACT CARD ============ */
+        .contact-card {
+            background: linear-gradient(135deg, #1B2A4A 0%, #0F1A32 100%);
+            border-radius: 16px; padding: 40px;
+            display: flex; align-items: center; justify-content: space-between;
+            margin-top: 48px;
+        }
+        .contact-card h3 {
+            font-family: 'DM Serif Display', serif;
+            color: #fff; font-size: 20px; margin-bottom: 6px;
+        }
+        .contact-card p { color: rgba(255,255,255,0.6); font-size: 13px; }
+        .contact-info { text-align: right; }
+        .contact-info div {
+            color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 4px;
+        }
+        .contact-info strong { color: #A89060; }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 700px) {
+            .color-grid, .logo-grid { grid-template-columns: 1fr 1fr; }
+            .template-grid, .guidelines-grid { grid-template-columns: 1fr; }
+            .brand-hero { padding: 40px 24px; }
+            .brand-hero h1 { font-size: 28px; letter-spacing: 2px; }
+            .contact-card { flex-direction: column; text-align: center; gap: 20px; }
+            .contact-info { text-align: center; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="brand-header">
-            <img src="../img/logo.png" alt="ASPMG">
+
+        <!-- ========== HERO ========== -->
+        <div class="brand-hero">
+            <img src="../img/logo.png" alt="ASPMG Logo">
             <h1>ASPMG</h1>
-            <p>Brand Kit &amp; Templates</p>
-            <p class="subtitle">Consistent branding for all community communications</p>
+            <p class="tagline">A Solid Property Management Group</p>
+            <div class="gold-divider"></div>
+            <p class="subtitle">Brand Guidelines &amp; Asset Kit</p>
         </div>
 
-        <!-- COLORS -->
-        <div class="section-title">Brand Colors</div>
-        <div class="color-grid">
-            <div class="color-card">
-                <div class="color-swatch" style="background:#1B2A4A"></div>
-                <div class="color-info">
-                    <div class="color-name">Navy Primary</div>
-                    <div class="color-hex">#1B2A4A</div>
+        <!-- ========== 1. BRAND COLORS ========== -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">1</div>
+                <div class="section-title">Brand Colors</div>
+            </div>
+            <p class="section-desc">Our palette reflects trust, professionalism, and South Florida elegance.</p>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background:#1B2A4A">
+                        <span class="copy-hex">#1B2A4A</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Navy Primary</div>
+                        <div class="color-hex">rgb(27, 42, 74)</div>
+                        <div class="color-use">Headers, nav, text, dark backgrounds</div>
+                    </div>
                 </div>
-            </div>
-            <div class="color-card">
-                <div class="color-swatch" style="background:#2C4270"></div>
-                <div class="color-info">
-                    <div class="color-name">Navy Light</div>
-                    <div class="color-hex">#2C4270</div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background:#2C4270">
+                        <span class="copy-hex">#2C4270</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Navy Light</div>
+                        <div class="color-hex">rgb(44, 66, 112)</div>
+                        <div class="color-use">Hover states, gradients, accents</div>
+                    </div>
                 </div>
-            </div>
-            <div class="color-card">
-                <div class="color-swatch" style="background:#A89060"></div>
-                <div class="color-info">
-                    <div class="color-name">Gold Accent</div>
-                    <div class="color-hex">#A89060</div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background:#0F1A32">
+                        <span class="copy-hex">#0F1A32</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Navy Dark</div>
+                        <div class="color-hex">rgb(15, 26, 50)</div>
+                        <div class="color-use">Footer, deep backgrounds</div>
+                    </div>
                 </div>
-            </div>
-            <div class="color-card">
-                <div class="color-swatch" style="background:#BDA87A"></div>
-                <div class="color-info">
-                    <div class="color-name">Gold Light</div>
-                    <div class="color-hex">#BDA87A</div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background:#A89060">
+                        <span class="copy-hex">#A89060</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Gold Primary</div>
+                        <div class="color-hex">rgb(168, 144, 96)</div>
+                        <div class="color-use">CTAs, accents, highlights, links</div>
+                    </div>
                 </div>
-            </div>
-            <div class="color-card">
-                <div class="color-swatch" style="background:#F4F6FA"></div>
-                <div class="color-info">
-                    <div class="color-name">Background</div>
-                    <div class="color-hex">#F4F6FA</div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background:#BDA87A">
+                        <span class="copy-hex">#BDA87A</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Gold Light</div>
+                        <div class="color-hex">rgb(189, 168, 122)</div>
+                        <div class="color-use">Hover gold, secondary accent</div>
+                    </div>
                 </div>
-            </div>
-            <div class="color-card">
-                <div class="color-swatch" style="background:#1A1E2C"></div>
-                <div class="color-info">
-                    <div class="color-name">Dark Text</div>
-                    <div class="color-hex">#1A1E2C</div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background:#F4F6FA">
+                        <span class="copy-hex">#F4F6FA</span>
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Light Background</div>
+                        <div class="color-hex">rgb(244, 246, 250)</div>
+                        <div class="color-use">Page background, card fills</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- TYPOGRAPHY -->
-        <div class="section-title">Typography</div>
-        <div class="type-sample">
-            <div class="type-label">Headings — DM Serif Display</div>
-            <div class="type-heading">Your Community. Our Commitment.</div>
-        </div>
-        <div class="type-sample">
-            <div class="type-label">Body — Sora</div>
-            <div class="type-body">Full-service HOA and condominium association management with 20+ years of dedicated experience protecting and enhancing your property investment.</div>
-        </div>
-
-        <!-- LOGO USAGE -->
-        <div class="section-title">Logo Assets</div>
-        <div class="logo-grid">
-            <div class="logo-card">
-                <img src="../img/logo.png" alt="Logo">
-                <div class="label">Primary (400px)</div>
-            </div>
-            <div class="logo-card dark">
-                <img src="../img/logo.png" alt="Logo on dark">
-                <div class="label">On Dark Background</div>
-            </div>
-            <div class="logo-card">
-                <img src="../img/favicon/apple-touch-icon.png" alt="Icon">
-                <div class="label">Icon (180px)</div>
             </div>
         </div>
 
-        <!-- DOCUMENT TEMPLATES -->
-        <div class="section-title">Document Templates</div>
-        <p style="color:#888; font-size:14px; margin-bottom:16px;">Open any template in your browser, fill in the fields, and print to PDF (Cmd+P).</p>
-        <div class="template-grid">
-            <a class="template-card" href="letterhead.html">
-                <div class="template-icon">&#9993;</div>
-                <h3>Letterhead</h3>
-                <p>Official correspondence, general letters, and formal communications</p>
-                <span class="link">Open Template &rarr;</span>
-            </a>
-            <a class="template-card" href="memo.html">
-                <div class="template-icon">&#128221;</div>
-                <h3>Community Memo</h3>
-                <p>Announcements, policy updates, and community-wide notices</p>
-                <span class="link">Open Template &rarr;</span>
-            </a>
-            <a class="template-card" href="meeting-notice.html">
-                <div class="template-icon">&#128197;</div>
-                <h3>Meeting Notice</h3>
-                <p>Board meeting agendas, annual meetings, and special sessions</p>
-                <span class="link">Open Template &rarr;</span>
-            </a>
-            <a class="template-card" href="violation-notice.html">
-                <div class="template-icon">&#9888;</div>
-                <h3>Violation Notice</h3>
-                <p>Property violations, compliance notices, and fining letters</p>
-                <span class="link">Open Template &rarr;</span>
-            </a>
-            <a class="template-card" href="invoice.html">
-                <div class="template-icon">&#128176;</div>
-                <h3>Invoice / Statement</h3>
-                <p>Billing statements, assessment invoices, and payment summaries</p>
-                <span class="link">Open Template &rarr;</span>
-            </a>
+        <!-- ========== 2. TYPOGRAPHY ========== -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">2</div>
+                <div class="section-title">Typography</div>
+            </div>
+            <p class="section-desc">Two typefaces — a refined serif for headings and a clean sans-serif for everything else.</p>
+
+            <div class="type-card">
+                <div class="type-label">Headings &mdash; DM Serif Display</div>
+                <div class="type-heading-demo" style="font-size:32px; margin-bottom:8px;">Your Community. Our Commitment.</div>
+                <div class="type-heading-demo" style="font-size:20px; color:#666;">Used for page titles, section headings, and display text</div>
+                <div class="type-specimens">
+                    <div class="type-specimen">
+                        <div class="type-heading-demo" style="font-size:36px;">Aa</div>
+                        <div class="weight">Regular 400</div>
+                    </div>
+                    <div class="type-specimen">
+                        <div class="type-heading-demo" style="font-size:36px; font-style:italic;">Aa</div>
+                        <div class="weight">Italic 400</div>
+                    </div>
+                </div>
+                <a href="https://fonts.google.com/specimen/DM+Serif+Display" target="_blank" style="display:inline-block;margin-top:12px;font-size:12px;color:#A89060;font-weight:600;text-decoration:none;">Install Font &darr;</a>
+            </div>
+
+            <div class="type-card">
+                <div class="type-label">Body &mdash; Sora</div>
+                <div class="type-body-demo" style="font-size:16px; margin-bottom:8px;">Full-service HOA and condominium association management with 20+ years of dedicated experience protecting and enhancing your property investment.</div>
+                <div class="type-body-demo" style="font-size:13px; color:#999;">Used for paragraphs, labels, buttons, navigation, and UI elements</div>
+                <div class="type-specimens">
+                    <div class="type-specimen">
+                        <div style="font-size:24px; font-weight:300;">Aa</div>
+                        <div class="weight">Light 300</div>
+                    </div>
+                    <div class="type-specimen">
+                        <div style="font-size:24px; font-weight:400;">Aa</div>
+                        <div class="weight">Regular 400</div>
+                    </div>
+                    <div class="type-specimen">
+                        <div style="font-size:24px; font-weight:600;">Aa</div>
+                        <div class="weight">SemiBold 600</div>
+                    </div>
+                    <div class="type-specimen">
+                        <div style="font-size:24px; font-weight:700;">Aa</div>
+                        <div class="weight">Bold 700</div>
+                    </div>
+                </div>
+                <a href="https://fonts.google.com/specimen/Sora" target="_blank" style="display:inline-block;margin-top:12px;font-size:12px;color:#A89060;font-weight:600;text-decoration:none;">Install Font &darr;</a>
+            </div>
+            <p style="color:#999; font-size:12px; margin-top:12px;">Install these fonts on your computer so the Word templates display correctly.</p>
         </div>
+
+        <!-- ========== 3. LOGO DOWNLOADS ========== -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">3</div>
+                <div class="section-title">Logo Downloads</div>
+            </div>
+            <p class="section-desc">PNG with transparent background. Click to download.</p>
+            <div class="logo-grid">
+                <a class="logo-card" href="logo-web-small.png" download>
+                    <img src="logo-web-small.png" alt="Logo Web Small">
+                    <div class="name">Web Small</div>
+                    <div class="meta">200px &middot; Emails, Signatures</div>
+                    <span class="dl">Download</span>
+                </a>
+                <a class="logo-card" href="logo-web-standard.png" download>
+                    <img src="logo-web-standard.png" alt="Logo Web Standard">
+                    <div class="name">Web Standard</div>
+                    <div class="meta">400px &middot; Headers, Footers</div>
+                    <span class="dl">Download</span>
+                </a>
+                <a class="logo-card" href="logo-web-large.png" download>
+                    <img src="logo-web-large.png" alt="Logo Web Large">
+                    <div class="name">Web Large</div>
+                    <div class="meta">800px &middot; Presentations, Banners</div>
+                    <span class="dl">Download</span>
+                </a>
+                <a class="logo-card dark" href="logo-print-highres.png" download>
+                    <img src="logo-print-highres.png" alt="Logo Print High-Res">
+                    <div class="name">Print High-Res</div>
+                    <div class="meta">1200px &middot; Letterhead, Signage</div>
+                    <span class="dl">Download</span>
+                </a>
+                <a class="logo-card dark" href="logo-print-full.png" download>
+                    <img src="logo-print-full.png" alt="Logo Print Full">
+                    <div class="name">Print Full Size</div>
+                    <div class="meta">Original &middot; Large Format</div>
+                    <span class="dl">Download</span>
+                </a>
+                <a class="logo-card" href="logo-icon-512.png" download>
+                    <img src="logo-icon-512.png" alt="Logo Icon">
+                    <div class="name">Icon / Avatar</div>
+                    <div class="meta">512px &middot; Social, Profiles</div>
+                    <span class="dl">Download</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ========== 4. USAGE GUIDELINES ========== -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">4</div>
+                <div class="section-title">Usage Guidelines</div>
+            </div>
+            <p class="section-desc">Keep the brand consistent across all communications.</p>
+            <div class="guidelines-grid">
+                <div class="guideline-card do">
+                    <span class="guideline-badge">Do</span>
+                    <ul>
+                        <li>Use the logo on white or navy backgrounds</li>
+                        <li>Maintain clear space around the logo</li>
+                        <li>Use brand colors for all documents</li>
+                        <li>Use DM Serif Display for headings</li>
+                        <li>Use Sora for body text and UI</li>
+                        <li>Include contact info on all materials</li>
+                    </ul>
+                </div>
+                <div class="guideline-card dont">
+                    <span class="guideline-badge">Don't</span>
+                    <ul>
+                        <li>Stretch, rotate, or distort the logo</li>
+                        <li>Place the logo on busy photo backgrounds</li>
+                        <li>Change the logo colors</li>
+                        <li>Use fonts other than DM Serif / Sora</li>
+                        <li>Add drop shadows or effects to the logo</li>
+                        <li>Use low-resolution logo files for print</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 5. DOCUMENT TEMPLATES ========== -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <div class="section-title">Document Templates</div>
+            </div>
+            <p class="section-desc">Download any Word template, fill in the fields, and save or print.</p>
+            <div class="template-grid">
+                <a class="template-card" href="ASPMG-Letterhead.docx" download>
+                    <div class="template-icon">&#9993;</div>
+                    <h3>Letterhead</h3>
+                    <p>Official correspondence, general letters, and formal communications</p>
+                    <span class="link">Download .docx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Community-Memo.docx" download>
+                    <div class="template-icon">&#128221;</div>
+                    <h3>Community Memo</h3>
+                    <p>Announcements, policy updates, and community-wide notices</p>
+                    <span class="link">Download .docx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Meeting-Notice.docx" download>
+                    <div class="template-icon">&#128197;</div>
+                    <h3>Meeting Notice</h3>
+                    <p>Board meeting agendas, annual meetings, and special sessions</p>
+                    <span class="link">Download .docx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Violation-Notice.docx" download>
+                    <div class="template-icon">&#9888;</div>
+                    <h3>Violation Notice</h3>
+                    <p>Property violations, compliance notices, and fining letters</p>
+                    <span class="link">Download .docx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Invoice.docx" download>
+                    <div class="template-icon">&#128176;</div>
+                    <h3>Invoice / Statement</h3>
+                    <p>Billing statements, assessment invoices, and payment summaries</p>
+                    <span class="link">Download .docx &darr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- ========== CONTACT FOOTER ========== -->
+        <div class="contact-card">
+            <div>
+                <h3>Need Brand Assets?</h3>
+                <p>Contact the office for additional formats or custom materials.</p>
+            </div>
+            <div class="contact-info">
+                <div><strong>Phone</strong> (305) 661-8400</div>
+                <div><strong>Email</strong> info@aspmg.com</div>
+                <div><strong>Web</strong> aspmg.com</div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
