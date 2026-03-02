@@ -15,7 +15,13 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+        .container { max-width: 1440px; margin: 0 auto; padding: 40px 48px 80px; }
+        .sections-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: start;
+        }
 
         /* ============ HERO HEADER ============ */
         .brand-hero {
@@ -227,34 +233,6 @@
             font-size: 11px; color: #A89060; font-weight: 600;
         }
 
-        /* ============ USAGE GUIDELINES ============ */
-        .guidelines-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .guideline-card {
-            background: #fff; border-radius: 12px; padding: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        .guideline-card.do { border-top: 3px solid #2E7D5B; }
-        .guideline-card.dont { border-top: 3px solid #C0392B; }
-        .guideline-badge {
-            display: inline-block; font-size: 9px; font-weight: 700;
-            letter-spacing: 1.5px; text-transform: uppercase;
-            padding: 3px 10px; border-radius: 4px; margin-bottom: 10px;
-        }
-        .guideline-card.do .guideline-badge { background: #E8F5EE; color: #2E7D5B; }
-        .guideline-card.dont .guideline-badge { background: #FDE8E8; color: #C0392B; }
-        .guideline-card ul {
-            list-style: none; padding: 0;
-        }
-        .guideline-card li {
-            font-size: 13px; color: #555;
-            padding: 5px 0; padding-left: 20px; position: relative;
-        }
-        .guideline-card.do li::before { content: '✓'; position: absolute; left: 0; color: #2E7D5B; font-weight: 700; }
-        .guideline-card.dont li::before { content: '✕'; position: absolute; left: 0; color: #C0392B; font-weight: 700; }
-
         /* ============ CONTACT CARD ============ */
         .contact-card {
             background: linear-gradient(135deg, #1B2A4A 0%, #0F1A32 100%);
@@ -274,9 +252,13 @@
         .contact-info strong { color: #A89060; }
 
         /* ============ RESPONSIVE ============ */
+        @media (max-width: 900px) {
+            .sections-grid { grid-template-columns: 1fr; }
+            .container { padding: 24px 20px 60px; }
+        }
         @media (max-width: 700px) {
             .color-grid, .logo-grid { grid-template-columns: 1fr 1fr; }
-            .template-grid, .guidelines-grid { grid-template-columns: 1fr; }
+            .template-grid { grid-template-columns: 1fr; }
             .brand-hero { padding: 40px 24px; }
             .brand-hero h1 { font-size: 28px; letter-spacing: 2px; }
             .contact-card { flex-direction: column; text-align: center; gap: 20px; }
@@ -295,6 +277,8 @@
             <div class="gold-divider"></div>
             <p class="subtitle">Brand Guidelines &amp; Asset Kit</p>
         </div>
+
+        <div class="sections-grid">
 
         <!-- ========== 1. BRAND COLORS ========== -->
         <div class="section">
@@ -466,43 +450,10 @@
             </div>
         </div>
 
-        <!-- ========== 4. USAGE GUIDELINES ========== -->
+        <!-- ========== 4. DOCUMENT TEMPLATES ========== -->
         <div class="section">
             <div class="section-header">
                 <div class="section-number">4</div>
-                <div class="section-title">Usage Guidelines</div>
-            </div>
-            <p class="section-desc">Keep the brand consistent across all communications.</p>
-            <div class="guidelines-grid">
-                <div class="guideline-card do">
-                    <span class="guideline-badge">Do</span>
-                    <ul>
-                        <li>Use the logo on white or navy backgrounds</li>
-                        <li>Maintain clear space around the logo</li>
-                        <li>Use brand colors for all documents</li>
-                        <li>Use DM Serif Display for headings</li>
-                        <li>Use Sora for body text and UI</li>
-                        <li>Include contact info on all materials</li>
-                    </ul>
-                </div>
-                <div class="guideline-card dont">
-                    <span class="guideline-badge">Don't</span>
-                    <ul>
-                        <li>Stretch, rotate, or distort the logo</li>
-                        <li>Place the logo on busy photo backgrounds</li>
-                        <li>Change the logo colors</li>
-                        <li>Use fonts other than DM Serif / Sora</li>
-                        <li>Add drop shadows or effects to the logo</li>
-                        <li>Use low-resolution logo files for print</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ========== 5. DOCUMENT TEMPLATES ========== -->
-        <div class="section">
-            <div class="section-header">
-                <div class="section-number">5</div>
                 <div class="section-title">Document Templates</div>
             </div>
             <p class="section-desc">Download any Word template, fill in the fields, and save or print.</p>
@@ -539,6 +490,55 @@
                 </a>
             </div>
         </div>
+
+        <!-- ========== 5. EXCEL TEMPLATES ========== -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">5</div>
+                <div class="section-title">Excel Spreadsheets</div>
+            </div>
+            <p class="section-desc">Branded Excel templates for financials, tracking, and records.</p>
+            <div class="template-grid">
+                <a class="template-card" href="ASPMG-Annual-Budget.xlsx" download>
+                    <div class="template-icon">&#128200;</div>
+                    <h3>Annual Budget</h3>
+                    <p>Income &amp; expense categories with monthly/annual columns and reserve contributions</p>
+                    <span class="link">Download .xlsx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Financial-Report.xlsx" download>
+                    <div class="template-icon">&#128202;</div>
+                    <h3>Monthly Financial Report</h3>
+                    <p>Budget vs actual, KPIs, accounts receivable aging, and manager notes</p>
+                    <span class="link">Download .xlsx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Work-Order-Log.xlsx" download>
+                    <div class="template-icon">&#128295;</div>
+                    <h3>Work Order Log</h3>
+                    <p>Track maintenance requests with vendor, status, cost, and completion date</p>
+                    <span class="link">Download .xlsx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Inspection-Checklist.xlsx" download>
+                    <div class="template-icon">&#128269;</div>
+                    <h3>Inspection Checklist</h3>
+                    <p>Building exterior, grounds, common areas, and fire safety walkthrough</p>
+                    <span class="link">Download .xlsx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Community-Directory.xlsx" download>
+                    <div class="template-icon">&#128101;</div>
+                    <h3>Community Directory</h3>
+                    <p>Owner/tenant contacts, unit numbers, emails, and occupancy status</p>
+                    <span class="link">Download .xlsx &darr;</span>
+                </a>
+                <a class="template-card" href="ASPMG-Vendor-List.xlsx" download>
+                    <div class="template-icon">&#128188;</div>
+                    <h3>Vendor List</h3>
+                    <p>Approved contractors with contact info, category, license, and insurance</p>
+                    <span class="link">Download .xlsx &darr;</span>
+                </a>
+            </div>
+        </div>
+
+        </div><!-- /sections-grid -->
 
         <!-- ========== CONTACT FOOTER ========== -->
         <div class="contact-card">
