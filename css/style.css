@@ -1317,9 +1317,7 @@ footer {
         opacity: 0.35;
     }
     .navbar .brand-name {
-        color: var(--white);
-        font-size: 20px;
-        letter-spacing: 2px;
+        display: none;
     }
     .navbar .logo {
         width: 44px;
