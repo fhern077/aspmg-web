@@ -277,6 +277,44 @@
             font-size: 11px; color: #A89060; font-weight: 600;
         }
 
+        /* ============ SIGNATURE GENERATOR ============ */
+        .sig-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        .sig-form label {
+            font-size: 11px; font-weight: 600; color: #1B2A4A;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .sig-form input {
+            width: 100%; padding: 10px 14px;
+            border: 1px solid #E0E3EA; border-radius: 8px;
+            font-family: 'Sora', sans-serif; font-size: 14px;
+            color: #333; background: #fff;
+            transition: border-color 0.2s;
+        }
+        .sig-form input:focus {
+            outline: none; border-color: #A89060;
+            box-shadow: 0 0 0 3px rgba(168,144,96,0.12);
+        }
+        .sig-preview-wrap {
+            background: #fff; border-radius: 10px;
+            padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #E0E3EA;
+        }
+        .sig-preview-label {
+            font-size: 9px; text-transform: uppercase;
+            letter-spacing: 2px; color: #A89060;
+            font-weight: 700; margin-bottom: 14px;
+        }
+        .sig-copy-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 16px; padding: 10px 24px;
+            background: #1B2A4A; color: #fff;
+            border: none; border-radius: 8px;
+            font-family: 'Sora', sans-serif;
+            font-size: 13px; font-weight: 600;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .sig-copy-btn:hover { background: #2C4270; }
+
         /* ============ CONTACT CARD ============ */
         .contact-card {
             background: linear-gradient(135deg, #1B2A4A 0%, #0F1A32 100%);
@@ -639,6 +677,33 @@
             </div>
         </div>
 
+        <!-- ========== 6. EMAIL SIGNATURE GENERATOR ========== -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">6</div>
+                <div class="section-title">Generador de Firma</div>
+            </div>
+            <p class="section-desc">Escribe tu nombre y cargo para generar tu firma de correo profesional.</p>
+
+            <div class="sig-form">
+                <div>
+                    <label for="sigName">Nombre</label>
+                    <input type="text" id="sigName" placeholder="Norys Hernandez">
+                </div>
+                <div>
+                    <label for="sigTitle">Cargo</label>
+                    <input type="text" id="sigTitle" placeholder="Property Manager">
+                </div>
+            </div>
+
+            <div class="sig-preview-wrap">
+                <div class="sig-preview-label">Vista Previa</div>
+                <div id="sigPreview"></div>
+            </div>
+
+            <button class="sig-copy-btn" id="sigCopyBtn">&#128203; Copiar HTML</button>
+        </div>
+
         </div><!-- /sections-grid -->
 
         <!-- ========== CONTACT FOOTER ========== -->
@@ -659,6 +724,52 @@
     <div class="copy-toast" id="copyToast">&iexcl;Copiado!</div>
 
     <script>
+    /* ---- Signature Generator ---- */
+    var sigName = document.getElementById('sigName');
+    var sigTitle = document.getElementById('sigTitle');
+    var sigPreview = document.getElementById('sigPreview');
+    var sigCopyBtn = document.getElementById('sigCopyBtn');
+
+    function buildSigHTML(name, title) {
+        var n = name || 'Tu Nombre';
+        var t = title || 'Tu Cargo';
+        return '<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#333333;line-height:1.4;">'
+            + '<tr><td style="padding-bottom:10px;">'
+            + '<a href="https://aspmg.com" target="_blank">'
+            + '<img src="https://aspmg.com/img/logo.png" alt="ASPMG" width="60" style="display:block;border:0;" />'
+            + '</a></td></tr>'
+            + '<tr><td style="padding-bottom:2px;font-size:15px;font-weight:bold;color:#1B2A4A;">' + n + '</td></tr>'
+            + '<tr><td style="padding-bottom:8px;font-size:13px;color:#A89060;font-weight:600;">' + t + '</td></tr>'
+            + '<tr><td style="padding-bottom:10px;"><table cellpadding="0" cellspacing="0" border="0"><tr><td style="width:40px;height:2px;background:#A89060;"></td></tr></table></td></tr>'
+            + '<tr><td style="font-size:12px;color:#555555;">Office: 305-661-8400 &nbsp;|&nbsp; <a href="https://www.aspmg.com" style="color:#A89060;text-decoration:none;">www.aspmg.com</a></td></tr>'
+            + '<tr><td style="font-size:12px;color:#555555;font-weight:600;">A Solid Property Management Group, Inc.</td></tr>'
+            + '<tr><td style="font-size:12px;color:#555555;">85 Grand Canal Drive | Suite 201 | Miami, FL 33144</td></tr>'
+            + '<tr><td style="padding-top:6px;font-size:11px;font-style:italic;color:#A89060;"><em>We manage your property the right way!</em></td></tr>'
+            + '<tr><td style="padding-top:10px;font-size:9px;color:#999999;line-height:1.3;">'
+            + 'CONFIDENTIALITY NOTICE: This email is for the exclusive use of the intended recipient. If received in error, please notify the sender and delete all copies.'
+            + '</td></tr></table>';
+    }
+
+    function updateSigPreview() {
+        sigPreview.innerHTML = buildSigHTML(sigName.value.trim(), sigTitle.value.trim());
+    }
+
+    sigName.addEventListener('input', updateSigPreview);
+    sigTitle.addEventListener('input', updateSigPreview);
+    updateSigPreview();
+
+    sigCopyBtn.addEventListener('click', function() {
+        var html = buildSigHTML(sigName.value.trim(), sigTitle.value.trim());
+        var blob = new Blob([html], { type: 'text/html' });
+        var item = new ClipboardItem({ 'text/html': blob, 'text/plain': new Blob([html], { type: 'text/plain' }) });
+        navigator.clipboard.write([item]).then(function() {
+            var toast = document.getElementById('copyToast');
+            toast.textContent = '\u00a1Firma copiada!';
+            toast.classList.add('show');
+            setTimeout(function() { toast.classList.remove('show'); }, 1500);
+        });
+    });
+
     document.querySelectorAll('.color-card').forEach(function(card) {
         card.addEventListener('click', function() {
             var hex = card.querySelector('.copy-hex').textContent.trim();
