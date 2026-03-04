@@ -22,7 +22,7 @@
     /* Neutrals */
     --dark: #1A1E2C;
     --body: #5A6275;
-    --body-light: #8891A4;
+    --body-light: #6B7590;
     --muted: #C4CAD6;
     --light: #F4F6FA;
     --white: #FFFFFF;
@@ -125,7 +125,7 @@ h3, h4, h5, h6 {
     margin-bottom: 12px;
 }
 
-.text-accent { color: var(--accent) !important; }
+.text-accent { color: #866E38 !important; }
 .text-white-75 { color: rgba(255,255,255,0.75) !important; }
 .text-white-65 { color: rgba(255,255,255,0.65) !important; }
 .text-white-50 { color: rgba(255,255,255,0.5) !important; }
