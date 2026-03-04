@@ -34,9 +34,9 @@
 
     <!-- Critical CSS inlined — hero, navbar, and above-the-fold styles -->
     <style>
-    @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-serif-display-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:'Sora';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/sora-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:'Sora';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/sora-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:optional;src:url(fonts/dm-serif-display-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Sora';font-style:normal;font-weight:400;font-display:optional;src:url(fonts/sora-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Sora';font-style:normal;font-weight:600;font-display:optional;src:url(fonts/sora-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
     @font-face{font-family:boxicons;font-weight:400;font-style:normal;font-display:block;src:url(fonts/boxicons.woff2) format('woff2'),url(fonts/boxicons.woff) format('woff')}
     @font-face{font-family:'DM Serif Display Fallback';src:local('Georgia');size-adjust:105%;ascent-override:90%;descent-override:25%;line-gap-override:0%}
     @font-face{font-family:'Sora Fallback';src:local('Arial');size-adjust:100%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
@@ -105,7 +105,7 @@
     .navbar .dropdown-menu{display:none}.dropdown{position:relative}
     @media(min-width:992px){.d-none.d-md-block{display:block!important}.d-none.d-lg-inline{display:inline!important}.d-none.d-lg-block{display:block!important}.col-lg-7{width:58.333%}}
     @media(max-width:991.98px){.d-none.d-md-block{display:none!important}.navbar-expand-lg .navbar-collapse{display:none!important}.navbar-toggler{display:block}.navbar{background:linear-gradient(135deg,var(--primary),var(--primary-dark))!important;padding:10px 0!important}.navbar .brand-name{display:none}.navbar .logo{width:44px;margin:-6px 0}.hamburger-line{background:var(--accent)!important}.hero{min-height:80vh;background-attachment:scroll}.hero .display-3{font-size:2.5rem}}
-    @media(max-width:767.98px){.hero{min-height:auto;padding-top:60px;padding-bottom:40px;background-attachment:scroll}.hero .container{text-align:center}.hero .display-3{font-size:2rem}.hero .lead{font-size:.95rem;max-width:100%!important;margin-left:auto;margin-right:auto}.hero .d-flex.flex-wrap{flex-direction:column;align-items:center}.hero .btn-lg{width:100%;text-align:center}.hero-trust-pills{justify-content:center;flex-wrap:wrap}.topbar{display:none!important}}
+    @media(max-width:767.98px){.hero{min-height:100svh;padding-top:60px;padding-bottom:40px;background-attachment:scroll}.hero .container{text-align:center}.hero .display-3{font-size:2rem}.hero .lead{font-size:.95rem;max-width:100%!important;margin-left:auto;margin-right:auto}.hero .d-flex.flex-wrap{flex-direction:column;align-items:center}.hero .btn-lg{width:100%;text-align:center}.hero-trust-pills{justify-content:center;flex-wrap:wrap}.topbar{display:none!important}}
     </style>
 
     <!-- Deferred full stylesheet — single request, non-render-blocking -->
