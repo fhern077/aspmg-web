@@ -5,7 +5,7 @@ const css = require('./tasks/css');
 const js = require('./tasks/js');
 const fonts = require('./tasks/fonts');
 const images = require('./tasks/images');
-const html = require('./tasks/html');
+const { transform, minifyHtml } = require('./tasks/html');
 const criticalCss = require('./tasks/critical-css');
 const seo = require('./tasks/seo');
 
@@ -13,30 +13,22 @@ async function build() {
   const start = Date.now();
   console.log('Building ASPMG site...\n');
 
-  // Step 1: Clean
-  console.log('[1/5] Clean');
+  console.log('[1/6] Clean');
   await clean();
 
-  // Step 2: Parallel tasks
-  console.log('\n[2/5] Process assets (parallel)');
-  await Promise.all([
-    copy(),
-    css(),
-    js(),
-    fonts(),
-    images(),
-  ]);
+  console.log('\n[2/6] Process assets (parallel)');
+  await Promise.all([copy(), css(), js(), fonts(), images()]);
 
-  // Step 3: HTML (depends on CSS + images being done for <picture> tags and CSS link rewrites)
-  console.log('\n[3/5] HTML');
-  await html();
+  console.log('\n[3/6] HTML transform');
+  await transform();
 
-  // Step 4: Critical CSS (depends on HTML being in dist/)
-  console.log('\n[4/5] Critical CSS');
+  console.log('\n[4/6] Critical CSS');
   await criticalCss();
 
-  // Step 5: SEO validation
-  console.log('\n[5/5] SEO validation');
+  console.log('\n[5/6] HTML minify');
+  await minifyHtml();
+
+  console.log('\n[6/6] SEO validation');
   await seo();
 
   const elapsed = ((Date.now() - start) / 1000).toFixed(1);

@@ -8,7 +8,6 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0",
-    "critical": "^7.2.1",
     "cssnano": "^7.0.0",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
