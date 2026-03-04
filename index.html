@@ -27,8 +27,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-
     <!-- Preload LCP hero image so browser discovers it immediately -->
     <link rel="preload" href="img/cover.webp" as="image" type="image/webp" fetchpriority="high">
 
@@ -99,14 +97,12 @@
     <link rel="preload" href="fonts/boxicons.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Deferred stylesheets — loaded asynchronously to avoid render-blocking -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/base.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/boxicons.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/boxicons.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/style.css">
     </noscript>
     <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -759,14 +755,11 @@
                             </div>
                         </div>
                     </a>
-                    <div class="map-embed mt-4" id="mapPlaceholder" role="button" tabindex="0" aria-label="Click to load interactive map" style="position:relative;cursor:pointer;border-radius:16px;overflow:hidden;height:220px;background:linear-gradient(135deg,#e8eaed 0%,#d4d8e0 100%);">
-                        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
-                            <i class='bx bx-map' style="font-size:36px;color:var(--primary);"></i>
-                            <span style="background:var(--primary);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;font-family:var(--font-body);box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-                                Load Map
-                            </span>
-                            <span style="font-size:11px;color:var(--body-light);">85 Grand Canal Dr, Miami, FL 33144</span>
-                        </div>
+                    <div class="map-embed mt-4" id="mapPlaceholder" role="button" tabindex="0" aria-label="Click to load interactive map" style="position:relative;cursor:pointer;border-radius:16px;overflow:hidden;height:220px;">
+                        <picture>
+                            <source srcset="img/map-placeholder.webp" type="image/webp">
+                            <img src="img/map-placeholder.png" alt="Map showing ASPMG office at 85 Grand Canal Dr, Miami FL" width="1200" height="440" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+                        </picture>
                     </div>
                 </div>
                 <!-- Right: Contact Form -->
@@ -1033,9 +1026,10 @@
         </button>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="js/i18n.js" defer></script>
+    <script>
+    (function(){var l=localStorage.getItem('lang')||(navigator.language||'').slice(0,2);if(l==='es'){var s=document.createElement('script');s.src='js/i18n.js';document.head.appendChild(s)}else if('requestIdleCallback' in window){requestIdleCallback(function(){var s=document.createElement('script');s.src='js/i18n.js';document.head.appendChild(s)})}else{setTimeout(function(){var s=document.createElement('script');s.src='js/i18n.js';document.head.appendChild(s)},200)}})();
+    </script>
     <script>
     document.getElementById('mapPlaceholder').addEventListener('click',function(){
         this.innerHTML='<iframe title="ASPMG Office Location - 85 Grand Canal Dr, Miami, FL 33144" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.3!2d-80.3!3d25.76!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b7e1c0a5c9b7%3A0x4d5b4c3e5f7a8d9!2s85%20Grand%20Canal%20Dr%2C%20Miami%2C%20FL%2033144!5e0!3m2!1sen!2sus!4v1" width="100%" height="220" style="border:0;border-radius:16px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';

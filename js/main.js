@@ -48,6 +48,75 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // 2b. Navbar collapse (hamburger menu)
+    var toggler = document.querySelector('.navbar-toggler');
+    var collapse = document.getElementById('navbarNav');
+    if (toggler && collapse) {
+        toggler.addEventListener('click', function () {
+            var expanded = collapse.classList.toggle('show');
+            toggler.setAttribute('aria-expanded', expanded);
+        });
+        collapse.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(function (link) {
+            link.addEventListener('click', function () {
+                collapse.classList.remove('show');
+                toggler.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    // 2c. Dropdown toggle
+    document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            var menu = this.nextElementSibling;
+            if (!menu) return;
+            // Close other open dropdowns
+            document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
+                if (m !== menu) m.classList.remove('show');
+            });
+            menu.classList.toggle('show');
+        });
+    });
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
+                m.classList.remove('show');
+            });
+        }
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
+                m.classList.remove('show');
+            });
+        }
+    });
+
+    // 2d. FAQ Accordion
+    var faqAccordion = document.getElementById('faqAccordion');
+    if (faqAccordion) {
+        faqAccordion.addEventListener('click', function (e) {
+            var btn = e.target.closest('.accordion-button');
+            if (!btn) return;
+            var targetSel = btn.getAttribute('data-bs-target');
+            var panel = document.querySelector(targetSel);
+            if (!panel) return;
+            var isOpen = panel.classList.contains('show');
+            // Close all panels
+            faqAccordion.querySelectorAll('.accordion-collapse.show').forEach(function (p) {
+                p.classList.remove('show');
+                var b = p.closest('.accordion-item').querySelector('.accordion-button');
+                if (b) { b.classList.add('collapsed'); b.setAttribute('aria-expanded', 'false'); }
+            });
+            // Toggle clicked panel
+            if (!isOpen) {
+                panel.classList.add('show');
+                btn.classList.remove('collapsed');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+
     // 3. Scroll-to-Top Button
     var scrollBtn = document.createElement('button');
     scrollBtn.innerHTML = '<i class="bx bx-chevron-up"></i>';

@@ -85,11 +85,11 @@
     </style>
 
     <!-- Deferred stylesheets — loaded asynchronously to avoid render-blocking -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/base.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/boxicons.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/boxicons.min.css">
         <link rel="stylesheet" href="css/style.css">
     </noscript>
@@ -509,8 +509,9 @@
     }
     </script>
 
-    <script src="js/bootstrap.bundle.min.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="js/i18n.js" defer></script>
+    <script>
+    (function(){var l=localStorage.getItem('lang')||(navigator.language||'').slice(0,2);if(l==='es'){var s=document.createElement('script');s.src='js/i18n.js';document.head.appendChild(s)}else if('requestIdleCallback' in window){requestIdleCallback(function(){var s=document.createElement('script');s.src='js/i18n.js';document.head.appendChild(s)})}else{setTimeout(function(){var s=document.createElement('script');s.src='js/i18n.js';document.head.appendChild(s)},200)}})();
+    </script>
 </body>
 </html>
