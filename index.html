@@ -29,6 +29,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
+    <!-- Preload LCP hero image so browser discovers it immediately -->
+    <link rel="preload" href="img/cover.webp" as="image" type="image/webp" fetchpriority="high">
+
     <!-- Preload critical fonts to prevent CLS from font swapping -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" as="style">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap">
@@ -250,21 +253,21 @@
                         <div class="hero-card">
                             <div class="hero-card-icon"><i class='bx bx-shield-quarter'></i></div>
                             <div>
-                                <h6 data-i18n="hero.card1_title">Trusted Management</h6>
+                                <h3 class="h6" data-i18n="hero.card1_title">Trusted Management</h3>
                                 <p data-i18n="hero.card1_desc">20+ years protecting property investments across South Florida</p>
                             </div>
                         </div>
                         <div class="hero-card">
                             <div class="hero-card-icon"><i class='bx bx-home-heart'></i></div>
                             <div>
-                                <h6 data-i18n="hero.card2_title">30+ Communities</h6>
+                                <h3 class="h6" data-i18n="hero.card2_title">30+ Communities</h3>
                                 <p data-i18n="hero.card2_desc">HOA and condo associations across Miami-Dade and Broward trust us</p>
                             </div>
                         </div>
                         <div class="hero-card">
                             <div class="hero-card-icon"><i class='bx bx-time-five'></i></div>
                             <div>
-                                <h6 data-i18n="hero.card3_title">24/7 Emergency Service</h6>
+                                <h3 class="h6" data-i18n="hero.card3_title">24/7 Emergency Service</h3>
                                 <p data-i18n="hero.card3_desc">Round-the-clock support when your community needs it most</p>
                             </div>
                         </div>
@@ -303,7 +306,7 @@
                 <div class="col-lg-6 fade-in-up">
                     <div class="about-image-wrapper">
                         <picture>
-                            <source srcset="img/co.webp" type="image/webp">
+                            <source srcset="img/co-400.webp 400w, img/co-700.webp 700w, img/co.webp 1000w" sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 500px" type="image/webp">
                             <img src="img/co.jpg" alt="Aerial view of Miami residential community managed by ASPMG" class="about-image" loading="lazy" width="1000" height="562">
                         </picture>
                         <div class="about-image-accent"></div>
@@ -325,7 +328,7 @@
                                 <i class='bx bxs-message-rounded-check'></i>
                             </div>
                             <div>
-                                <h5 data-i18n="about.feat1_title">Transparent Communication</h5>
+                                <h3 class="h5" data-i18n="about.feat1_title">Transparent Communication</h3>
                                 <p class="mb-0" data-i18n="about.feat1_desc">Regular updates so you are never surprised by what is happening with your properties.</p>
                             </div>
                         </div>
@@ -334,7 +337,7 @@
                                 <i class='bx bxs-user-check'></i>
                             </div>
                             <div>
-                                <h5 data-i18n="about.feat2_title">Personalized Service</h5>
+                                <h3 class="h5" data-i18n="about.feat2_title">Personalized Service</h3>
                                 <p class="mb-0" data-i18n="about.feat2_desc">To us you are not "just another client." We provide customized management solutions.</p>
                             </div>
                         </div>
@@ -343,7 +346,7 @@
                                 <i class='bx bxs-phone-call'></i>
                             </div>
                             <div>
-                                <h5 data-i18n="about.feat3_title">24/7 Emergency Response</h5>
+                                <h3 class="h5" data-i18n="about.feat3_title">24/7 Emergency Response</h3>
                                 <p class="mb-0" data-i18n="about.feat3_desc">Round-the-clock service to handle any emergency repairs that may arise.</p>
                             </div>
                         </div>
@@ -370,7 +373,7 @@
                         <div class="service-card-icon">
                             <i class='bx bx-dollar-circle'></i>
                         </div>
-                        <h5 data-i18n="services.financial_title">Financial Management</h5>
+                        <h3 class="h5" data-i18n="services.financial_title">Financial Management</h3>
                         <p data-i18n="services.financial_desc">Annual CAM reconciliation, accounts receivable and payable management, monthly statements, audits, annual budget preparation, and financial reporting.</p>
                         <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
@@ -380,7 +383,7 @@
                         <div class="service-card-icon">
                             <i class='bx bx-wrench'></i>
                         </div>
-                        <h5 data-i18n="services.maintenance_title">Maintenance</h5>
+                        <h3 class="h5" data-i18n="services.maintenance_title">Maintenance</h3>
                         <p data-i18n="services.maintenance_desc">Customized maintenance plans, vendor supervision, bid/selection process management, repair notices, and 24-hour emergency service at your disposal.</p>
                         <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
@@ -390,7 +393,7 @@
                         <div class="service-card-icon">
                             <i class='bx bx-buildings'></i>
                         </div>
-                        <h5 data-i18n="services.property_title">Property Management</h5>
+                        <h3 class="h5" data-i18n="services.property_title">Property Management</h3>
                         <p data-i18n="services.property_desc">Strategic community plans for long-term property value, meetings, elections, budgets, guard services, violations, parking, and day-to-day operations.</p>
                         <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
@@ -400,7 +403,7 @@
                         <div class="service-card-icon">
                             <i class='bx bx-laptop'></i>
                         </div>
-                        <h5 data-i18n="services.tech_title">Technology</h5>
+                        <h3 class="h5" data-i18n="services.tech_title">Technology</h3>
                         <p data-i18n="services.tech_desc">Online accounts, payment portals, electronic forms, website construction, and electronic communications for modern, efficient management.</p>
                         <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
@@ -410,7 +413,7 @@
                         <div class="service-card-icon">
                             <i class='bx bx-message-rounded-dots'></i>
                         </div>
-                        <h5 data-i18n="services.comms_title">Communications</h5>
+                        <h3 class="h5" data-i18n="services.comms_title">Communications</h3>
                         <p data-i18n="services.comms_desc">Private client accounts with regular updates on inspections, financial reports, notices, maintenance, and projects. Stay informed at all times.</p>
                         <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
@@ -420,7 +423,7 @@
                         <div class="service-card-icon">
                             <i class='bx bx-search-alt'></i>
                         </div>
-                        <h5 data-i18n="services.inspect_title">Inspections</h5>
+                        <h3 class="h5" data-i18n="services.inspect_title">Inspections</h3>
                         <p data-i18n="services.inspect_desc">Regular property walks and thorough documentation. Preventive maintenance plans that have led to significant savings and lowered property insurance.</p>
                         <a href="#contact" class="btn-ghost"><span data-i18n="services.learn_more">Learn More</span> <i class='bx bx-right-arrow-alt'></i></a>
                     </div>
@@ -444,28 +447,28 @@
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">01</div>
-                        <h5 data-i18n="diff.1_title">Local Expertise</h5>
+                        <h3 class="h5" data-i18n="diff.1_title">Local Expertise</h3>
                         <p data-i18n="diff.1_desc">Deep knowledge of Miami-Dade and Broward County regulations, vendors, and community needs.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">02</div>
-                        <h5 data-i18n="diff.2_title">Cost Savings</h5>
+                        <h3 class="h5" data-i18n="diff.2_title">Cost Savings</h3>
                         <p data-i18n="diff.2_desc">Strategic financial planning that has eliminated the need for special assessments in our communities.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">03</div>
-                        <h5 data-i18n="diff.3_title">Proactive Inspections</h5>
+                        <h3 class="h5" data-i18n="diff.3_title">Proactive Inspections</h3>
                         <p data-i18n="diff.3_desc">Regular property walks and preventive maintenance leading to significant savings on costly repairs.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in-up">
                     <div class="diff-card">
                         <div class="diff-number">04</div>
-                        <h5 data-i18n="diff.4_title">Technology Forward</h5>
+                        <h3 class="h5" data-i18n="diff.4_title">Technology Forward</h3>
                         <p data-i18n="diff.4_desc">Online accounts, payment portals, electronic forms, and digital communications for modern management.</p>
                     </div>
                 </div>
@@ -499,7 +502,7 @@
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-1.jpg" alt="Nick Cachaldora - ASPMG property management testimonial" loading="lazy">
                             <div class="ms-3">
-                                <h6>Nick Cachaldora</h6>
+                                <h3 class="h6">Nick Cachaldora</h3>
                                 <small data-i18n="testimonial.1_role">Association Board Member</small>
                             </div>
                         </div>
@@ -520,7 +523,7 @@
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-2.jpg" alt="Massiel Ortega - ASPMG property management testimonial" loading="lazy">
                             <div class="ms-3">
-                                <h6>Massiel Ortega</h6>
+                                <h3 class="h6">Massiel Ortega</h3>
                                 <small data-i18n="testimonial.2_role">Association Board Member</small>
                             </div>
                         </div>
@@ -541,7 +544,7 @@
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-3.jpg" alt="Nilsa Bravo - ASPMG property management testimonial" loading="lazy">
                             <div class="ms-3">
-                                <h6>Nilsa Bravo</h6>
+                                <h3 class="h6">Nilsa Bravo</h3>
                                 <small data-i18n="testimonial.3_role">Association Board Member</small>
                             </div>
                         </div>
@@ -562,7 +565,7 @@
                         <div class="testimonial-author d-flex align-items-center mt-4">
                             <img src="img/testimonial-4.png" alt="Ramiro Gomez - ASPMG property management testimonial" loading="lazy">
                             <div class="ms-3">
-                                <h6>Ramiro Gomez</h6>
+                                <h3 class="h6">Ramiro Gomez</h3>
                                 <small data-i18n="testimonial.4_role">Resident</small>
                             </div>
                         </div>
@@ -721,7 +724,7 @@
                                     <i class='bx bx-map'></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h6 class="mb-1" data-i18n="contact.office">Our Office</h6>
+                                    <h3 class="h6 mb-1" data-i18n="contact.office">Our Office</h3>
                                     <p class="mb-0">85 Grand Canal Dr, Unit 201<br>Miami, FL 33144</p>
                                 </div>
                                 <i class='bx bx-chevron-right d-md-none ms-2' style="color: var(--accent); font-size: 20px;"></i>
@@ -735,7 +738,7 @@
                                     <i class='bx bx-phone'></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h6 class="mb-1" data-i18n="contact.phone">Phone</h6>
+                                    <h3 class="h6 mb-1" data-i18n="contact.phone">Phone</h3>
                                     <p class="mb-0">(305) 661-8400</p>
                                 </div>
                                 <i class='bx bx-chevron-right d-md-none ms-2' style="color: var(--accent); font-size: 20px;"></i>
@@ -749,7 +752,7 @@
                                     <i class='bx bx-envelope'></i>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h6 class="mb-1" data-i18n="contact.email">Email</h6>
+                                    <h3 class="h6 mb-1" data-i18n="contact.email">Email</h3>
                                     <p class="mb-0">info@aspmg.com</p>
                                 </div>
                                 <i class='bx bx-chevron-right d-md-none ms-2' style="color: var(--accent); font-size: 20px;"></i>
@@ -836,7 +839,7 @@
                         </p>
                     </div>
                     <div class="col-lg-2 col-md-4">
-                        <h6 class="footer-heading" data-i18n="footer.quick_links">Quick Links</h6>
+                        <h3 class="h6 footer-heading" data-i18n="footer.quick_links">Quick Links</h3>
                         <ul class="footer-links list-unstyled">
                             <li><a href="#home" data-i18n="footer.home">Home</a></li>
                             <li><a href="#aboutus" data-i18n="footer.about">About Us</a></li>
@@ -846,7 +849,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-heading" data-i18n="footer.resident_resources">Resident Resources</h6>
+                        <h3 class="h6 footer-heading" data-i18n="footer.resident_resources">Resident Resources</h3>
                         <ul class="footer-links list-unstyled">
                             <li><a href="payments.html" data-i18n="footer.payments">Make a Payment</a></li>
                             <li><a href="documents.html" data-i18n="footer.documents">Community Documents</a></li>
@@ -854,7 +857,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h6 class="footer-heading" data-i18n="footer.contact">Contact</h6>
+                        <h3 class="h6 footer-heading" data-i18n="footer.contact">Contact</h3>
                         <ul class="footer-contact list-unstyled">
                             <li><i class='bx bx-map me-2'></i> 85 Grand Canal Dr, Unit 201<br>
                                 <span style="margin-left: 26px;">Miami, FL 33144</span></li>
