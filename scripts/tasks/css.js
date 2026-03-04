@@ -28,14 +28,13 @@ module.exports = async function css() {
   // 3. Read boxicons CSS
   const boxicons = await fs.readFile(path.join(SRC, 'css', 'boxicons.min.css'), 'utf8');
 
-  // 4. Extract font declarations + fallbacks from all.css (everything before base.css content)
-  // The all.css starts with @font-face declarations and fallbacks, then base.css content
-  const fontSection = allCss.split('/* Font fallback @font-face')[0] +
+  // 4. Font fallback declarations
+  const fontFallbacks =
     '@font-face{font-family:\'DM Serif Display Fallback\';src:local(\'Georgia\');size-adjust:105%;ascent-override:90%;descent-override:25%;line-gap-override:0%}' +
     '@font-face{font-family:\'Sora Fallback\';src:local(\'Arial\');size-adjust:100%;ascent-override:95%;descent-override:25%;line-gap-override:0%}';
 
-  // 5. Merge: fonts + font-fallbacks + boxicons + purged base+style
-  const merged = fontSection + '\n' + boxicons + '\n' + purged.map(r => r.css).join('\n');
+  // 5. Merge: Google fonts + fallbacks + boxicons + purged base+style
+  const merged = allCss + '\n' + fontFallbacks + '\n' + boxicons + '\n' + purged.map(r => r.css).join('\n');
 
   // 6. Minify with cssnano
   const result = await postcss([cssnano({ preset: 'default' })]).process(merged, { from: undefined });
