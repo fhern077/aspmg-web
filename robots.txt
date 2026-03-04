@@ -1,5 +1,4 @@
 User-agent: *
-Allow: /
 Disallow: /templates/
 
 Sitemap: https://aspmg.com/sitemap.xml
