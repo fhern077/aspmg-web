@@ -28,9 +28,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Preload critical fonts to prevent CLS -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap">
+    <link rel="preload" href="fonts/boxicons.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Critical CSS — above-the-fold styles inlined to eliminate render-blocking -->
     <style>
-        :root{--primary:#1B2A4A;--primary-light:#2C4270;--primary-dark:#0F1A32;--accent:#A89060;--accent-light:#BDA87A;--accent-dark:#8D764D;--dark:#1A1E2C;--body:#5A6275;--body-light:#8891A4;--muted:#C4CAD6;--light:#F4F6FA;--white:#FFFFFF;--shadow-sm:0 2px 8px rgba(27,42,74,0.06);--shadow-md:0 4px 16px rgba(27,42,74,0.08);--font-heading:'DM Serif Display',Georgia,serif;--font-body:'Sora','Inter',sans-serif;--section-py:clamp(80px,10vw,120px);--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--transition-fast:0.2s cubic-bezier(0.4,0,0.2,1);--transition-base:0.35s cubic-bezier(0.4,0,0.2,1)}
+        @font-face{font-family:'DM Serif Display Fallback';src:local('Georgia');size-adjust:105%;ascent-override:90%;descent-override:25%;line-gap-override:0%}
+        @font-face{font-family:'Sora Fallback';src:local('Arial');size-adjust:100%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
+        :root{--primary:#1B2A4A;--primary-light:#2C4270;--primary-dark:#0F1A32;--accent:#A89060;--accent-light:#BDA87A;--accent-dark:#8D764D;--dark:#1A1E2C;--body:#5A6275;--body-light:#6B7590;--muted:#C4CAD6;--light:#F4F6FA;--white:#FFFFFF;--shadow-sm:0 2px 8px rgba(27,42,74,0.06);--shadow-md:0 4px 16px rgba(27,42,74,0.08);--font-heading:'DM Serif Display','DM Serif Display Fallback',Georgia,serif;--font-body:'Sora','Sora Fallback','Inter',sans-serif;--section-py:clamp(80px,10vw,120px);--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--transition-fast:0.2s cubic-bezier(0.4,0,0.2,1);--transition-base:0.35s cubic-bezier(0.4,0,0.2,1)}
         *,*::before,*::after{box-sizing:border-box}
         html{scroll-behavior:smooth;scroll-padding-top:120px;overflow-x:hidden}
         body{margin:0;font-family:var(--font-body);font-size:16px;line-height:1.75;color:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -78,12 +85,10 @@
     </style>
 
     <!-- Deferred stylesheets — loaded asynchronously to avoid render-blocking -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/boxicons.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/boxicons.min.css">
         <link rel="stylesheet" href="css/style.css">
