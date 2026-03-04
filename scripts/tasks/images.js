@@ -51,7 +51,7 @@ module.exports = async function images() {
     const skipWebp = SKIP_WEBP.includes(file);
 
     if (ext === '.jpg' || ext === '.jpeg') {
-      await sharp(srcPath).jpeg({ quality: 80, mozjpeg: true }).toFile(path.join(imgDist, file));
+      await sharp(srcPath).jpeg({ quality: 60, mozjpeg: true }).toFile(path.join(imgDist, file));
     } else if (ext === '.png') {
       await sharp(srcPath).png({ quality: 80, compressionLevel: 9 }).toFile(path.join(imgDist, file));
     } else {
@@ -59,9 +59,16 @@ module.exports = async function images() {
     }
     await fs.copy(path.join(imgDist, file), path.join(cachedDir, file));
 
+    // Only create webp if one doesn't already exist in source (don't override pre-optimized webps)
     if (!skipWebp && ext !== '.webp') {
       const webpName = `${basename}.webp`;
-      await sharp(srcPath).webp({ quality: 75 }).toFile(path.join(imgDist, webpName));
+      const srcWebp = path.join(imgSrc, webpName);
+      if (await fs.pathExists(srcWebp)) {
+        // Use pre-optimized webp from source
+        await fs.copy(srcWebp, path.join(imgDist, webpName));
+      } else {
+        await sharp(srcPath).webp({ quality: 55 }).toFile(path.join(imgDist, webpName));
+      }
       await fs.copy(path.join(imgDist, webpName), path.join(cachedDir, webpName));
     }
 
