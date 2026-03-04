@@ -1,0 +1,17 @@
+/* Font fallback @font-face declarations — prevents CLS from font swapping */
+@font-face {
+    font-family: 'DM Serif Display Fallback';
+    src: local('Georgia');
+    size-adjust: 105%;
+    ascent-override: 90%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+}
+@font-face {
+    font-family: 'Sora Fallback';
+    src: local('Arial');
+    size-adjust: 100%;
+    ascent-override: 95%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+}

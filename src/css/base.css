@@ -1,7 +1,19 @@
 /* ========================================
-   base.css — Bootstrap replacement (~4KB)
-   Only the utilities + components this site uses
+   base.css — Bootstrap replacement
+   Only the reboot + utilities + components this site uses
    ======================================== */
+
+/* --- Reboot (Bootstrap's element resets) --- */
+p { margin-top: 0; margin-bottom: 1rem; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 0.5rem; }
+ol, ul { padding-left: 2rem; }
+blockquote { margin: 0 0 1rem; }
+small { font-size: 0.875em; }
+img { vertical-align: middle; }
+button, select { text-transform: none; }
+textarea { resize: vertical; }
+fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
+[type=search] { -webkit-appearance: textfield; outline-offset: -2px; }
 
 /* --- Grid --- */
 .row {
@@ -103,9 +115,9 @@
   .text-md-end { text-align: end !important; }
 }
 .display-3 { font-size: calc(1.525rem + 3.3vw); }
-.h3 { font-size: 1.25rem; }
-.h5 { font-size: 1.1rem; }
-.h6 { font-size: 0.95rem; }
+.h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+.h5 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.h6 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
 
 /* --- Text colors --- */
 .text-white { color: #fff !important; }
@@ -189,6 +201,9 @@
   .navbar-expand-lg .navbar-collapse.show {
     display: block !important;
   }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column;
+  }
   .navbar-toggler { display: block; }
 }
 
@@ -220,9 +235,15 @@
 .dropdown-item:hover, .dropdown-item:focus {
   background-color: #f8f9fa;
 }
+@media (max-width: 991.98px) {
+  .navbar-collapse .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: 0;
+  }
+}
 
 /* --- Accordion --- */
-.accordion { }
 .accordion-header { margin: 0; }
 .accordion-button {
   display: flex;
@@ -232,6 +253,10 @@
   border: 0;
   cursor: pointer;
 }
+.accordion-button::after {
+  flex-shrink: 0;
+  margin-left: auto;
+}
 .accordion-collapse {
   display: none;
   overflow: hidden;
@@ -239,7 +264,6 @@
 .accordion-collapse.show {
   display: block;
 }
-.accordion-body { }
 
 /* --- Animations (replaces animate.css CDN) --- */
 .animate__animated {

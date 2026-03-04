@@ -65,31 +65,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 2c. Dropdown toggle
+    function closeAllDropdowns() {
+        document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
+            m.classList.remove('show');
+        });
+        document.querySelectorAll('.dropdown-toggle.show').forEach(function (t) {
+            t.classList.remove('show');
+            t.setAttribute('aria-expanded', 'false');
+        });
+    }
     document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
             var menu = this.nextElementSibling;
             if (!menu) return;
-            // Close other open dropdowns
-            document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
-                if (m !== menu) m.classList.remove('show');
-            });
-            menu.classList.toggle('show');
+            var wasOpen = menu.classList.contains('show');
+            closeAllDropdowns();
+            if (!wasOpen) {
+                menu.classList.add('show');
+                this.classList.add('show');
+                this.setAttribute('aria-expanded', 'true');
+            }
         });
     });
     document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
-                m.classList.remove('show');
-            });
-        }
+        if (!e.target.closest('.dropdown')) closeAllDropdowns();
     });
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.dropdown-menu.show').forEach(function (m) {
-                m.classList.remove('show');
-            });
-        }
+        if (e.key === 'Escape') closeAllDropdowns();
     });
 
     // 2d. FAQ Accordion

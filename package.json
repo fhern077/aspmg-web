@@ -1,0 +1,21 @@
+{
+  "name": "aspmg-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "clean": "node -e \"require('fs-extra').removeSync('dist')\""
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0",
+    "critical": "^7.2.1",
+    "cssnano": "^7.0.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.4.0",
+    "purgecss": "^6.0.0",
+    "sharp": "^0.33.0",
+    "terser": "^5.36.0"
+  }
+}
