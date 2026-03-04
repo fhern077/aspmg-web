@@ -37,9 +37,10 @@ async function transform() {
   for (const page of SITE_PAGES) {
     let content = await fs.readFile(path.join(SRC, page), 'utf8');
 
+    // Legacy 4-file CSS pattern → all.css (if present in older source files)
     content = content.replace(
       /\s*<link rel="stylesheet" href="css\/font-fallbacks\.css">\s*\n\s*<link rel="stylesheet" href="css\/base\.css">\s*\n\s*<link rel="stylesheet" href="css\/boxicons\.min\.css">\s*\n\s*<link rel="stylesheet" href="css\/style\.css">/,
-      '\n    <link rel="stylesheet" href="css/style.css">\n    <link rel="stylesheet" href="css/boxicons.min.css">'
+      '\n    <link rel="stylesheet" href="css/all.css">'
     );
 
     content = content.replace(/<img\s[^>]*src="([^"]+)"[^>]*>/g, (match, src) => {
