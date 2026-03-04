@@ -39,7 +39,7 @@ async function transform() {
 
     content = content.replace(
       /\s*<link rel="stylesheet" href="css\/font-fallbacks\.css">\s*\n\s*<link rel="stylesheet" href="css\/base\.css">\s*\n\s*<link rel="stylesheet" href="css\/boxicons\.min\.css">\s*\n\s*<link rel="stylesheet" href="css\/style\.css">/,
-      '\n    <link rel="stylesheet" href="css/font-fallbacks.css">\n    <link rel="stylesheet" href="css/style.css">\n    <link rel="stylesheet" href="css/boxicons.min.css">'
+      '\n    <link rel="stylesheet" href="css/style.css">\n    <link rel="stylesheet" href="css/boxicons.min.css">'
     );
 
     content = content.replace(/<img\s[^>]*src="([^"]+)"[^>]*>/g, (match, src) => {
