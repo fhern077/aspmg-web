@@ -369,6 +369,18 @@
             .logo-card img { width: 56px; }
             .template-icon { width: 38px; height: 38px; font-size: 18px; }
         }
+
+        /* ============ LANGUAGE TOGGLE ============ */
+        .lang-toggle {
+            position: absolute; top: 20px; right: 20px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px; padding: 6px 16px;
+            color: rgba(255,255,255,0.8); font-size: 12px; font-weight: 600;
+            letter-spacing: 0.5px; cursor: pointer;
+            transition: all 0.2s; text-transform: uppercase;
+            z-index: 2;
+        }
+        .lang-toggle:hover { background: rgba(255,255,255,0.2); color: #fff; }
     </style>
 </head>
 <body>
@@ -376,11 +388,12 @@
 
         <!-- ========== HERO ========== -->
         <div class="brand-hero">
+            <button class="lang-toggle" id="langToggle">EN</button>
             <img src="../img/logo.png" alt="ASPMG Logo">
             <h1>ASPMG</h1>
             <p class="tagline">A Solid Property Management Group</p>
             <div class="gold-divider"></div>
-            <p class="subtitle">Manual de Marca y Recursos</p>
+            <p class="subtitle" data-i18n="hero.subtitle">Manual de Marca y Recursos</p>
         </div>
 
         <div class="sections-grid">
@@ -389,45 +402,45 @@
         <div class="section">
             <div class="section-header">
                 <div class="section-number">1</div>
-                <div class="section-title">Descargar Logos</div>
+                <div class="section-title" data-i18n="s1.title">Descargar Logos</div>
             </div>
-            <p class="section-desc">PNG con fondo transparente. Haz clic para descargar.</p>
+            <p class="section-desc" data-i18n="s1.desc">PNG con fondo transparente. Haz clic para descargar.</p>
             <div class="logo-grid">
                 <a class="logo-card" href="logo-web-small.png" download>
                     <img src="logo-web-small.png" alt="Logo Web Small">
-                    <div class="name">Web Peque&ntilde;o</div>
-                    <div class="meta">200px &middot; Correos, Firmas</div>
-                    <span class="dl">Descargar</span>
+                    <div class="name" data-i18n="s1.name1">Web Peque&ntilde;o</div>
+                    <div class="meta" data-i18n="s1.meta1">200px &middot; Correos, Firmas</div>
+                    <span class="dl" data-i18n="s1.dl">Descargar</span>
                 </a>
                 <a class="logo-card" href="logo-web-standard.png" download>
                     <img src="logo-web-standard.png" alt="Logo Web Standard">
-                    <div class="name">Web Est&aacute;ndar</div>
-                    <div class="meta">400px &middot; Encabezados, Pies de p&aacute;gina</div>
-                    <span class="dl">Descargar</span>
+                    <div class="name" data-i18n="s1.name2">Web Est&aacute;ndar</div>
+                    <div class="meta" data-i18n="s1.meta2">400px &middot; Encabezados, Pies de p&aacute;gina</div>
+                    <span class="dl" data-i18n="s1.dl">Descargar</span>
                 </a>
                 <a class="logo-card" href="logo-web-large.png" download>
                     <img src="logo-web-large.png" alt="Logo Web Large">
-                    <div class="name">Web Grande</div>
-                    <div class="meta">800px &middot; Presentaciones, Banners</div>
-                    <span class="dl">Descargar</span>
+                    <div class="name" data-i18n="s1.name3">Web Grande</div>
+                    <div class="meta" data-i18n="s1.meta3">800px &middot; Presentaciones, Banners</div>
+                    <span class="dl" data-i18n="s1.dl">Descargar</span>
                 </a>
                 <a class="logo-card dark" href="logo-print-highres.png" download>
                     <img src="logo-print-highres.png" alt="Logo Print High-Res">
-                    <div class="name">Impresi&oacute;n Alta Res</div>
-                    <div class="meta">1200px &middot; Membretes, Letreros</div>
-                    <span class="dl">Descargar</span>
+                    <div class="name" data-i18n="s1.name4">Impresi&oacute;n Alta Res</div>
+                    <div class="meta" data-i18n="s1.meta4">1200px &middot; Membretes, Letreros</div>
+                    <span class="dl" data-i18n="s1.dl">Descargar</span>
                 </a>
                 <a class="logo-card dark" href="logo-print-full.png" download>
                     <img src="logo-print-full.png" alt="Logo Print Full">
-                    <div class="name">Impresi&oacute;n Completa</div>
-                    <div class="meta">Original &middot; Gran Formato</div>
-                    <span class="dl">Descargar</span>
+                    <div class="name" data-i18n="s1.name5">Impresi&oacute;n Completa</div>
+                    <div class="meta" data-i18n="s1.meta5">Original &middot; Gran Formato</div>
+                    <span class="dl" data-i18n="s1.dl">Descargar</span>
                 </a>
                 <a class="logo-card" href="logo-icon-512.png" download>
                     <img src="logo-icon-512.png" alt="Logo Icon">
-                    <div class="name">Icono / Avatar</div>
-                    <div class="meta">512px &middot; Redes Sociales, Perfiles</div>
-                    <span class="dl">Descargar</span>
+                    <div class="name" data-i18n="s1.name6">Icono / Avatar</div>
+                    <div class="meta" data-i18n="s1.meta6">512px &middot; Redes Sociales, Perfiles</div>
+                    <span class="dl" data-i18n="s1.dl">Descargar</span>
                 </a>
             </div>
         </div>
@@ -436,79 +449,79 @@
         <div class="section">
             <div class="section-header">
                 <div class="section-number">2</div>
-                <div class="section-title">Plantillas de Documentos</div>
+                <div class="section-title" data-i18n="s2.title">Plantillas de Documentos</div>
             </div>
-            <p class="section-desc">Descarga cualquier plantilla de Word, completa los campos y guarda o imprime.</p>
+            <p class="section-desc" data-i18n="s2.desc">Descarga cualquier plantilla de Word, completa los campos y guarda o imprime.</p>
             <div class="template-grid">
                 <a class="template-card" href="ASPMG-Letterhead.docx" download>
                     <div class="template-preview">
                         <img src="previews/letterhead.png" alt="Letterhead Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#9993;</div>
-                    <h3>Membrete</h3>
-                    <p>Limpio, compatible con B&amp;N — logo + encabezado de texto para impresi&oacute;n diaria</p>
-                    <span class="link">Descargar .docx &darr;</span>
+                    <h3 data-i18n="s2.t1_name">Membrete</h3>
+                    <p data-i18n="s2.t1_desc">Limpio, compatible con B&amp;N — logo + encabezado de texto para impresi&oacute;n diaria</p>
+                    <span class="link" data-i18n="s2.link_docx">Descargar .docx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Letterhead - fancy.docx" download>
                     <div class="template-preview">
                         <img src="previews/letterhead-fancy.png" alt="Letterhead Fancy Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#9993;</div>
-                    <h3>Membrete — Elegante</h3>
-                    <p>Encabezado azul marino a todo color con barra dorada para impresi&oacute;n a color</p>
-                    <span class="link">Descargar .docx &darr;</span>
+                    <h3 data-i18n="s2.t2_name">Membrete — Elegante</h3>
+                    <p data-i18n="s2.t2_desc">Encabezado azul marino a todo color con barra dorada para impresi&oacute;n a color</p>
+                    <span class="link" data-i18n="s2.link_docx">Descargar .docx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Community-Memo.docx" download>
                     <div class="template-preview">
                         <img src="previews/community-memo.png" alt="Community Memo Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128221;</div>
-                    <h3>Memo Comunitario</h3>
-                    <p>Limpio, compatible con B&amp;N — logo + texto para impresi&oacute;n diaria</p>
-                    <span class="link">Descargar .docx &darr;</span>
+                    <h3 data-i18n="s2.t3_name">Memo Comunitario</h3>
+                    <p data-i18n="s2.t3_desc">Limpio, compatible con B&amp;N — logo + texto para impresi&oacute;n diaria</p>
+                    <span class="link" data-i18n="s2.link_docx">Descargar .docx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Community-Memo - fancy.docx" download>
                     <div class="template-preview">
                         <img src="previews/community-memo-fancy.png" alt="Community Memo Fancy Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128221;</div>
-                    <h3>Memo Comunitario — Elegante</h3>
-                    <p>Encabezado azul marino a todo color con barra dorada para impresi&oacute;n a color</p>
-                    <span class="link">Descargar .docx &darr;</span>
+                    <h3 data-i18n="s2.t4_name">Memo Comunitario — Elegante</h3>
+                    <p data-i18n="s2.t4_desc">Encabezado azul marino a todo color con barra dorada para impresi&oacute;n a color</p>
+                    <span class="link" data-i18n="s2.link_docx">Descargar .docx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Meeting-Notice.docx" download>
                     <div class="template-preview">
                         <img src="previews/meeting-notice.png" alt="Meeting Notice Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128197;</div>
-                    <h3>Aviso de Reuni&oacute;n</h3>
-                    <p>Agendas de junta directiva, reuniones anuales y sesiones especiales</p>
-                    <span class="link">Descargar .docx &darr;</span>
+                    <h3 data-i18n="s2.t5_name">Aviso de Reuni&oacute;n</h3>
+                    <p data-i18n="s2.t5_desc">Agendas de junta directiva, reuniones anuales y sesiones especiales</p>
+                    <span class="link" data-i18n="s2.link_docx">Descargar .docx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Violation-Notice.docx" download>
                     <div class="template-preview">
                         <img src="previews/violation-notice.png" alt="Violation Notice Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#9888;</div>
-                    <h3>Aviso de Violaci&oacute;n</h3>
-                    <p>Violaciones de propiedad, avisos de cumplimiento y cartas de multa</p>
-                    <span class="link">Descargar .docx &darr;</span>
+                    <h3 data-i18n="s2.t6_name">Aviso de Violaci&oacute;n</h3>
+                    <p data-i18n="s2.t6_desc">Violaciones de propiedad, avisos de cumplimiento y cartas de multa</p>
+                    <span class="link" data-i18n="s2.link_docx">Descargar .docx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Invoice.docx" download>
                     <div class="template-preview">
                         <img src="previews/invoice.png" alt="Invoice Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128176;</div>
-                    <h3>Factura / Estado de Cuenta</h3>
-                    <p>Estados de cuenta, facturas de cuotas y res&uacute;menes de pago</p>
-                    <span class="link">Descargar .docx &darr;</span>
+                    <h3 data-i18n="s2.t7_name">Factura / Estado de Cuenta</h3>
+                    <p data-i18n="s2.t7_desc">Estados de cuenta, facturas de cuotas y res&uacute;menes de pago</p>
+                    <span class="link" data-i18n="s2.link_docx">Descargar .docx &darr;</span>
                 </a>
             </div>
         </div>
@@ -517,18 +530,18 @@
         <div class="section">
             <div class="section-header">
                 <div class="section-number">3</div>
-                <div class="section-title">Colores de Marca</div>
+                <div class="section-title" data-i18n="s3.title">Colores de Marca</div>
             </div>
-            <p class="section-desc">Nuestra paleta refleja confianza, profesionalismo y la elegancia del Sur de la Florida.</p>
+            <p class="section-desc" data-i18n="s3.desc">Nuestra paleta refleja confianza, profesionalismo y la elegancia del Sur de la Florida.</p>
             <div class="color-grid">
                 <div class="color-card">
                     <div class="color-swatch" style="background:#1B2A4A">
                         <span class="copy-hex">#1B2A4A</span>
                     </div>
                     <div class="color-info">
-                        <div class="color-name">Azul Marino Principal</div>
+                        <div class="color-name" data-i18n="s3.name1">Azul Marino Principal</div>
                         <div class="color-hex">rgb(27, 42, 74)</div>
-                        <div class="color-use">Encabezados, navegaci&oacute;n, texto, fondos oscuros</div>
+                        <div class="color-use" data-i18n="s3.use1">Encabezados, navegaci&oacute;n, texto, fondos oscuros</div>
                     </div>
                 </div>
                 <div class="color-card">
@@ -536,9 +549,9 @@
                         <span class="copy-hex">#2C4270</span>
                     </div>
                     <div class="color-info">
-                        <div class="color-name">Azul Marino Claro</div>
+                        <div class="color-name" data-i18n="s3.name2">Azul Marino Claro</div>
                         <div class="color-hex">rgb(44, 66, 112)</div>
-                        <div class="color-use">Estados hover, degradados, acentos</div>
+                        <div class="color-use" data-i18n="s3.use2">Estados hover, degradados, acentos</div>
                     </div>
                 </div>
                 <div class="color-card">
@@ -546,9 +559,9 @@
                         <span class="copy-hex">#0F1A32</span>
                     </div>
                     <div class="color-info">
-                        <div class="color-name">Azul Marino Oscuro</div>
+                        <div class="color-name" data-i18n="s3.name3">Azul Marino Oscuro</div>
                         <div class="color-hex">rgb(15, 26, 50)</div>
-                        <div class="color-use">Pie de p&aacute;gina, fondos profundos</div>
+                        <div class="color-use" data-i18n="s3.use3">Pie de p&aacute;gina, fondos profundos</div>
                     </div>
                 </div>
                 <div class="color-card">
@@ -556,9 +569,9 @@
                         <span class="copy-hex">#A89060</span>
                     </div>
                     <div class="color-info">
-                        <div class="color-name">Dorado Principal</div>
+                        <div class="color-name" data-i18n="s3.name4">Dorado Principal</div>
                         <div class="color-hex">rgb(168, 144, 96)</div>
-                        <div class="color-use">Botones, acentos, destacados, enlaces</div>
+                        <div class="color-use" data-i18n="s3.use4">Botones, acentos, destacados, enlaces</div>
                     </div>
                 </div>
                 <div class="color-card">
@@ -566,9 +579,9 @@
                         <span class="copy-hex">#BDA87A</span>
                     </div>
                     <div class="color-info">
-                        <div class="color-name">Dorado Claro</div>
+                        <div class="color-name" data-i18n="s3.name5">Dorado Claro</div>
                         <div class="color-hex">rgb(189, 168, 122)</div>
-                        <div class="color-use">Dorado hover, acento secundario</div>
+                        <div class="color-use" data-i18n="s3.use5">Dorado hover, acento secundario</div>
                     </div>
                 </div>
                 <div class="color-card">
@@ -576,9 +589,9 @@
                         <span class="copy-hex">#F4F6FA</span>
                     </div>
                     <div class="color-info">
-                        <div class="color-name">Fondo Claro</div>
+                        <div class="color-name" data-i18n="s3.name6">Fondo Claro</div>
                         <div class="color-hex">rgb(244, 246, 250)</div>
-                        <div class="color-use">Fondo de p&aacute;gina, relleno de tarjetas</div>
+                        <div class="color-use" data-i18n="s3.use6">Fondo de p&aacute;gina, relleno de tarjetas</div>
                     </div>
                 </div>
             </div>
@@ -588,14 +601,14 @@
         <div class="section">
             <div class="section-header">
                 <div class="section-number">4</div>
-                <div class="section-title">Tipograf&iacute;a</div>
+                <div class="section-title" data-i18n="s4.title">Tipograf&iacute;a</div>
             </div>
-            <p class="section-desc">Dos tipograf&iacute;as — una serif refinada para t&iacute;tulos y una sans-serif limpia para todo lo dem&aacute;s.</p>
+            <p class="section-desc" data-i18n="s4.desc">Dos tipograf&iacute;as — una serif refinada para t&iacute;tulos y una sans-serif limpia para todo lo dem&aacute;s.</p>
 
             <div class="type-card">
-                <div class="type-label">T&iacute;tulos &mdash; DM Serif Display</div>
-                <div class="type-heading-demo" style="font-size:32px; margin-bottom:8px;">Tu Comunidad. Nuestro Compromiso.</div>
-                <div class="type-heading-demo" style="font-size:20px; color:#666;">Usado para t&iacute;tulos de p&aacute;gina, encabezados de secci&oacute;n y texto destacado</div>
+                <div class="type-label" data-i18n="s4.heading_label">T&iacute;tulos &mdash; DM Serif Display</div>
+                <div class="type-heading-demo" style="font-size:32px; margin-bottom:8px;" data-i18n="s4.heading_demo">Tu Comunidad. Nuestro Compromiso.</div>
+                <div class="type-heading-demo" style="font-size:20px; color:#666;" data-i18n="s4.heading_use">Usado para t&iacute;tulos de p&aacute;gina, encabezados de secci&oacute;n y texto destacado</div>
                 <div class="type-specimens">
                     <div class="type-specimen">
                         <div class="type-heading-demo" style="font-size:36px;">Aa</div>
@@ -606,13 +619,13 @@
                         <div class="weight">Italic 400</div>
                     </div>
                 </div>
-                <a href="https://fonts.google.com/specimen/DM+Serif+Display" target="_blank" style="display:inline-block;margin-top:12px;font-size:12px;color:#A89060;font-weight:600;text-decoration:none;">Instalar Fuente &darr;</a>
+                <a href="https://fonts.google.com/specimen/DM+Serif+Display" target="_blank" style="display:inline-block;margin-top:12px;font-size:12px;color:#A89060;font-weight:600;text-decoration:none;" data-i18n="s4.install">Instalar Fuente &darr;</a>
             </div>
 
             <div class="type-card">
-                <div class="type-label">Cuerpo &mdash; Sora</div>
-                <div class="type-body-demo" style="font-size:16px; margin-bottom:8px;">Administraci&oacute;n integral de asociaciones HOA y condominios con m&aacute;s de 20 a&ntilde;os de experiencia dedicada protegiendo y mejorando su inversi&oacute;n inmobiliaria.</div>
-                <div class="type-body-demo" style="font-size:13px; color:#999;">Usado para p&aacute;rrafos, etiquetas, botones, navegaci&oacute;n y elementos de interfaz</div>
+                <div class="type-label" data-i18n="s4.body_label">Cuerpo &mdash; Sora</div>
+                <div class="type-body-demo" style="font-size:16px; margin-bottom:8px;" data-i18n="s4.body_demo">Administraci&oacute;n integral de asociaciones HOA y condominios con m&aacute;s de 20 a&ntilde;os de experiencia dedicada protegiendo y mejorando su inversi&oacute;n inmobiliaria.</div>
+                <div class="type-body-demo" style="font-size:13px; color:#999;" data-i18n="s4.body_use">Usado para p&aacute;rrafos, etiquetas, botones, navegaci&oacute;n y elementos de interfaz</div>
                 <div class="type-specimens">
                     <div class="type-specimen">
                         <div style="font-size:24px; font-weight:300;">Aa</div>
@@ -631,78 +644,78 @@
                         <div class="weight">Bold 700</div>
                     </div>
                 </div>
-                <a href="https://fonts.google.com/specimen/Sora" target="_blank" style="display:inline-block;margin-top:12px;font-size:12px;color:#A89060;font-weight:600;text-decoration:none;">Instalar Fuente &darr;</a>
+                <a href="https://fonts.google.com/specimen/Sora" target="_blank" style="display:inline-block;margin-top:12px;font-size:12px;color:#A89060;font-weight:600;text-decoration:none;" data-i18n="s4.install">Instalar Fuente &darr;</a>
             </div>
-            <p style="color:#999; font-size:12px; margin-top:12px;">Instala estas fuentes en tu computadora para que las plantillas de Word se muestren correctamente.</p>
+            <p style="color:#999; font-size:12px; margin-top:12px;" data-i18n="s4.note">Instala estas fuentes en tu computadora para que las plantillas de Word se muestren correctamente.</p>
         </div>
 
         <!-- ========== 5. EXCEL TEMPLATES ========== -->
         <div class="section">
             <div class="section-header">
                 <div class="section-number">5</div>
-                <div class="section-title">Hojas de C&aacute;lculo Excel</div>
+                <div class="section-title" data-i18n="s5.title">Hojas de C&aacute;lculo Excel</div>
             </div>
-            <p class="section-desc">Plantillas de Excel con marca para finanzas, seguimiento y registros.</p>
+            <p class="section-desc" data-i18n="s5.desc">Plantillas de Excel con marca para finanzas, seguimiento y registros.</p>
             <div class="template-grid">
                 <a class="template-card" href="ASPMG-Annual-Budget.xlsx" download>
                     <div class="template-preview">
                         <img src="previews/annual-budget.png" alt="Annual Budget Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128200;</div>
-                    <h3>Presupuesto Anual</h3>
-                    <p>Categor&iacute;as de ingresos y gastos con columnas mensuales/anuales y contribuciones de reserva</p>
-                    <span class="link">Descargar .xlsx &darr;</span>
+                    <h3 data-i18n="s5.e1_name">Presupuesto Anual</h3>
+                    <p data-i18n="s5.e1_desc">Categor&iacute;as de ingresos y gastos con columnas mensuales/anuales y contribuciones de reserva</p>
+                    <span class="link" data-i18n="s5.link_xlsx">Descargar .xlsx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Financial-Report.xlsx" download>
                     <div class="template-preview">
                         <img src="previews/financial-report.png" alt="Financial Report Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128202;</div>
-                    <h3>Informe Financiero Mensual</h3>
-                    <p>Presupuesto vs real, KPIs, antig&uuml;edad de cuentas por cobrar y notas del administrador</p>
-                    <span class="link">Descargar .xlsx &darr;</span>
+                    <h3 data-i18n="s5.e2_name">Informe Financiero Mensual</h3>
+                    <p data-i18n="s5.e2_desc">Presupuesto vs real, KPIs, antig&uuml;edad de cuentas por cobrar y notas del administrador</p>
+                    <span class="link" data-i18n="s5.link_xlsx">Descargar .xlsx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Work-Order-Log.xlsx" download>
                     <div class="template-preview">
                         <img src="previews/work-order-log.png" alt="Work Order Log Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128295;</div>
-                    <h3>Registro de &Oacute;rdenes de Trabajo</h3>
-                    <p>Seguimiento de solicitudes de mantenimiento con proveedor, estado, costo y fecha de terminaci&oacute;n</p>
-                    <span class="link">Descargar .xlsx &darr;</span>
+                    <h3 data-i18n="s5.e3_name">Registro de &Oacute;rdenes de Trabajo</h3>
+                    <p data-i18n="s5.e3_desc">Seguimiento de solicitudes de mantenimiento con proveedor, estado, costo y fecha de terminaci&oacute;n</p>
+                    <span class="link" data-i18n="s5.link_xlsx">Descargar .xlsx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Inspection-Checklist.xlsx" download>
                     <div class="template-preview">
                         <img src="previews/inspection-checklist.png" alt="Inspection Checklist Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128269;</div>
-                    <h3>Lista de Inspecci&oacute;n</h3>
-                    <p>Exterior del edificio, jardines, &aacute;reas comunes y recorrido de seguridad contra incendios</p>
-                    <span class="link">Descargar .xlsx &darr;</span>
+                    <h3 data-i18n="s5.e4_name">Lista de Inspecci&oacute;n</h3>
+                    <p data-i18n="s5.e4_desc">Exterior del edificio, jardines, &aacute;reas comunes y recorrido de seguridad contra incendios</p>
+                    <span class="link" data-i18n="s5.link_xlsx">Descargar .xlsx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Community-Directory.xlsx" download>
                     <div class="template-preview">
                         <img src="previews/community-directory.png" alt="Community Directory Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128101;</div>
-                    <h3>Directorio de la Comunidad</h3>
-                    <p>Contactos de propietarios/inquilinos, n&uacute;meros de unidad, correos y estado de ocupaci&oacute;n</p>
-                    <span class="link">Descargar .xlsx &darr;</span>
+                    <h3 data-i18n="s5.e5_name">Directorio de la Comunidad</h3>
+                    <p data-i18n="s5.e5_desc">Contactos de propietarios/inquilinos, n&uacute;meros de unidad, correos y estado de ocupaci&oacute;n</p>
+                    <span class="link" data-i18n="s5.link_xlsx">Descargar .xlsx &darr;</span>
                 </a>
                 <a class="template-card" href="ASPMG-Vendor-List.xlsx" download>
                     <div class="template-preview">
                         <img src="previews/vendor-list.png" alt="Vendor List Preview">
-                        <div class="preview-label">Vista previa</div>
+                        <div class="preview-label" data-i18n="s2.preview">Vista previa</div>
                     </div>
                     <div class="template-icon">&#128188;</div>
-                    <h3>Lista de Proveedores</h3>
-                    <p>Contratistas aprobados con informaci&oacute;n de contacto, categor&iacute;a, licencia y seguro</p>
-                    <span class="link">Descargar .xlsx &darr;</span>
+                    <h3 data-i18n="s5.e6_name">Lista de Proveedores</h3>
+                    <p data-i18n="s5.e6_desc">Contratistas aprobados con informaci&oacute;n de contacto, categor&iacute;a, licencia y seguro</p>
+                    <span class="link" data-i18n="s5.link_xlsx">Descargar .xlsx &darr;</span>
                 </a>
             </div>
         </div>
@@ -711,27 +724,27 @@
         <div class="section">
             <div class="section-header">
                 <div class="section-number">6</div>
-                <div class="section-title">Generador de Firma</div>
+                <div class="section-title" data-i18n="s6.title">Generador de Firma</div>
             </div>
-            <p class="section-desc">Escribe tu nombre y cargo para generar tu firma de correo profesional.</p>
+            <p class="section-desc" data-i18n="s6.desc">Escribe tu nombre y cargo para generar tu firma de correo profesional.</p>
 
             <div class="sig-form">
                 <div>
-                    <label for="sigName">Nombre</label>
-                    <input type="text" id="sigName" placeholder="Norys Hernandez">
+                    <label for="sigName" data-i18n="s6.name_label">Nombre</label>
+                    <input type="text" id="sigName" placeholder="Tu Nombre">
                 </div>
                 <div>
-                    <label for="sigTitle">Cargo</label>
-                    <input type="text" id="sigTitle" placeholder="Property Manager">
+                    <label for="sigTitle" data-i18n="s6.title_label">Cargo</label>
+                    <input type="text" id="sigTitle" placeholder="Tu Cargo">
                 </div>
             </div>
 
             <div class="sig-preview-wrap">
-                <div class="sig-preview-label">Vista Previa</div>
+                <div class="sig-preview-label" data-i18n="s6.preview">Vista Previa</div>
                 <div id="sigPreview"></div>
             </div>
 
-            <button class="sig-copy-btn" id="sigCopyBtn">&#128203; Copiar HTML</button>
+            <button class="sig-copy-btn" id="sigCopyBtn" data-i18n="s6.copy">&#128203; Copiar HTML</button>
         </div>
 
         </div><!-- /sections-grid -->
@@ -739,37 +752,250 @@
         <!-- ========== CONTACT FOOTER ========== -->
         <div class="contact-card">
             <div>
-                <h3>&iquest;Necesitas Recursos de Marca?</h3>
-                <p>Contacta la oficina para formatos adicionales o materiales personalizados.</p>
+                <h3 data-i18n="contact.title">&iquest;Necesitas Recursos de Marca?</h3>
+                <p data-i18n="contact.desc">Contacta la oficina para formatos adicionales o materiales personalizados.</p>
             </div>
             <div class="contact-info">
-                <div><strong>Phone</strong> (305) 661-8400</div>
-                <div><strong>Email</strong> info@aspmg.com</div>
-                <div><strong>Web</strong> aspmg.com</div>
+                <div><strong data-i18n="contact.phone_label">Phone</strong> (305) 661-8400</div>
+                <div><strong data-i18n="contact.email_label">Email</strong> info@aspmg.com</div>
+                <div><strong data-i18n="contact.web_label">Web</strong> aspmg.com</div>
             </div>
         </div>
 
     </div>
 
-    <div class="copy-toast" id="copyToast">&iexcl;Copiado!</div>
+    <div class="copy-toast" id="copyToast"></div>
 
     <script>
-    /* ---- Signature Generator ---- */
-    var sigName = document.getElementById('sigName');
-    var sigTitle = document.getElementById('sigTitle');
+    /* ============================================================
+       LANGUAGE TOGGLE — default: Spanish (es)
+    ============================================================ */
+    var currentLang = 'es';
+
+    var translations = {
+        es: {
+            'hero.subtitle':      'Manual de Marca y Recursos',
+            's1.title':           'Descargar Logos',
+            's1.desc':            'PNG con fondo transparente. Haz clic para descargar.',
+            's1.name1':           'Web Pequeño',
+            's1.meta1':           '200px · Correos, Firmas',
+            's1.name2':           'Web Estándar',
+            's1.meta2':           '400px · Encabezados, Pies de página',
+            's1.name3':           'Web Grande',
+            's1.meta3':           '800px · Presentaciones, Banners',
+            's1.name4':           'Impresión Alta Res',
+            's1.meta4':           '1200px · Membretes, Letreros',
+            's1.name5':           'Impresión Completa',
+            's1.meta5':           'Original · Gran Formato',
+            's1.name6':           'Icono / Avatar',
+            's1.meta6':           '512px · Redes Sociales, Perfiles',
+            's1.dl':              'Descargar',
+            's2.title':           'Plantillas de Documentos',
+            's2.desc':            'Descarga cualquier plantilla de Word, completa los campos y guarda o imprime.',
+            's2.preview':         'Vista previa',
+            's2.t1_name':         'Membrete',
+            's2.t1_desc':         'Limpio, compatible con B&N — logo + encabezado de texto para impresión diaria',
+            's2.t2_name':         'Membrete — Elegante',
+            's2.t2_desc':         'Encabezado azul marino a todo color con barra dorada para impresión a color',
+            's2.t3_name':         'Memo Comunitario',
+            's2.t3_desc':         'Limpio, compatible con B&N — logo + texto para impresión diaria',
+            's2.t4_name':         'Memo Comunitario — Elegante',
+            's2.t4_desc':         'Encabezado azul marino a todo color con barra dorada para impresión a color',
+            's2.t5_name':         'Aviso de Reunión',
+            's2.t5_desc':         'Agendas de junta directiva, reuniones anuales y sesiones especiales',
+            's2.t6_name':         'Aviso de Violación',
+            's2.t6_desc':         'Violaciones de propiedad, avisos de cumplimiento y cartas de multa',
+            's2.t7_name':         'Factura / Estado de Cuenta',
+            's2.t7_desc':         'Estados de cuenta, facturas de cuotas y resúmenes de pago',
+            's2.link_docx':       'Descargar .docx ↓',
+            's3.title':           'Colores de Marca',
+            's3.desc':            'Nuestra paleta refleja confianza, profesionalismo y la elegancia del Sur de la Florida.',
+            's3.name1':           'Azul Marino Principal',
+            's3.use1':            'Encabezados, navegación, texto, fondos oscuros',
+            's3.name2':           'Azul Marino Claro',
+            's3.use2':            'Estados hover, degradados, acentos',
+            's3.name3':           'Azul Marino Oscuro',
+            's3.use3':            'Pie de página, fondos profundos',
+            's3.name4':           'Dorado Principal',
+            's3.use4':            'Botones, acentos, destacados, enlaces',
+            's3.name5':           'Dorado Claro',
+            's3.use5':            'Dorado hover, acento secundario',
+            's3.name6':           'Fondo Claro',
+            's3.use6':            'Fondo de página, relleno de tarjetas',
+            's4.title':           'Tipografía',
+            's4.desc':            'Dos tipografías — una serif refinada para títulos y una sans-serif limpia para todo lo demás.',
+            's4.heading_label':   'Títulos — DM Serif Display',
+            's4.heading_demo':    'Tu Comunidad. Nuestro Compromiso.',
+            's4.heading_use':     'Usado para títulos de página, encabezados de sección y texto destacado',
+            's4.body_label':      'Cuerpo — Sora',
+            's4.body_demo':       'Administración integral de asociaciones HOA y condominios con más de 20 años de experiencia dedicada protegiendo y mejorando su inversión inmobiliaria.',
+            's4.body_use':        'Usado para párrafos, etiquetas, botones, navegación y elementos de interfaz',
+            's4.install':         'Instalar Fuente ↓',
+            's4.note':            'Instala estas fuentes en tu computadora para que las plantillas de Word se muestren correctamente.',
+            's5.title':           'Hojas de Cálculo Excel',
+            's5.desc':            'Plantillas de Excel con marca para finanzas, seguimiento y registros.',
+            's5.e1_name':         'Presupuesto Anual',
+            's5.e1_desc':         'Categorías de ingresos y gastos con columnas mensuales/anuales y contribuciones de reserva',
+            's5.e2_name':         'Informe Financiero Mensual',
+            's5.e2_desc':         'Presupuesto vs real, KPIs, antigüedad de cuentas por cobrar y notas del administrador',
+            's5.e3_name':         'Registro de Órdenes de Trabajo',
+            's5.e3_desc':         'Seguimiento de solicitudes de mantenimiento con proveedor, estado, costo y fecha de terminación',
+            's5.e4_name':         'Lista de Inspección',
+            's5.e4_desc':         'Exterior del edificio, jardines, áreas comunes y recorrido de seguridad contra incendios',
+            's5.e5_name':         'Directorio de la Comunidad',
+            's5.e5_desc':         'Contactos de propietarios/inquilinos, números de unidad, correos y estado de ocupación',
+            's5.e6_name':         'Lista de Proveedores',
+            's5.e6_desc':         'Contratistas aprobados con información de contacto, categoría, licencia y seguro',
+            's5.link_xlsx':       'Descargar .xlsx ↓',
+            's6.title':           'Generador de Firma',
+            's6.desc':            'Escribe tu nombre y cargo para generar tu firma de correo profesional.',
+            's6.name_label':      'Nombre',
+            's6.title_label':     'Cargo',
+            's6.preview':         'Vista Previa',
+            's6.copy':            '📋 Copiar HTML',
+            'contact.title':      '¿Necesitas Recursos de Marca?',
+            'contact.desc':       'Contacta la oficina para formatos adicionales o materiales personalizados.',
+            'contact.phone_label':'Phone',
+            'contact.email_label':'Email',
+            'contact.web_label':  'Web',
+            'toast_copied':       '¡copiado!',
+            'toast_sig':          '¡Firma copiada!',
+            'sig_name_placeholder':'Tu Nombre',
+            'sig_title_placeholder':'Tu Cargo'
+        },
+        en: {
+            'hero.subtitle':      'Brand Manual & Resources',
+            's1.title':           'Download Logos',
+            's1.desc':            'PNG with transparent background. Click to download.',
+            's1.name1':           'Web Small',
+            's1.meta1':           '200px · Emails, Signatures',
+            's1.name2':           'Web Standard',
+            's1.meta2':           '400px · Headers, Footers',
+            's1.name3':           'Web Large',
+            's1.meta3':           '800px · Presentations, Banners',
+            's1.name4':           'Print High-Res',
+            's1.meta4':           '1200px · Letterheads, Signs',
+            's1.name5':           'Print Full',
+            's1.meta5':           'Original · Large Format',
+            's1.name6':           'Icon / Avatar',
+            's1.meta6':           '512px · Social Media, Profiles',
+            's1.dl':              'Download',
+            's2.title':           'Document Templates',
+            's2.desc':            'Download any Word template, fill in the fields and save or print.',
+            's2.preview':         'Preview',
+            's2.t1_name':         'Letterhead',
+            's2.t1_desc':         'Clean, B&W compatible — logo + text header for daily printing',
+            's2.t2_name':         'Letterhead — Elegant',
+            's2.t2_desc':         'Full-color navy header with gold bar for color printing',
+            's2.t3_name':         'Community Memo',
+            's2.t3_desc':         'Clean, B&W compatible — logo + text for daily printing',
+            's2.t4_name':         'Community Memo — Elegant',
+            's2.t4_desc':         'Full-color navy header with gold bar for color printing',
+            's2.t5_name':         'Meeting Notice',
+            's2.t5_desc':         'Board agendas, annual meetings and special sessions',
+            's2.t6_name':         'Violation Notice',
+            's2.t6_desc':         'Property violations, compliance notices and fine letters',
+            's2.t7_name':         'Invoice / Statement',
+            's2.t7_desc':         'Statements, fee invoices and payment summaries',
+            's2.link_docx':       'Download .docx ↓',
+            's3.title':           'Brand Colors',
+            's3.desc':            'Our palette reflects trust, professionalism and South Florida elegance.',
+            's3.name1':           'Navy Primary',
+            's3.use1':            'Headers, navigation, text, dark backgrounds',
+            's3.name2':           'Navy Light',
+            's3.use2':            'Hover states, gradients, accents',
+            's3.name3':           'Navy Dark',
+            's3.use3':            'Footer, deep backgrounds',
+            's3.name4':           'Gold Primary',
+            's3.use4':            'Buttons, accents, highlights, links',
+            's3.name5':           'Gold Light',
+            's3.use5':            'Gold hover, secondary accent',
+            's3.name6':           'Light Background',
+            's3.use6':            'Page background, card fills',
+            's4.title':           'Typography',
+            's4.desc':            'Two typefaces — a refined serif for headings and a clean sans-serif for everything else.',
+            's4.heading_label':   'Headings — DM Serif Display',
+            's4.heading_demo':    'Your Community. Our Commitment.',
+            's4.heading_use':     'Used for page titles, section headings and featured text',
+            's4.body_label':      'Body — Sora',
+            's4.body_demo':       'Full-service HOA and condominium association management with 20+ years of dedicated experience protecting and enhancing your property investment.',
+            's4.body_use':        'Used for paragraphs, labels, buttons, navigation and UI elements',
+            's4.install':         'Install Font ↓',
+            's4.note':            'Install these fonts on your computer so Word templates display correctly.',
+            's5.title':           'Excel Spreadsheets',
+            's5.desc':            'Branded Excel templates for finance, tracking and records.',
+            's5.e1_name':         'Annual Budget',
+            's5.e1_desc':         'Revenue and expense categories with monthly/annual columns and reserve contributions',
+            's5.e2_name':         'Monthly Financial Report',
+            's5.e2_desc':         'Budget vs actual, KPIs, accounts receivable aging and manager notes',
+            's5.e3_name':         'Work Order Log',
+            's5.e3_desc':         'Maintenance request tracking with vendor, status, cost and completion date',
+            's5.e4_name':         'Inspection Checklist',
+            's5.e4_desc':         'Building exterior, landscaping, common areas and fire safety walkthrough',
+            's5.e5_name':         'Community Directory',
+            's5.e5_desc':         'Owner/tenant contacts, unit numbers, emails and occupancy status',
+            's5.e6_name':         'Vendor List',
+            's5.e6_desc':         'Approved contractors with contact info, category, license and insurance',
+            's5.link_xlsx':       'Download .xlsx ↓',
+            's6.title':           'Signature Generator',
+            's6.desc':            'Enter your name and title to generate your professional email signature.',
+            's6.name_label':      'Name',
+            's6.title_label':     'Title',
+            's6.preview':         'Preview',
+            's6.copy':            '📋 Copy HTML',
+            'contact.title':      'Need Brand Resources?',
+            'contact.desc':       'Contact the office for additional formats or custom materials.',
+            'contact.phone_label':'Phone',
+            'contact.email_label':'Email',
+            'contact.web_label':  'Web',
+            'toast_copied':       'copied!',
+            'toast_sig':          'Signature copied!',
+            'sig_name_placeholder':'Your Name',
+            'sig_title_placeholder':'Your Title'
+        }
+    };
+
+    function applyLanguage(lang) {
+        var t = translations[lang];
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) {
+                el.textContent = t[key];
+            }
+        });
+        /* Update signature input placeholders */
+        document.getElementById('sigName').placeholder  = t['sig_name_placeholder'];
+        document.getElementById('sigTitle').placeholder = t['sig_title_placeholder'];
+        /* Update html lang attribute */
+        document.documentElement.lang = lang;
+        /* Update button label — shows the OTHER language */
+        document.getElementById('langToggle').textContent = (lang === 'es') ? 'EN' : 'ES';
+    }
+
+    document.getElementById('langToggle').addEventListener('click', function() {
+        currentLang = (currentLang === 'es') ? 'en' : 'es';
+        applyLanguage(currentLang);
+    });
+
+    /* ============================================================
+       SIGNATURE GENERATOR
+    ============================================================ */
+    var sigName    = document.getElementById('sigName');
+    var sigTitle   = document.getElementById('sigTitle');
     var sigPreview = document.getElementById('sigPreview');
     var sigCopyBtn = document.getElementById('sigCopyBtn');
 
     function buildSigHTML(name, title) {
-        var n = name || 'Tu Nombre';
-        var t = title || 'Tu Cargo';
+        var t = translations[currentLang];
+        var n = name  || t['sig_name_placeholder'];
+        var ti = title || t['sig_title_placeholder'];
         return '<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#333333;line-height:1.4;">'
             + '<tr><td style="padding-bottom:10px;">'
             + '<a href="https://aspmg.com" target="_blank">'
             + '<img src="https://aspmg.com/img/logo.png" alt="ASPMG" width="60" style="display:block;border:0;" />'
             + '</a></td></tr>'
             + '<tr><td style="padding-bottom:2px;font-size:15px;font-weight:bold;color:#1B2A4A;">' + n + '</td></tr>'
-            + '<tr><td style="padding-bottom:8px;font-size:13px;color:#A89060;font-weight:600;">' + t + '</td></tr>'
+            + '<tr><td style="padding-bottom:8px;font-size:13px;color:#A89060;font-weight:600;">' + ti + '</td></tr>'
             + '<tr><td style="padding-bottom:10px;"><table cellpadding="0" cellspacing="0" border="0"><tr><td style="width:40px;height:2px;background:#A89060;"></td></tr></table></td></tr>'
             + '<tr><td style="font-size:12px;color:#555555;">Office: 305-661-8400 &nbsp;|&nbsp; <a href="https://www.aspmg.com" style="color:#A89060;text-decoration:none;">www.aspmg.com</a></td></tr>'
             + '<tr><td style="font-size:12px;color:#555555;font-weight:600;">A Solid Property Management Group, Inc.</td></tr>'
@@ -794,18 +1020,21 @@
         var item = new ClipboardItem({ 'text/html': blob, 'text/plain': new Blob([html], { type: 'text/plain' }) });
         navigator.clipboard.write([item]).then(function() {
             var toast = document.getElementById('copyToast');
-            toast.textContent = '\u00a1Firma copiada!';
+            toast.textContent = translations[currentLang]['toast_sig'];
             toast.classList.add('show');
             setTimeout(function() { toast.classList.remove('show'); }, 1500);
         });
     });
 
+    /* ============================================================
+       COLOR COPY
+    ============================================================ */
     document.querySelectorAll('.color-card').forEach(function(card) {
         card.addEventListener('click', function() {
             var hex = card.querySelector('.copy-hex').textContent.trim();
             navigator.clipboard.writeText(hex).then(function() {
                 var toast = document.getElementById('copyToast');
-                toast.textContent = hex + ' \u00a1copiado!';
+                toast.textContent = hex + ' ' + translations[currentLang]['toast_copied'];
                 toast.classList.add('show');
                 setTimeout(function() { toast.classList.remove('show'); }, 1500);
             });
