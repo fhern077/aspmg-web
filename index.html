@@ -29,9 +29,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
+    <!-- Preload critical fonts to prevent CLS from font swapping -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap">
+
     <!-- Critical CSS — above-the-fold styles inlined to eliminate render-blocking -->
     <style>
-        :root{--primary:#1B2A4A;--primary-light:#2C4270;--primary-dark:#0F1A32;--accent:#A89060;--accent-light:#BDA87A;--accent-dark:#8D764D;--dark:#1A1E2C;--body:#5A6275;--body-light:#8891A4;--muted:#C4CAD6;--light:#F4F6FA;--white:#FFFFFF;--shadow-sm:0 2px 8px rgba(27,42,74,0.06);--shadow-md:0 4px 16px rgba(27,42,74,0.08);--shadow-lg:0 8px 30px rgba(27,42,74,0.12);--shadow-gold:0 4px 20px rgba(168,144,96,0.25);--font-heading:'DM Serif Display',Georgia,serif;--font-body:'Sora','Inter',sans-serif;--section-py:clamp(80px,10vw,120px);--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--transition-fast:0.2s cubic-bezier(0.4,0,0.2,1);--transition-base:0.35s cubic-bezier(0.4,0,0.2,1)}
+        :root{--primary:#1B2A4A;--primary-light:#2C4270;--primary-dark:#0F1A32;--accent:#A89060;--accent-light:#BDA87A;--accent-dark:#8D764D;--dark:#1A1E2C;--body:#5A6275;--body-light:#8891A4;--muted:#C4CAD6;--light:#F4F6FA;--white:#FFFFFF;--shadow-sm:0 2px 8px rgba(27,42,74,0.06);--shadow-md:0 4px 16px rgba(27,42,74,0.08);--shadow-lg:0 8px 30px rgba(27,42,74,0.12);--shadow-gold:0 4px 20px rgba(168,144,96,0.25);--font-heading:'DM Serif Display','DM Serif Display Fallback',Georgia,serif;--font-body:'Sora','Sora Fallback','Inter',sans-serif;--section-py:clamp(80px,10vw,120px);--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--transition-fast:0.2s cubic-bezier(0.4,0,0.2,1);--transition-base:0.35s cubic-bezier(0.4,0,0.2,1)}
+        @font-face{font-family:'DM Serif Display Fallback';src:local('Georgia');size-adjust:105%;ascent-override:90%;descent-override:25%;line-gap-override:0%}
+        @font-face{font-family:'Sora Fallback';src:local('Arial');size-adjust:100%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
         *,*::before,*::after{box-sizing:border-box}
         html{scroll-behavior:smooth;scroll-padding-top:120px;overflow-x:hidden}
         body{margin:0;font-family:var(--font-body);font-size:16px;line-height:1.75;color:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -86,14 +92,15 @@
         @media(max-width:767.98px){.hero{min-height:auto;padding-top:60px;padding-bottom:40px;background-attachment:scroll}.hero .container{text-align:center}.hero .display-3{font-size:2rem}.hero .lead{font-size:.95rem;max-width:100%!important;margin-left:auto;margin-right:auto}.hero .d-flex.flex-wrap{flex-direction:column;align-items:center}.hero .btn-lg{width:100%;text-align:center}}
     </style>
 
+    <!-- Preload boxicons font to prevent navbar CLS -->
+    <link rel="preload" href="fonts/boxicons.woff2" as="font" type="font/woff2" crossorigin>
+
     <!-- Deferred stylesheets — loaded asynchronously to avoid render-blocking -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/boxicons.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/boxicons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
