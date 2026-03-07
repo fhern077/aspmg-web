@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPMG - Memo</title>
+    <style>
+        @page { size: letter; margin: 0.75in 1in; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; color: #000; line-height: 1.5; background: #fff; }
+        .page { width: 8.5in; min-height: 11in; margin: 0 auto; padding: 0.75in 1in; display: flex; flex-direction: column; }
+
+        .letterhead { display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 2px solid #000; margin-bottom: 24px; }
+        .letterhead-left { display: flex; align-items: center; gap: 12px; }
+        .letterhead-logo { width: 44px; }
+        .letterhead-brand { font-size: 18pt; font-weight: 700; letter-spacing: 2px; color: #000; }
+        .letterhead-sub { font-size: 8pt; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 400; }
+        .letterhead-right { text-align: right; font-size: 9pt; color: #444; line-height: 1.6; }
+
+        .memo-heading { text-align: center; font-size: 14pt; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+
+        .meta-table { width: 100%; margin-bottom: 20px; border-collapse: collapse; }
+        .meta-table td { padding: 4px 0; font-size: 11pt; vertical-align: top; }
+        .meta-table .meta-label { font-weight: 700; width: 120px; padding-right: 12px; }
+        .meta-table .meta-sep { width: 1px; border-right: 2px solid #000; padding: 4px 16px 4px 0; }
+
+        .rule { border: none; border-top: 1px solid #000; margin: 4px 0 20px; }
+
+        .content { flex: 1; }
+
+        .lang-label { font-size: 10pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #999; padding-bottom: 3px; margin-bottom: 12px; color: #333; }
+
+        .memo-text { font-size: 12pt; line-height: 1.6; margin-bottom: 14px; }
+        .memo-text p { margin-bottom: 12px; text-align: justify; }
+        .memo-text p:last-child { margin-bottom: 0; }
+
+        .action-list { margin: 12px 0 14px 24px; }
+        .action-list li { margin-bottom: 4px; font-size: 11pt; }
+
+        .lang-break { border: none; border-top: 1px dashed #999; margin: 22px 0; }
+
+        .signature { margin-top: 36px; }
+        .sig-closing { font-size: 12pt; margin-bottom: 36px; }
+        .sig-rule { width: 280px; border-top: 1px solid #000; padding-top: 6px; }
+        .sig-name { font-size: 12pt; font-weight: 700; }
+        .sig-title { font-size: 10pt; color: #444; }
+        .sig-behalf { font-size: 10pt; color: #444; margin-top: 2px; }
+
+        .page-footer { border-top: 1px solid #000; padding-top: 8px; margin-top: auto; display: flex; justify-content: space-between; font-size: 8pt; color: #666; }
+
+        @media print { body { background: none; } .page { margin: 0; padding: 0.75in 1in; box-shadow: none; } }
+        @media screen { body { background: #E8E8E8; padding: 20px 0; } .page { box-shadow: 0 2px 20px rgba(0,0,0,0.15); margin: 20px auto; } }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="letterhead">
+            <div class="letterhead-left">
+                <img class="letterhead-logo" src="../img/logo.png" alt="ASPMG">
+                <div>
+                    <div class="letterhead-brand">ASPMG</div>
+                    <div class="letterhead-sub">A Solid Property Management Group</div>
+                </div>
+            </div>
+            <div class="letterhead-right">
+                85 Grand Canal Dr, Unit 201<br>
+                Miami, FL 33144<br>
+                (305) 661-8400 &nbsp;|&nbsp; info@aspmg.com
+            </div>
+        </div>
+
+        <div class="memo-heading">Memorandum / Memorando</div>
+
+        <table class="meta-table">
+            <tr>
+                <td class="meta-label">FROM / DE:</td>
+                <td>ASPMG &mdash; On Behalf of the Board / En Nombre de la Junta Directiva</td>
+            </tr>
+            <tr>
+                <td class="meta-label">TO / PARA:</td>
+                <td>All Residents &amp; Unit Owners / Todos los Residentes y Propietarios</td>
+            </tr>
+            <tr>
+                <td class="meta-label">DATE / FECHA:</td>
+                <td>[Month Day, Year]</td>
+            </tr>
+            <tr>
+                <td class="meta-label">ASSOCIATION:</td>
+                <td>[Association Name]</td>
+            </tr>
+            <tr>
+                <td class="meta-label">RE / ASUNTO:</td>
+                <td>[Subject of Memo]</td>
+            </tr>
+        </table>
+
+        <hr class="rule">
+
+        <div class="content">
+
+            <!-- ——— ENGLISH ——— -->
+            <div class="lang-label">English</div>
+            <div class="memo-text">
+                <p>Dear Residents,</p>
+                <p>[Opening paragraph — state the purpose of the memo clearly. For example: The Board of Directors would like to inform you of important updates regarding your community.]</p>
+                <p>[Body paragraph — provide additional details, context, or explanation. Include dates, deadlines, or relevant background information as needed.]</p>
+                <p>[Closing paragraph — summarize any required actions and express appreciation for cooperation.]</p>
+            </div>
+
+            <p style="font-size:11pt; font-weight:700; margin-bottom:6px;">Action Required:</p>
+            <ul class="action-list">
+                <li>[Action item or key takeaway]</li>
+                <li>[Action item or key takeaway]</li>
+                <li>[Action item or key takeaway]</li>
+            </ul>
+
+            <hr class="lang-break">
+
+            <!-- ——— SPANISH ——— -->
+            <div class="lang-label">Espa&ntilde;ol</div>
+            <div class="memo-text">
+                <p>Estimados Residentes,</p>
+                <p>[P&aacute;rrafo de apertura &mdash; indique el prop&oacute;sito del memorando de manera clara. Por ejemplo: La Junta Directiva desea informarles sobre actualizaciones importantes relacionadas con su comunidad.]</p>
+                <p>[P&aacute;rrafo del cuerpo &mdash; proporcione detalles adicionales, contexto o explicaciones. Incluya fechas, plazos o informaci&oacute;n relevante seg&uacute;n sea necesario.]</p>
+                <p>[P&aacute;rrafo de cierre &mdash; resuma las acciones requeridas y exprese agradecimiento por la cooperaci&oacute;n.]</p>
+            </div>
+
+            <p style="font-size:11pt; font-weight:700; margin-bottom:6px;">Acci&oacute;n Requerida:</p>
+            <ul class="action-list">
+                <li>[Punto de acci&oacute;n o informaci&oacute;n clave]</li>
+                <li>[Punto de acci&oacute;n o informaci&oacute;n clave]</li>
+                <li>[Punto de acci&oacute;n o informaci&oacute;n clave]</li>
+            </ul>
+
+            <!-- ——— SIGNATURE (shared) ——— -->
+            <div class="signature">
+                <div class="sig-closing">Respectfully / Respetuosamente,</div>
+                <div class="sig-rule">
+                    <div class="sig-name">[Manager Name]</div>
+                    <div class="sig-title">Property Manager &mdash; ASPMG</div>
+                    <div class="sig-behalf">On Behalf of the Board of Directors / En Nombre de la Junta Directiva, [Association Name]</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>85 Grand Canal Dr, Unit 201, Miami, FL 33144</span>
+            <span>aspmg.com &nbsp;|&nbsp; (305) 661-8400</span>
+        </div>
+    </div>
+</body>
+</html>
