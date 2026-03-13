@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPMG — Dadeland Walk Association Proposal</title>
+
+    <!-- Reveal.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+
+    <!-- ASPMG Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ============================================
+           ASPMG DESIGN TOKENS
+           ============================================ */
+        :root {
+            --primary: #1B2A4A;
+            --primary-light: #2C4270;
+            --primary-dark: #0F1A32;
+            --accent: #A89060;
+            --accent-light: #BDA87A;
+            --accent-dark: #8D764D;
+            --dark: #1A1E2C;
+            --body-text: #5A6275;
+            --body-light: #6B7590;
+            --muted: #C4CAD6;
+            --light-bg: #F4F6FA;
+            --white: #FFFFFF;
+            --success: #2E7D5B;
+            --success-light: #E8F5EE;
+
+            --font-heading: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Sora', 'Inter', Arial, sans-serif;
+
+            --shadow-sm: 0 2px 8px rgba(27, 42, 74, 0.06);
+            --shadow-md: 0 4px 16px rgba(27, 42, 74, 0.08);
+            --shadow-lg: 0 8px 30px rgba(27, 42, 74, 0.12);
+            --shadow-xl: 0 16px 48px rgba(27, 42, 74, 0.16);
+            --gold-shadow: 0 4px 20px rgba(168, 144, 96, 0.25);
+
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+        }
+
+        /* ============================================
+           REVEAL.JS OVERRIDES
+           ============================================ */
+        .reveal-viewport {
+            background: var(--primary-dark) !important;
+        }
+
+        .reveal {
+            font-family: var(--font-body);
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--body-text);
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        .reveal .slides section {
+            padding: 40px 60px;
+            box-sizing: border-box;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: var(--font-heading);
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            text-transform: none;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal h1 { font-size: 2.8em; }
+        .reveal h2 { font-size: 2em; }
+        .reveal h3 { font-size: 1.5em; }
+
+        .reveal h4, .reveal h5 {
+            font-family: var(--font-body);
+            color: var(--dark);
+            font-weight: 600;
+            line-height: 1.4;
+            text-transform: none;
+        }
+
+        .reveal p {
+            line-height: 1.75;
+            margin-bottom: 1em;
+        }
+
+        .reveal strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           SLIDE BACKGROUNDS
+           ============================================ */
+        .slide-dark {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+            color: var(--white) !important;
+        }
+
+        .slide-dark h1, .slide-dark h2, .slide-dark h3,
+        .slide-dark h4, .slide-dark h5, .slide-dark strong {
+            color: var(--white) !important;
+        }
+
+        .slide-dark p, .slide-dark li, .slide-dark span {
+            color: rgba(255,255,255,0.8) !important;
+        }
+
+        .slide-light {
+            background: var(--light-bg) !important;
+        }
+
+        .slide-white {
+            background: var(--white) !important;
+        }
+
+        .slide-accent {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a3560 50%, var(--primary-dark) 100%) !important;
+            color: var(--white) !important;
+        }
+
+        .slide-accent h1, .slide-accent h2, .slide-accent h3,
+        .slide-accent h4, .slide-accent strong {
+            color: var(--accent-light) !important;
+        }
+
+        .slide-accent p, .slide-accent li, .slide-accent span {
+            color: rgba(255,255,255,0.85) !important;
+        }
+
+        /* ============================================
+           GOLD ACCENTS
+           ============================================ */
+        .gold { color: var(--accent) !important; }
+        .gold-light { color: var(--accent-light) !important; }
+
+        .gold-bar {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 2px;
+            margin: 16px 0 24px;
+        }
+
+        .gold-bar-center {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 2px;
+            margin: 16px auto 24px;
+        }
+
+        /* ============================================
+           LAYOUT UTILITIES
+           ============================================ */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .flex-center { align-items: center; justify-content: center; }
+        .flex-between { justify-content: space-between; }
+        .gap-sm { gap: 16px; }
+        .gap-md { gap: 24px; }
+        .gap-lg { gap: 40px; }
+        .gap-xl { gap: 60px; }
+        .text-center { text-align: center !important; }
+        .text-right { text-align: right; }
+        .w-full { width: 100%; }
+        .mt-auto { margin-top: auto; }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        /* ============================================
+           TITLE SLIDE
+           ============================================ */
+        .title-slide {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(168,144,96,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 80%, rgba(168,144,96,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .title-logo {
+            width: 180px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .title-slide h1 {
+            font-size: 3.2em;
+            color: var(--white) !important;
+            margin-bottom: 0.15em;
+            position: relative;
+        }
+
+        .title-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.15em;
+            font-weight: 300;
+            color: rgba(255,255,255,0.6) !important;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .title-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 0 auto 40px;
+        }
+
+        .title-for {
+            font-family: var(--font-body);
+            font-size: 0.85em;
+            font-weight: 400;
+            color: rgba(255,255,255,0.45) !important;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .title-client {
+            font-family: var(--font-heading);
+            font-size: 1.8em;
+            color: var(--accent-light) !important;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           SECTION DIVIDER SLIDES
+           ============================================ */
+        .section-divider {
+            display: flex !important;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            right: -10%;
+            top: -20%;
+            width: 60%;
+            height: 140%;
+            background: radial-gradient(ellipse, rgba(168,144,96,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .section-number {
+            font-family: var(--font-heading);
+            font-size: 6em;
+            color: rgba(168,144,96,0.15);
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+        }
+
+        .section-divider h2 {
+            font-size: 2.8em;
+            color: var(--white) !important;
+            position: relative;
+        }
+
+        .section-divider p {
+            font-size: 1.1em;
+            max-width: 600px;
+            position: relative;
+        }
+
+        /* ============================================
+           STAT CARDS
+           ============================================ */
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.8em;
+            color: var(--accent);
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-family: var(--font-body);
+            font-size: 0.75em;
+            font-weight: 600;
+            color: var(--body-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .stat-card-dark {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card-dark .stat-number {
+            color: var(--accent-light);
+        }
+
+        .stat-card-dark .stat-label {
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ============================================
+           IMAGE CARDS
+           ============================================ */
+        .img-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .img-compare-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .img-compare-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-compare-label {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: var(--font-body);
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .label-before {
+            background: rgba(27, 42, 74, 0.85);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .label-after {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* ============================================
+           FEATURE CARDS
+           ============================================ */
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-sm);
+            border-left: 3px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--accent-light);
+        }
+
+        .feature-card h5 {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.8em;
+            color: var(--body-light);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================
+           FINANCIAL TABLE
+           ============================================ */
+        .finance-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            font-size: 0.85em;
+        }
+
+        .finance-table thead {
+            background: var(--primary);
+        }
+
+        .finance-table th {
+            color: var(--white);
+            font-weight: 600;
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 0.85em;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .finance-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: var(--dark);
+        }
+
+        .finance-table tbody tr {
+            background: var(--white);
+        }
+
+        .finance-table tbody tr:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .finance-table .highlight-row {
+            background: rgba(168,144,96,0.08) !important;
+            font-weight: 600;
+        }
+
+        .finance-table .growth-positive {
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* ============================================
+           TIMELINE
+           ============================================ */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent), var(--accent-light), var(--muted));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--white);
+            box-shadow: 0 0 0 3px rgba(168,144,96,0.2);
+        }
+
+        .timeline-item h5 {
+            font-size: 0.9em;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item p {
+            font-size: 0.8em;
+            margin: 0;
+            color: var(--body-light);
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           BADGES / TAGS
+           ============================================ */
+        .badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .badge-gold {
+            background: rgba(168,144,96,0.12);
+            color: var(--accent-dark);
+        }
+
+        .badge-success {
+            background: var(--success-light);
+            color: var(--success);
+        }
+
+        .badge-navy {
+            background: rgba(27,42,74,0.08);
+            color: var(--primary);
+        }
+
+        /* ============================================
+           QUOTE / CALLOUT
+           ============================================ */
+        .callout {
+            background: rgba(168,144,96,0.06);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 20px 28px;
+            margin: 20px 0;
+        }
+
+        .callout p {
+            font-style: italic;
+            color: var(--primary);
+            font-size: 0.95em;
+            margin: 0;
+        }
+
+        .callout-dark {
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid var(--accent-light);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 20px 28px;
+            margin: 20px 0;
+        }
+
+        .callout-dark p {
+            font-style: italic;
+            color: rgba(255,255,255,0.85) !important;
+            font-size: 1em;
+            margin: 0;
+        }
+
+        /* ============================================
+           LIST STYLES
+           ============================================ */
+        .reveal ul.clean-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reveal ul.clean-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .reveal ul.clean-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* ============================================
+           PROGRESS / METER
+           ============================================ */
+        .progress-bar-container {
+            margin-bottom: 16px;
+        }
+
+        .progress-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--dark);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(0,0,0,0.06);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ============================================
+           FOOTER WATERMARK
+           ============================================ */
+        .slide-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.6em;
+            color: var(--muted);
+            opacity: 0.6;
+        }
+
+        .slide-footer-dark {
+            color: rgba(255,255,255,0.25);
+        }
+
+        .slide-footer-logo {
+            height: 24px;
+            opacity: 0.5;
+        }
+
+        .slide-footer-dark .slide-footer-logo {
+            opacity: 0.3;
+        }
+
+        /* ============================================
+           PHOTO GALLERY
+           ============================================ */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .photo-gallery-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .photo-gallery-3 img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+        }
+
+        .photo-full {
+            width: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ============================================
+           CTA SLIDE
+           ============================================ */
+        .cta-slide {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(168,144,96,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-contact {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .cta-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            padding: 16px 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-contact-item i {
+            color: var(--accent-light);
+        }
+
+        .cta-contact-item span {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.8) !important;
+        }
+
+        /* ============================================
+           INSPECTION SHOWCASE
+           ============================================ */
+        .inspection-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .inspection-card {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+        }
+
+        .inspection-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .inspection-card-body {
+            padding: 12px 16px;
+        }
+
+        .inspection-card-body p {
+            font-size: 0.7em;
+            margin: 0;
+            color: var(--body-light);
+            line-height: 1.4;
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        .reveal .slides section .fragment.fade-up {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal .slides section .fragment.fade-up.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Subtle pattern overlay for dark slides */
+        .pattern-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(168,144,96,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168,144,96,0.04) 0%, transparent 40%),
+                radial-gradient(circle at 60% 80%, rgba(44,66,112,0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 900px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr 1fr; }
+            .grid-4 { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ==========================================
+                 SLIDE 1: TITLE
+                 ========================================== -->
+            <section class="slide-dark title-slide pattern-overlay" data-transition="fade">
+                <img src="img/logo.png" alt="ASPMG" class="title-logo">
+                <p class="title-subtitle">A Solid Property Management Group</p>
+                <div class="title-divider"></div>
+                <p class="title-for">Prepared exclusively for</p>
+                <h1 class="title-client" style="color: var(--accent-light) !important;">Dadeland Walk<br>Association</h1>
+                <div style="margin-top: 50px;">
+                    <span style="font-size: 0.65em; color: rgba(255,255,255,0.35) !important; letter-spacing: 0.15em; text-transform: uppercase;">March 2026 &nbsp;&bull;&nbsp; Miami, Florida</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 2: WHO WE ARE
+                 ========================================== -->
+            <section class="slide-dark section-divider pattern-overlay" data-transition="slide">
+                <div class="section-number">01</div>
+                <h2>Who We Are</h2>
+                <div class="gold-bar"></div>
+                <p>A full-service property management firm built on transparency, technology, and financial excellence for South Florida's condominium associations.</p>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 3: AT A GLANCE
+                 ========================================== -->
+            <section class="slide-light" data-transition="slide">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <span class="badge badge-gold">Company Overview</span>
+                    <h2 style="margin-top: 12px;">ASPMG at a Glance</h2>
+                    <div class="gold-bar-center"></div>
+                </div>
+
+                <div class="grid-4" style="margin-bottom: 40px;">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years of<br>Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Associations<br>Managed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$50M+</div>
+                        <div class="stat-label">Assets Under<br>Management</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Board<br>Transparency</div>
+                    </div>
+                </div>
+
+                <div class="callout">
+                    <p>"We don't just manage properties — we transform communities through proactive financial stewardship, cutting-edge technology, and relentless attention to detail."</p>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>85 Grand Canal Dr, Suite 201 &bull; Miami, FL 33144</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 4: THE ASPMG DIFFERENCE
+                 ========================================== -->
+            <section class="slide-white" data-transition="slide" style="padding: 30px 50px;">
+                <span class="badge badge-navy">What Sets Us Apart</span>
+                <h2 style="margin-top: 8px; margin-bottom: 6px; font-size: 1.7em;">The ASPMG Difference</h2>
+                <div class="gold-bar" style="margin: 8px 0 16px;"></div>
+
+                <div class="grid-3" style="gap: 16px;">
+                    <div class="feature-card" style="padding: 18px 16px; display: flex; gap: 14px; align-items: flex-start;">
+                        <div class="feature-icon" style="width: 36px; height: 36px; min-width: 36px; margin-bottom: 0;">
+                            <i data-lucide="shield-check" style="width:18px; height:18px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.85em; margin-bottom: 4px;">Financial Stewardship</h5>
+                            <p style="font-size: 0.72em;">Growing reserves, eliminating debt, and saving over $200K on insurance — same coverage.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 18px 16px; display: flex; gap: 14px; align-items: flex-start;">
+                        <div class="feature-icon" style="width: 36px; height: 36px; min-width: 36px; margin-bottom: 0;">
+                            <i data-lucide="monitor-smartphone" style="width:18px; height:18px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.85em; margin-bottom: 4px;">Technology-Driven</h5>
+                            <p style="font-size: 0.72em;">ApplyHOA delivers real-time reporting, owner portals, and digital management.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 18px 16px; display: flex; gap: 14px; align-items: flex-start;">
+                        <div class="feature-icon" style="width: 36px; height: 36px; min-width: 36px; margin-bottom: 0;">
+                            <i data-lucide="eye" style="width:18px; height:18px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.85em; margin-bottom: 4px;">Radical Transparency</h5>
+                            <p style="font-size: 0.72em;">Photo inspection reports, itemized financials, and open-book project management.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 18px 16px; display: flex; gap: 14px; align-items: flex-start;">
+                        <div class="feature-icon" style="width: 36px; height: 36px; min-width: 36px; margin-bottom: 0;">
+                            <i data-lucide="hard-hat" style="width:18px; height:18px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.85em; margin-bottom: 4px;">Project Management</h5>
+                            <p style="font-size: 0.72em;">Roof to pool — end-to-end capital projects with before/after documentation.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 18px 16px; display: flex; gap: 14px; align-items: flex-start;">
+                        <div class="feature-icon" style="width: 36px; height: 36px; min-width: 36px; margin-bottom: 0;">
+                            <i data-lucide="clipboard-check" style="width:18px; height:18px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.85em; margin-bottom: 4px;">Proactive Inspections</h5>
+                            <p style="font-size: 0.72em;">20+ page photo reports catch issues early and track every resolution.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 18px 16px; display: flex; gap: 14px; align-items: flex-start;">
+                        <div class="feature-icon" style="width: 36px; height: 36px; min-width: 36px; margin-bottom: 0;">
+                            <i data-lucide="users" style="width:18px; height:18px;"></i>
+                        </div>
+                        <div>
+                            <h5 style="font-size: 0.85em; margin-bottom: 4px;">Bilingual Team</h5>
+                            <p style="font-size: 0.72em;">Full English/Spanish staff for clear communication with every resident.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>aspmg.com</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 5: TECHNOLOGY - APPLYHOA
+                 ========================================== -->
+            <section class="slide-dark section-divider pattern-overlay" data-transition="slide">
+                <div class="section-number">02</div>
+                <h2>Technology &amp; Innovation</h2>
+                <div class="gold-bar" style="background: linear-gradient(90deg, var(--accent-light), rgba(189,168,122,0.3));"></div>
+                <p>Powered by ApplyHOA — our proprietary platform that brings condominium management into the digital age.</p>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 6: APPLYHOA FEATURES
+                 ========================================== -->
+            <section class="slide-light" data-transition="slide" style="padding: 30px 50px;">
+                <div class="grid-2" style="gap: 30px;">
+                    <div>
+                        <span class="badge badge-gold">Powered by ApplyHOA</span>
+                        <h2 style="margin-top: 8px; margin-bottom: 6px; font-size: 1.6em;">Smart Management,<br>Real-Time Control</h2>
+                        <div class="gold-bar" style="margin: 8px 0 14px;"></div>
+                        <p style="font-size: 0.82em; margin-bottom: 14px;">Our proprietary platform built for Florida condo associations — replacing outdated paper processes with a fully digital ecosystem.</p>
+
+                        <ul class="clean-list" style="margin-top: 0;">
+                            <li style="margin-bottom: 8px; font-size: 0.82em;"><strong>Owner Portal</strong> — Payments, requests, and documents 24/7</li>
+                            <li style="margin-bottom: 8px; font-size: 0.82em;"><strong>Board Dashboard</strong> — Real-time financials, violations, project status</li>
+                            <li style="margin-bottom: 8px; font-size: 0.82em;"><strong>Digital Voting</strong> — Secure online elections and amendments</li>
+                            <li style="margin-bottom: 8px; font-size: 0.82em;"><strong>Maintenance Tracking</strong> — Every work order logged and resolved</li>
+                            <li style="margin-bottom: 0; font-size: 0.82em;"><strong>Document Library</strong> — Bylaws, budgets, minutes — all searchable</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: var(--radius-xl); padding: 32px; text-align: center;">
+                        <div style="margin-bottom: 14px;">
+                            <i data-lucide="smartphone" style="width: 56px; height: 56px; color: var(--accent-light);"></i>
+                        </div>
+                        <h4 style="color: var(--white) !important; font-size: 1.15em; margin-bottom: 8px;">Everything in One Platform</h4>
+                        <p style="color: rgba(255,255,255,0.6) !important; font-size: 0.75em; margin-bottom: 20px;">Any device, anywhere, anytime.</p>
+                        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                            <span class="badge" style="background: rgba(168,144,96,0.2); color: var(--accent-light);">Payments</span>
+                            <span class="badge" style="background: rgba(168,144,96,0.2); color: var(--accent-light);">Reports</span>
+                            <span class="badge" style="background: rgba(168,144,96,0.2); color: var(--accent-light);">Violations</span>
+                            <span class="badge" style="background: rgba(168,144,96,0.2); color: var(--accent-light);">Requests</span>
+                            <span class="badge" style="background: rgba(168,144,96,0.2); color: var(--accent-light);">Voting</span>
+                            <span class="badge" style="background: rgba(168,144,96,0.2); color: var(--accent-light);">Documents</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>applyhoa.com</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 7: FINANCIAL EXCELLENCE DIVIDER
+                 ========================================== -->
+            <section class="slide-dark section-divider pattern-overlay" data-transition="slide">
+                <div class="section-number">03</div>
+                <h2>Financial Excellence</h2>
+                <div class="gold-bar" style="background: linear-gradient(90deg, var(--accent-light), rgba(189,168,122,0.3));"></div>
+                <p>Real numbers. Real results. See how ASPMG transforms the financial health of the associations we manage.</p>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 8: MONEY EFFECT - DORAL GRAND
+                 ========================================== -->
+            <section class="slide-white" data-transition="slide">
+                <div class="grid-2" style="align-items: start;">
+                    <div>
+                        <span class="badge badge-success">Case Study</span>
+                        <h2 style="margin-top: 12px; font-size: 1.6em;">The Money Effect</h2>
+                        <h4 style="color: var(--accent) !important; font-size: 0.95em; margin-bottom: 4px;">Doral Grand Condominium</h4>
+                        <div class="gold-bar"></div>
+
+                        <p style="font-size: 0.85em;">Under ASPMG management, Doral Grand's total assets more than doubled in just two years — with properly categorized reserves and dramatically reduced receivables.</p>
+
+                        <table class="finance-table" style="margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Mar 2024</th>
+                                    <th>Mar 2026</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight-row">
+                                    <td><strong>Total Assets</strong></td>
+                                    <td>$63,128</td>
+                                    <td>$130,472</td>
+                                    <td class="growth-positive">+107%</td>
+                                </tr>
+                                <tr>
+                                    <td>Cash & Savings</td>
+                                    <td>$55,453</td>
+                                    <td>$129,122</td>
+                                    <td class="growth-positive">+133%</td>
+                                </tr>
+                                <tr>
+                                    <td>Reserves</td>
+                                    <td>$47,010</td>
+                                    <td>$101,325</td>
+                                    <td class="growth-positive">+116%</td>
+                                </tr>
+                                <tr>
+                                    <td>Receivables</td>
+                                    <td>$7,676</td>
+                                    <td>$1,350</td>
+                                    <td class="growth-positive">-82%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div style="background: var(--light-bg); border-radius: var(--radius-xl); padding: 32px; margin-bottom: 24px;">
+                            <h5 style="font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--body-light); margin-bottom: 20px;">Asset Growth Over 2 Years</h5>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-label">
+                                    <span>March 2024</span>
+                                    <span>$63,128</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill" style="width: 48%;"></div>
+                                </div>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-label">
+                                    <span>March 2026</span>
+                                    <span class="gold">$130,472</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-bar-fill" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: var(--radius-lg); padding: 28px; text-align: center;">
+                            <div style="font-family: var(--font-heading); font-size: 3em; color: var(--accent-light); line-height: 1;">+107%</div>
+                            <div style="font-size: 0.75em; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px;">Total Asset Growth</div>
+                            <div style="font-size: 0.7em; color: rgba(255,255,255,0.4); margin-top: 4px;">In Just 24 Months</div>
+                        </div>
+
+                        <div class="callout" style="margin-top: 20px;">
+                            <p>Reserves properly allocated across 5 categories: Painting, Seal Coat, General Reserve, Interest, and Roof Replacement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Doral Grand Condominium Inc.</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 9: MIRACLE ECONOMY - THE SEASONS
+                 ========================================== -->
+            <section class="slide-light" data-transition="slide">
+                <div class="grid-2" style="align-items: start;">
+                    <div>
+                        <span class="badge badge-success">Case Study</span>
+                        <h2 style="margin-top: 12px; font-size: 1.6em;">The Miracle Economy</h2>
+                        <h4 style="color: var(--accent) !important; font-size: 0.95em; margin-bottom: 4px;">The Seasons Villas &amp; Townhomes</h4>
+                        <div class="gold-bar"></div>
+
+                        <p style="font-size: 0.85em;">The Seasons had a $318K credit line debt. Under ASPMG, we completely paid it off while growing total assets by 73% and restructuring reserves to meet Florida's new requirements.</p>
+
+                        <table class="finance-table" style="margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Aug 2023</th>
+                                    <th>Feb 2026</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight-row">
+                                    <td><strong>Total Assets</strong></td>
+                                    <td>$804,782</td>
+                                    <td>$1,392,951</td>
+                                    <td class="growth-positive">+73%</td>
+                                </tr>
+                                <tr>
+                                    <td>Cash & Savings</td>
+                                    <td>$555,378</td>
+                                    <td>$1,198,615</td>
+                                    <td class="growth-positive">+116%</td>
+                                </tr>
+                                <tr>
+                                    <td>Credit Line Debt</td>
+                                    <td>$318,728</td>
+                                    <td>$0</td>
+                                    <td class="growth-positive">Paid Off</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Reserves</td>
+                                    <td>$445,921</td>
+                                    <td>$518,077</td>
+                                    <td class="growth-positive">+16%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: var(--radius-xl); padding: 32px;">
+                            <div style="text-align: center; margin-bottom: 28px;">
+                                <div style="font-family: var(--font-heading); font-size: 2.5em; color: var(--accent-light); line-height: 1;">$318,728</div>
+                                <div style="font-size: 0.75em; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 8px;">Credit Line Debt &rarr; Eliminated</div>
+                            </div>
+                            <div style="display: flex; gap: 12px; text-align: center;">
+                                <div class="stat-card-dark" style="flex: 1; padding: 20px 16px;">
+                                    <div class="stat-number" style="font-size: 1.8em;">+73%</div>
+                                    <div class="stat-label">Asset Growth</div>
+                                </div>
+                                <div class="stat-card-dark" style="flex: 1; padding: 20px 16px;">
+                                    <div class="stat-number" style="font-size: 1.8em;">+116%</div>
+                                    <div class="stat-label">Cash Growth</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: var(--white); border-radius: var(--radius-lg); padding: 24px; margin-top: 20px; box-shadow: var(--shadow-sm);">
+                            <h5 style="font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--body-light); margin-bottom: 16px;">Reserve Restructuring (SB 4-D Compliant)</h5>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.75em;">
+                                <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                    <span>Waterproofing</span>
+                                    <strong class="gold">$348,152</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                    <span>Roof</span>
+                                    <strong class="gold">$93,181</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                    <span>Electrical</span>
+                                    <strong class="gold">$28,615</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                    <span>Plumbing</span>
+                                    <strong class="gold">$24,909</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                    <span>Fire Protection</span>
+                                    <strong class="gold">$14,214</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                    <span>Structure</span>
+                                    <strong class="gold">$7,048</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>The Seasons Villas & Townhomes</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 10: INSURANCE SAVINGS
+                 ========================================== -->
+            <section class="slide-white" data-transition="slide" style="padding: 28px 50px;">
+                <div class="grid-2" style="align-items: start; gap: 30px;">
+                    <div>
+                        <span class="badge badge-success">Case Study</span>
+                        <h2 style="margin-top: 8px; margin-bottom: 4px; font-size: 1.5em;">$200K Insurance Savings</h2>
+                        <h4 style="color: var(--accent) !important; font-size: 0.85em; margin-bottom: 2px;">Laguna Club Condominium</h4>
+                        <div class="gold-bar" style="margin: 6px 0 12px;"></div>
+
+                        <p style="font-size: 0.78em; margin-bottom: 10px;">Previous management was paying over <strong>$550K annually</strong>. We secured the <strong>exact same coverage for $350K</strong> — saving over $200,000 every year.</p>
+
+                        <div style="background: var(--success-light); border-left: 3px solid var(--success); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 12px 16px; margin-bottom: 12px;">
+                            <p style="font-size: 0.78em; color: var(--success); font-weight: 600; margin: 0;">$200,000 back in the association's pocket — every single year. Same coverage. Smarter management.</p>
+                        </div>
+
+                        <div style="background: var(--light-bg); border-radius: var(--radius-md); padding: 16px;">
+                            <h5 style="font-size: 0.78em; margin-bottom: 10px;">How We Did It</h5>
+                            <ul class="clean-list">
+                                <li style="margin-bottom: 6px; font-size: 0.75em;">Multi-carrier competitive bidding — not just one quote</li>
+                                <li style="margin-bottom: 6px; font-size: 0.75em;">Leveraged portfolio relationships for better rates</li>
+                                <li style="margin-bottom: 6px; font-size: 0.75em;">Optimized coverage without reducing protection</li>
+                                <li style="margin-bottom: 6px; font-size: 0.75em;">Eliminated unnecessary fees and redundant riders</li>
+                                <li style="margin-bottom: 0; font-size: 0.75em;">Ongoing annual review to prevent premium creep</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Big savings hero -->
+                        <div style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: var(--radius-xl); padding: 28px; text-align: center; margin-bottom: 14px;">
+                            <div style="font-size: 0.65em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px;">Annual Savings</div>
+                            <div style="font-family: var(--font-heading); font-size: 3em; color: var(--accent-light); line-height: 1;">$200K+</div>
+                            <div style="font-size: 0.7em; color: rgba(255,255,255,0.6); margin-top: 6px;">Saved per year — same coverage</div>
+
+                            <div style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 18px;">
+                                <div style="display: flex; gap: 12px; justify-content: center; align-items: center;">
+                                    <div style="text-align: center; flex: 1;">
+                                        <div style="font-size: 0.55em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em;">Before ASPMG</div>
+                                        <div style="font-family: var(--font-heading); font-size: 1.5em; color: rgba(255,255,255,0.5); text-decoration: line-through; margin-top: 2px;">~$550K</div>
+                                    </div>
+                                    <div style="color: var(--accent-light);">
+                                        <i data-lucide="arrow-right" style="width: 20px; height: 20px;"></i>
+                                    </div>
+                                    <div style="text-align: center; flex: 1;">
+                                        <div style="font-size: 0.55em; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em;">With ASPMG</div>
+                                        <div style="font-family: var(--font-heading); font-size: 1.5em; color: var(--accent-light); margin-top: 2px;">$350K</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Coverage details -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div style="background: var(--light-bg); border-radius: var(--radius-sm); padding: 12px;">
+                                <div style="font-size: 0.6em; color: var(--body-light); text-transform: uppercase; letter-spacing: 0.08em;">Coverage</div>
+                                <div style="font-size: 0.78em; color: var(--dark); font-weight: 600; margin-top: 3px;">Special Form + Wind/Hail</div>
+                            </div>
+                            <div style="background: var(--light-bg); border-radius: var(--radius-sm); padding: 12px;">
+                                <div style="font-size: 0.6em; color: var(--body-light); text-transform: uppercase; letter-spacing: 0.08em;">Carrier</div>
+                                <div style="font-size: 0.78em; color: var(--dark); font-weight: 600; margin-top: 3px;">Slide Insurance Co.</div>
+                            </div>
+                            <div style="background: var(--light-bg); border-radius: var(--radius-sm); padding: 12px;">
+                                <div style="font-size: 0.6em; color: var(--body-light); text-transform: uppercase; letter-spacing: 0.08em;">Ord/Law Limit</div>
+                                <div style="font-size: 0.78em; color: var(--dark); font-weight: 600; margin-top: 3px;">$1,000,000</div>
+                            </div>
+                            <div style="background: var(--light-bg); border-radius: var(--radius-sm); padding: 12px;">
+                                <div style="font-size: 0.6em; color: var(--body-light); text-transform: uppercase; letter-spacing: 0.08em;">Includes</div>
+                                <div style="font-size: 0.78em; color: var(--accent); font-weight: 600; margin-top: 3px;">Equipment Breakdown</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Laguna Club Condominium Assoc.</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 11: PROJECT MANAGEMENT DIVIDER
+                 ========================================== -->
+            <section class="slide-dark section-divider pattern-overlay" data-transition="slide">
+                <div class="section-number">04</div>
+                <h2>Project Management</h2>
+                <div class="gold-bar" style="background: linear-gradient(90deg, var(--accent-light), rgba(189,168,122,0.3));"></div>
+                <p>End-to-end oversight of capital improvement projects with full photo documentation and board transparency.</p>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 12: ROOF REPLACEMENT
+                 ========================================== -->
+            <section class="slide-light" data-transition="slide">
+                <span class="badge badge-navy">Capital Projects</span>
+                <h2 style="margin-top: 12px; font-size: 1.6em;">Roof Replacement</h2>
+                <div class="gold-bar"></div>
+
+                <div class="img-compare" style="margin-top: 24px;">
+                    <div class="img-compare-item">
+                        <img src="img/roof-before.jpg" alt="Roof Before">
+                        <span class="img-compare-label label-before">Before</span>
+                    </div>
+                    <div class="img-compare-item">
+                        <img src="img/roof-after.jpg" alt="Roof After">
+                        <span class="img-compare-label label-after">After</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 24px; margin-top: 24px;">
+                    <div class="callout" style="flex: 1;">
+                        <p>Complete roof replacement managed from bid solicitation through final inspection — on time and within budget. Modern standing-seam metal roofing for long-term durability.</p>
+                    </div>
+                    <div style="display: flex; gap: 16px;">
+                        <div class="stat-card" style="min-width: 120px;">
+                            <div class="stat-number" style="font-size: 1.8em;">100%</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-card" style="min-width: 120px;">
+                            <div class="stat-number" style="font-size: 1.8em;">Drone</div>
+                            <div class="stat-label">Documented</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>C-West Building</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 13: BUILDING PAINT - IBIZA VILLAGE
+                 ========================================== -->
+            <section class="slide-white" data-transition="slide">
+                <span class="badge badge-navy">Capital Projects</span>
+                <h2 style="margin-top: 12px; font-size: 1.6em;">Building Paint — Before &amp; After</h2>
+                <h4 style="color: var(--accent) !important; font-size: 0.9em;">Ibiza Village Condominium Association</h4>
+                <div class="gold-bar"></div>
+
+                <div class="photo-gallery-3" style="margin-top: 20px;">
+                    <img src="img/ibiza-1.jpg" alt="Ibiza Village Before & After 1">
+                    <img src="img/ibiza-2.jpg" alt="Ibiza Village Before & After 2">
+                    <img src="img/ibiza-3.jpg" alt="Ibiza Village Before & After 3">
+                </div>
+
+                <div class="callout" style="margin-top: 24px;">
+                    <p>Complete exterior paint project transforming faded, weathered buildings into a vibrant, modern community aesthetic — managed from color selection through final walkthrough.</p>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Ibiza Village Condominium Assoc.</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 14: FLOOR REPLACEMENT - BF2
+                 ========================================== -->
+            <section class="slide-light" data-transition="slide" style="padding: 28px 50px;">
+                <div class="grid-2" style="align-items: start; gap: 30px;">
+                    <div>
+                        <span class="badge badge-navy">Capital Projects</span>
+                        <h2 style="margin-top: 8px; margin-bottom: 4px; font-size: 1.4em;">Floor Replacement</h2>
+                        <h4 style="color: var(--accent) !important; font-size: 0.85em; margin-bottom: 2px;">Bleau Fontaine Condominium</h4>
+                        <div class="gold-bar" style="margin: 6px 0 12px;"></div>
+
+                        <p style="font-size: 0.78em; margin-bottom: 12px;">Dated terracotta tile transformed into modern gray porcelain throughout lobbies, hallways, and stairwells.</p>
+
+                        <div class="timeline" style="padding-left: 32px;">
+                            <div class="timeline-item" style="margin-bottom: 16px;">
+                                <h5 style="font-size: 0.82em; margin-bottom: 2px;">Bid Solicitation</h5>
+                                <p style="font-size: 0.72em;">Competitive bids obtained and presented to the board</p>
+                            </div>
+                            <div class="timeline-item" style="margin-bottom: 16px;">
+                                <h5 style="font-size: 0.82em; margin-bottom: 2px;">Material Selection</h5>
+                                <p style="font-size: 0.72em;">Board-approved porcelain with slip-resistant finish</p>
+                            </div>
+                            <div class="timeline-item" style="margin-bottom: 16px;">
+                                <h5 style="font-size: 0.82em; margin-bottom: 2px;">Execution &amp; Oversight</h5>
+                                <p style="font-size: 0.72em;">Daily monitoring with minimal disruption to residents</p>
+                            </div>
+                            <div class="timeline-item" style="margin-bottom: 0;">
+                                <h5 style="font-size: 0.82em; margin-bottom: 2px;">Final Inspection</h5>
+                                <p style="font-size: 0.72em;">Quality walkthrough and before/after documentation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/bf2-floor-1.jpg" alt="BF2 Floor Replacement Before & After" class="photo-full" style="max-height: 480px;">
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Bleau Fontaine Condo No. 2</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 15: POOL MANAGEMENT
+                 ========================================== -->
+            <section class="slide-white" data-transition="slide">
+                <div class="grid-2">
+                    <div>
+                        <span class="badge badge-navy">Amenity Management</span>
+                        <h2 style="margin-top: 12px; font-size: 1.6em;">Pool Resurfacing &amp; Maintenance</h2>
+                        <div class="gold-bar"></div>
+
+                        <p style="font-size: 0.85em;">From draining to resurfacing to final fill — every step documented with photos and reported to the board. Our hands-on approach ensures quality control at every stage.</p>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;">
+                            <div class="feature-card" style="padding: 20px;">
+                                <h5 style="font-size: 0.85em; margin-bottom: 4px;">Emptied & Inspected</h5>
+                                <p style="font-size: 0.75em;">Full drain, structural inspection, and surface assessment</p>
+                            </div>
+                            <div class="feature-card" style="padding: 20px;">
+                                <h5 style="font-size: 0.85em; margin-bottom: 4px;">Resurfaced & Filled</h5>
+                                <p style="font-size: 0.75em;">New plaster application, chemical balance, and reopening</p>
+                            </div>
+                            <div class="feature-card" style="padding: 20px;">
+                                <h5 style="font-size: 0.85em; margin-bottom: 4px;">Photo Documented</h5>
+                                <p style="font-size: 0.75em;">Every phase captured and shared with the board</p>
+                            </div>
+                            <div class="feature-card" style="padding: 20px;">
+                                <h5 style="font-size: 0.85em; margin-bottom: 4px;">Vendor Managed</h5>
+                                <p style="font-size: 0.75em;">All contractors vetted, insured, and supervised on-site</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/pool-1.jpg" alt="Pool Emptied and Filled" class="photo-full" style="max-height: 500px;">
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Pool Management</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 16: INSPECTIONS DIVIDER
+                 ========================================== -->
+            <section class="slide-dark section-divider pattern-overlay" data-transition="slide">
+                <div class="section-number">05</div>
+                <h2>Proactive Inspections</h2>
+                <div class="gold-bar" style="background: linear-gradient(90deg, var(--accent-light), rgba(189,168,122,0.3));"></div>
+                <p>Detailed, photo-documented inspection reports that catch issues early and track resolution over time.</p>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 17: INSPECTION REPORTS
+                 ========================================== -->
+            <section class="slide-light" data-transition="slide" style="padding: 24px 50px;">
+                <div class="grid-2" style="align-items: start; gap: 24px;">
+                    <div>
+                        <span class="badge badge-gold">Quality Assurance</span>
+                        <h2 style="margin-top: 6px; margin-bottom: 2px; font-size: 1.35em;">Detailed Inspection Reports</h2>
+                        <h4 style="color: var(--accent) !important; font-size: 0.8em; margin-bottom: 2px;">Shamrock Condominium — Feb 2026</h4>
+                        <div class="gold-bar" style="margin: 6px 0 10px;"></div>
+
+                        <p style="font-size: 0.75em; margin-bottom: 10px;">Regular on-site inspections with numbered photos, detailed descriptions, and follow-up tracking on every issue.</p>
+
+                        <div style="background: var(--white); border-radius: var(--radius-md); padding: 14px 16px; box-shadow: var(--shadow-sm); margin-bottom: 12px;">
+                            <h5 style="font-size: 0.75em; margin-bottom: 8px;">What We Document</h5>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; font-size: 0.7em;">
+                                <span style="color: var(--body-light);">&bull; Storage compliance</span>
+                                <span style="color: var(--body-light);">&bull; A/C filter tracking</span>
+                                <span style="color: var(--body-light);">&bull; Fire alarm permits</span>
+                                <span style="color: var(--body-light);">&bull; Lighting &amp; electrical</span>
+                                <span style="color: var(--body-light);">&bull; Common area violations</span>
+                                <span style="color: var(--body-light);">&bull; Pool condition</span>
+                                <span style="color: var(--body-light);">&bull; Landscaping</span>
+                                <span style="color: var(--body-light);">&bull; Plumbing &amp; structural</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 12px;">
+                            <div class="stat-card" style="flex: 1; padding: 14px 12px;">
+                                <div class="stat-number" style="font-size: 1.4em;">23</div>
+                                <div class="stat-label" style="font-size: 0.65em;">Pages</div>
+                            </div>
+                            <div class="stat-card" style="flex: 1; padding: 14px 12px;">
+                                <div class="stat-number" style="font-size: 1.4em;">15+</div>
+                                <div class="stat-label" style="font-size: 0.65em;">Photos</div>
+                            </div>
+                            <div class="stat-card" style="flex: 1; padding: 14px 12px;">
+                                <div class="stat-number" style="font-size: 1.4em;">Every</div>
+                                <div class="stat-label" style="font-size: 0.65em;">Issue Tracked</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="inspection-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div class="inspection-card">
+                                <img src="img/inspection-01.jpg" alt="Inspection Page 1" style="height: 160px;">
+                                <div class="inspection-card-body" style="padding: 8px 12px;">
+                                    <p style="font-size: 0.65em;"><strong>Cover</strong> — Issue identified, follow-up confirmed</p>
+                                </div>
+                            </div>
+                            <div class="inspection-card">
+                                <img src="img/inspection-02.jpg" alt="Inspection Page 2" style="height: 160px;">
+                                <div class="inspection-card-body" style="padding: 8px 12px;">
+                                    <p style="font-size: 0.65em;"><strong>A/C Filters</strong> — Tracked with change date</p>
+                                </div>
+                            </div>
+                            <div class="inspection-card" style="grid-column: span 2;">
+                                <img src="img/inspection-03.jpg" alt="Inspection Page 3" style="height: 150px;">
+                                <div class="inspection-card-body" style="padding: 8px 12px;">
+                                    <p style="font-size: 0.65em;"><strong>Full documentation</strong> — Every observation numbered, photographed, with follow-up notes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Shamrock Condominium</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 18: BOARD TRANSPARENCY
+                 ========================================== -->
+            <section class="slide-dark pattern-overlay" data-transition="slide" style="display: flex !important; flex-direction: column; justify-content: center; padding: 28px 50px;">
+                <div style="text-align: center; margin-bottom: 28px;">
+                    <span class="badge" style="background: rgba(168,144,96,0.2); color: var(--accent-light);">Our Promise</span>
+                    <h2 style="margin-top: 10px; font-size: 1.9em; color: var(--white) !important; margin-bottom: 4px;">Total Transparency with Your Board</h2>
+                    <div class="gold-bar-center" style="background: linear-gradient(90deg, transparent, var(--accent-light), transparent); margin: 8px auto 12px;"></div>
+                    <p style="max-width: 600px; margin: 0 auto; font-size: 0.85em;">Every dollar accounted for. Every project documented. Every decision informed by data.</p>
+                </div>
+
+                <div class="grid-4" style="max-width: 880px; margin: 0 auto;">
+                    <div class="stat-card-dark" style="padding: 22px 18px;">
+                        <div style="margin-bottom: 8px;">
+                            <i data-lucide="file-text" style="width: 26px; height: 26px; color: var(--accent-light);"></i>
+                        </div>
+                        <h5 style="color: var(--white) !important; font-size: 0.8em; margin-bottom: 4px;">Monthly Financials</h5>
+                        <p style="font-size: 0.65em; margin: 0;">P&L, balance sheets, and bank reconciliations</p>
+                    </div>
+                    <div class="stat-card-dark" style="padding: 22px 18px;">
+                        <div style="margin-bottom: 8px;">
+                            <i data-lucide="camera" style="width: 26px; height: 26px; color: var(--accent-light);"></i>
+                        </div>
+                        <h5 style="color: var(--white) !important; font-size: 0.8em; margin-bottom: 4px;">Photo Reports</h5>
+                        <p style="font-size: 0.65em; margin: 0;">Inspections and project updates with full imagery</p>
+                    </div>
+                    <div class="stat-card-dark" style="padding: 22px 18px;">
+                        <div style="margin-bottom: 8px;">
+                            <i data-lucide="bar-chart-3" style="width: 26px; height: 26px; color: var(--accent-light);"></i>
+                        </div>
+                        <h5 style="color: var(--white) !important; font-size: 0.8em; margin-bottom: 4px;">Reserve Tracking</h5>
+                        <p style="font-size: 0.65em; margin: 0;">Real-time funding status and projections</p>
+                    </div>
+                    <div class="stat-card-dark" style="padding: 22px 18px;">
+                        <div style="margin-bottom: 8px;">
+                            <i data-lucide="message-square" style="width: 26px; height: 26px; color: var(--accent-light);"></i>
+                        </div>
+                        <h5 style="color: var(--white) !important; font-size: 0.8em; margin-bottom: 4px;">Open Communication</h5>
+                        <p style="font-size: 0.65em; margin: 0;">Direct line to your manager — always responsive</p>
+                    </div>
+                </div>
+
+                <div class="callout-dark" style="max-width: 680px; margin: 22px auto 0; padding: 16px 24px;">
+                    <p style="font-size: 0.85em;">"An informed board makes better decisions. We provide more data, more often, and with more context than any other management company."</p>
+                </div>
+
+                <div class="slide-footer slide-footer-dark">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Board Transparency</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 19: WHY ASPMG FOR DADELAND WALK
+                 ========================================== -->
+            <section class="slide-light" data-transition="slide" style="padding: 24px 50px;">
+                <div style="text-align: center; margin-bottom: 16px;">
+                    <span class="badge badge-gold">The Right Partner</span>
+                    <h2 style="margin-top: 8px; margin-bottom: 4px; font-size: 1.7em;">Why ASPMG for Dadeland Walk?</h2>
+                    <div class="gold-bar-center" style="margin: 6px auto 0;"></div>
+                </div>
+
+                <div class="grid-2" style="gap: 20px 36px; align-items: start;">
+                    <div class="feature-card" style="padding: 14px 16px; margin-bottom: 0; display: flex; gap: 12px; align-items: flex-start;">
+                        <span class="gold" style="font-family: var(--font-heading); font-size: 1.3em; line-height: 1;">1.</span>
+                        <div>
+                            <h5 style="font-size: 0.82em; margin-bottom: 3px;">Proven Financial Results</h5>
+                            <p style="font-size: 0.72em;">We grow reserves and eliminate debt. Our track record speaks through balance sheets, not promises.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 14px 16px; margin-bottom: 0; display: flex; gap: 12px; align-items: flex-start;">
+                        <span class="gold" style="font-family: var(--font-heading); font-size: 1.3em; line-height: 1;">4.</span>
+                        <div>
+                            <h5 style="font-size: 0.82em; margin-bottom: 3px;">Proactive, Not Reactive</h5>
+                            <p style="font-size: 0.72em;">Detailed inspections catch problems before emergencies. We identify, document, and resolve.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 14px 16px; margin-bottom: 0; display: flex; gap: 12px; align-items: flex-start;">
+                        <span class="gold" style="font-family: var(--font-heading); font-size: 1.3em; line-height: 1;">2.</span>
+                        <div>
+                            <h5 style="font-size: 0.82em; margin-bottom: 3px;">Technology That Empowers</h5>
+                            <p style="font-size: 0.72em;">ApplyHOA gives your board and residents 24/7 access to payments, documents, and real-time data.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 14px 16px; margin-bottom: 0; display: flex; gap: 12px; align-items: flex-start;">
+                        <span class="gold" style="font-family: var(--font-heading); font-size: 1.3em; line-height: 1;">5.</span>
+                        <div>
+                            <h5 style="font-size: 0.82em; margin-bottom: 3px;">Insurance Expertise</h5>
+                            <p style="font-size: 0.72em;">Saved Laguna Club $200K/year — same coverage. Portfolio leverage for rates no single association gets.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 14px 16px; margin-bottom: 0; display: flex; gap: 12px; align-items: flex-start;">
+                        <span class="gold" style="font-family: var(--font-heading); font-size: 1.3em; line-height: 1;">3.</span>
+                        <div>
+                            <h5 style="font-size: 0.82em; margin-bottom: 3px;">Hands-On Project Management</h5>
+                            <p style="font-size: 0.72em;">Roofs, pools, paint — every detail overseen, every phase documented, delivered on time.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card" style="padding: 14px 16px; margin-bottom: 0; display: flex; gap: 12px; align-items: flex-start;">
+                        <span class="gold" style="font-family: var(--font-heading); font-size: 1.3em; line-height: 1;">6.</span>
+                        <div>
+                            <h5 style="font-size: 0.82em; margin-bottom: 3px;">SB 4-D Compliance Ready</h5>
+                            <p style="font-size: 0.72em;">Reserves already restructured across our portfolio for Florida's structural integrity requirements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <img src="img/logo.png" alt="ASPMG" class="slide-footer-logo">
+                    <span>Why ASPMG</span>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SLIDE 20: CLOSING / CTA
+                 ========================================== -->
+            <section class="slide-dark cta-slide pattern-overlay" data-transition="fade">
+                <img src="img/logo.png" alt="ASPMG" class="title-logo" style="width: 140px; margin-bottom: 24px;">
+                <h2 style="font-size: 2.4em; color: var(--white) !important; margin-bottom: 8px;">Let's Build Something<br><span style="color: var(--accent-light) !important;">Great Together</span></h2>
+                <div class="title-divider"></div>
+                <p style="font-size: 1em; max-width: 500px; margin: 0 auto 32px;">We're ready to bring the same level of excellence, transparency, and innovation to Dadeland Walk Association.</p>
+
+                <div class="cta-contact">
+                    <div class="cta-contact-item">
+                        <i data-lucide="phone" style="width: 20px; height: 20px; color: var(--accent-light);"></i>
+                        <span>(305) 661-8400</span>
+                    </div>
+                    <div class="cta-contact-item">
+                        <i data-lucide="globe" style="width: 20px; height: 20px; color: var(--accent-light);"></i>
+                        <span>www.aspmg.com</span>
+                    </div>
+                    <div class="cta-contact-item">
+                        <i data-lucide="map-pin" style="width: 20px; height: 20px; color: var(--accent-light);"></i>
+                        <span>85 Grand Canal Dr, Suite 201<br>Miami, FL 33144</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px;">
+                    <span style="font-size: 0.6em; color: rgba(255,255,255,0.25) !important; letter-spacing: 0.15em; text-transform: uppercase;">A Solid Property Management Group Inc. &bull; Confidential &bull; 2026</span>
+                </div>
+            </section>
+
+        </div><!-- /slides -->
+    </div><!-- /reveal -->
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            width: 1280,
+            height: 720,
+            margin: 0,
+            minScale: 0.2,
+            maxScale: 2.0,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: false,
+            controls: true,
+            controlsTutorial: true,
+            progress: true,
+            loop: false,
+            keyboard: true,
+            overview: true,
+            touch: true,
+            hideInactiveCursor: true,
+            hideCursorTime: 3000,
+        });
+
+        // Initialize Lucide icons after Reveal loads
+        Reveal.on('ready', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
