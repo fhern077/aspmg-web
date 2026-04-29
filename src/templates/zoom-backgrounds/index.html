@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASPMG — Zoom Backgrounds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+<style>
+:root{
+  --primary:#1B2A4A;
+  --primary-dark:#0F1A32;
+  --primary-light:#2C4270;
+  --accent:#A89060;
+  --accent-light:#BDA87A;
+  --white:#FFFFFF;
+  --light-bg:#F4F6FA;
+  --body:#5A6275;
+  --font-heading:'DM Serif Display',Georgia,serif;
+  --font-body:'Sora','Inter',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  font-family:var(--font-body);
+  background:var(--light-bg);
+  color:var(--body);
+  margin:0;
+  padding:48px 32px;
+}
+.page-header{
+  max-width:1100px;
+  margin:0 auto 40px;
+  text-align:center;
+}
+.page-header h1{
+  font-family:var(--font-heading);
+  font-size:2.4em;
+  color:var(--primary);
+  margin:0 0 8px;
+  letter-spacing:-0.01em;
+}
+.page-header p{
+  margin:0;
+  font-size:0.95em;
+  color:var(--body);
+  line-height:1.6;
+}
+.gold-bar{
+  width:60px;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-light));
+  margin:18px auto 24px;border-radius:2px;
+}
+.steps{
+  max-width:760px;margin:0 auto 48px;
+  background:#fff;border-radius:14px;padding:20px 28px;
+  box-shadow:0 4px 16px rgba(27,42,74,.06);
+  font-size:0.85em;line-height:1.7;
+}
+.steps strong{color:var(--primary)}
+.steps ol{margin:0;padding-left:20px}
+
+.bg-list{
+  display:flex;flex-direction:column;gap:48px;
+  max-width:1100px;margin:0 auto;
+}
+.bg-card{
+  background:#fff;
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 8px 30px rgba(27,42,74,.10);
+}
+.bg-card-header{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:16px;flex-wrap:wrap;gap:12px;
+}
+.bg-card-header h3{
+  font-family:var(--font-heading);
+  font-size:1.4em;color:var(--primary);
+  margin:0;letter-spacing:-0.01em;
+}
+.bg-card-header .meta{
+  font-size:0.7em;text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--body);font-weight:600;
+}
+.btn{
+  background:var(--primary);color:#fff;border:none;
+  padding:12px 22px;border-radius:8px;
+  font-family:var(--font-body);font-weight:600;font-size:0.85em;
+  letter-spacing:0.04em;cursor:pointer;
+  transition:background .25s ease,transform .15s ease;
+}
+.btn:hover{background:var(--primary-light)}
+.btn:active{transform:translateY(1px)}
+.btn .gold{color:var(--accent-light)}
+
+/* Preview wrapper scales the 1920x1080 canvas down to fit */
+.preview-wrap{
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:10px;
+  position:relative;
+  background:#000;
+}
+.bg-canvas{
+  width:1920px;height:1080px;
+  position:absolute;top:0;left:0;
+  transform-origin:top left;
+}
+
+/* ============================================
+   BG 1 — Classic Navy with Centered Logo
+   ============================================ */
+.bg1{
+  background:
+    radial-gradient(ellipse at 30% 20%,rgba(168,144,96,0.10) 0%,transparent 55%),
+    radial-gradient(ellipse at 70% 80%,rgba(168,144,96,0.06) 0%,transparent 50%),
+    linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;color:#fff;
+  position:relative;overflow:hidden;
+}
+.bg1::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 18% 50%,rgba(168,144,96,0.04) 0,transparent 40%),
+    radial-gradient(circle at 82% 30%,rgba(168,144,96,0.05) 0,transparent 40%);
+  pointer-events:none;
+}
+.bg1 .corner-tl,.bg1 .corner-br{
+  position:absolute;width:280px;height:280px;
+  border:2px solid rgba(168,144,96,0.18);
+  border-radius:16px;
+}
+.bg1 .corner-tl{top:80px;left:80px;border-right:none;border-bottom:none}
+.bg1 .corner-br{bottom:80px;right:80px;border-left:none;border-top:none}
+.bg1 .logo{width:340px;opacity:0.95;margin-bottom:32px;filter:drop-shadow(0 8px 30px rgba(0,0,0,0.4))}
+.bg1 .divider{
+  width:120px;height:3px;
+  background:linear-gradient(90deg,transparent,var(--accent-light),transparent);
+  margin:0 0 28px;
+}
+.bg1 .tag{
+  font-size:24px;letter-spacing:0.35em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);font-weight:300;
+}
+
+/* ============================================
+   BG 2 — Side-Branded (logo lower-right, person on left)
+   ============================================ */
+.bg2{
+  background:
+    linear-gradient(115deg,var(--primary-dark) 0%,var(--primary) 45%,#1a3560 100%);
+  position:relative;overflow:hidden;
+  color:#fff;
+}
+.bg2::before{
+  content:'';position:absolute;
+  right:-200px;top:-200px;width:1200px;height:1200px;
+  background:radial-gradient(circle,rgba(168,144,96,0.10) 0%,transparent 60%);
+  pointer-events:none;
+}
+.bg2 .left-strip{
+  position:absolute;left:0;top:0;bottom:0;width:18px;
+  background:linear-gradient(180deg,var(--accent-light),var(--accent),var(--accent-light));
+}
+.bg2 .brand{
+  position:absolute;right:90px;bottom:90px;
+  text-align:right;
+}
+.bg2 .brand img{width:280px;opacity:0.95;margin-bottom:18px;filter:drop-shadow(0 6px 20px rgba(0,0,0,0.35))}
+.bg2 .brand .gold-bar{width:90px;margin:0 0 0 auto}
+.bg2 .brand .name{
+  font-family:var(--font-heading);font-size:38px;color:#fff;
+  margin:14px 0 6px;line-height:1.1;
+}
+.bg2 .brand .tag{
+  font-size:16px;letter-spacing:0.25em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);font-weight:300;
+}
+.bg2 .top-mark{
+  position:absolute;top:80px;left:90px;
+  font-size:14px;letter-spacing:0.4em;text-transform:uppercase;
+  color:rgba(168,144,96,0.7);font-weight:600;
+}
+
+/* ============================================
+   BG 3 — Light / Boardroom
+   ============================================ */
+.bg3{
+  background:
+    linear-gradient(135deg,#F8F7F2 0%,#EFEAE0 100%);
+  position:relative;overflow:hidden;
+  color:var(--primary);
+}
+.bg3::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(45deg,rgba(168,144,96,0.04) 0 2px,transparent 2px 80px);
+  pointer-events:none;
+}
+.bg3 .frame{
+  position:absolute;inset:60px;
+  border:1px solid rgba(168,144,96,0.35);
+  border-radius:12px;
+  pointer-events:none;
+}
+.bg3 .frame-inner{
+  position:absolute;inset:80px;
+  border:1px solid rgba(168,144,96,0.2);
+  border-radius:8px;
+  pointer-events:none;
+}
+.bg3 .center{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+}
+.bg3 .logo{width:300px;margin-bottom:24px;opacity:0.95}
+.bg3 .divider{
+  width:140px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  margin-bottom:24px;
+}
+.bg3 .name{
+  font-family:var(--font-heading);font-size:34px;
+  color:var(--primary);margin:0 0 8px;letter-spacing:-0.01em;
+}
+.bg3 .tag{
+  font-size:16px;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;
+}
+.bg3 .corner{
+  position:absolute;font-family:var(--font-heading);
+  font-size:14px;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;
+}
+.bg3 .corner.tl{top:110px;left:130px}
+.bg3 .corner.br{bottom:110px;right:130px}
+
+@media(max-width:600px){
+  body{padding:24px 16px}
+  .page-header h1{font-size:1.7em}
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>ASPMG Zoom Backgrounds</h1>
+  <div class="gold-bar"></div>
+  <p>Three on-brand virtual backgrounds at full HD (1920&times;1080). Click <strong>Download PNG</strong> on any design to save it, then upload as a Zoom virtual background.</p>
+</div>
+
+<div class="steps">
+  <strong>How to use in Zoom:</strong>
+  <ol>
+    <li>Click <em>Download PNG</em> on the design you want.</li>
+    <li>In Zoom, open <em>Settings &rarr; Backgrounds &amp; Effects</em>.</li>
+    <li>Click the <em>+</em> next to Virtual Backgrounds and select the downloaded PNG.</li>
+  </ol>
+</div>
+
+<div class="bg-list">
+
+  <!-- BG 1 -->
+  <div class="bg-card">
+    <div class="bg-card-header">
+      <div>
+        <h3>Classic Navy</h3>
+        <div class="meta">1920 &times; 1080 &bull; Centered logo</div>
+      </div>
+      <button class="btn" data-target="bg1" data-name="ASPMG-Zoom-Classic-Navy.png">Download <span class="gold">PNG</span></button>
+    </div>
+    <div class="preview-wrap">
+      <div class="bg-canvas bg1" id="bg1">
+        <div class="corner-tl"></div>
+        <div class="corner-br"></div>
+        <img src="logo.png" class="logo" alt="ASPMG" crossorigin="anonymous">
+        <div class="divider"></div>
+        <div class="tag">A Solid Property Management Group</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BG 2 -->
+  <div class="bg-card">
+    <div class="bg-card-header">
+      <div>
+        <h3>Executive — Lower Right Brand</h3>
+        <div class="meta">1920 &times; 1080 &bull; Camera-friendly negative space</div>
+      </div>
+      <button class="btn" data-target="bg2" data-name="ASPMG-Zoom-Executive.png">Download <span class="gold">PNG</span></button>
+    </div>
+    <div class="preview-wrap">
+      <div class="bg-canvas bg2" id="bg2">
+        <div class="left-strip"></div>
+        <div class="top-mark">Confidential &bull; Board Meeting</div>
+        <div class="brand">
+          <img src="logo.png" alt="ASPMG" crossorigin="anonymous">
+          <div class="name">A Solid Property<br>Management Group</div>
+          <div class="gold-bar" style="background:linear-gradient(90deg,var(--accent),var(--accent-light))"></div>
+          <div class="tag" style="margin-top:14px;">aspmg.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BG 3 -->
+  <div class="bg-card">
+    <div class="bg-card-header">
+      <div>
+        <h3>Boardroom Light</h3>
+        <div class="meta">1920 &times; 1080 &bull; Refined &amp; printable</div>
+      </div>
+      <button class="btn" data-target="bg3" data-name="ASPMG-Zoom-Boardroom.png">Download <span class="gold">PNG</span></button>
+    </div>
+    <div class="preview-wrap">
+      <div class="bg-canvas bg3" id="bg3">
+        <div class="frame"></div>
+        <div class="frame-inner"></div>
+        <div class="corner tl">Est. ASPMG</div>
+        <div class="corner br">Miami &bull; FL</div>
+        <div class="center">
+          <img src="logo.png" class="logo" alt="ASPMG" crossorigin="anonymous">
+          <div class="divider"></div>
+          <div class="name">A Solid Property Management Group</div>
+          <div class="tag">Trusted &bull; Transparent &bull; Technology-Driven</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Scale previews to fit container width while keeping internal 1920x1080 layout intact
+function scalePreviews(){
+  document.querySelectorAll('.preview-wrap').forEach(wrap=>{
+    const canvas = wrap.querySelector('.bg-canvas');
+    if(!canvas) return;
+    const scale = wrap.clientWidth / 1920;
+    canvas.style.transform = `scale(${scale})`;
+  });
+}
+window.addEventListener('resize',scalePreviews);
+window.addEventListener('load',scalePreviews);
+scalePreviews();
+
+// Download buttons — render the canvas at full 1920x1080 to PNG
+document.querySelectorAll('.btn[data-target]').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const target = document.getElementById(btn.dataset.target);
+    const filename = btn.dataset.name || 'aspmg-zoom-background.png';
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Generating…';
+    try{
+      // Temporarily reset transform so html-to-image captures full size
+      const prevTransform = target.style.transform;
+      target.style.transform = 'none';
+      const dataUrl = await htmlToImage.toPng(target, {
+        width: 1920,
+        height: 1080,
+        pixelRatio: 1,
+        cacheBust: true,
+        style: { transform: 'none' }
+      });
+      target.style.transform = prevTransform;
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }catch(err){
+      console.error(err);
+      alert('Could not generate PNG. Try again or take a screenshot of the preview.');
+    }finally{
+      btn.disabled = false;
+      btn.textContent = original;
+      btn.innerHTML = btn.innerHTML; // ensure markup restored
+      // Restore the gold span
+      btn.innerHTML = 'Download <span class="gold">PNG</span>';
+      scalePreviews();
+    }
+  });
+});
+</script>
+</body>
+</html>
