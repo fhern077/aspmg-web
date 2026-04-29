@@ -261,7 +261,12 @@ body{
     <li>Click <em>Download PNG</em> on the design you want.</li>
     <li>In Zoom, open <em>Settings &rarr; Backgrounds &amp; Effects</em>.</li>
     <li>Click the <em>+</em> next to Virtual Backgrounds and select the downloaded PNG.</li>
+    <li><strong>If the logo / text looks reversed in your self-view:</strong> open <em>Settings &rarr; Video</em> and <strong>uncheck &ldquo;Mirror my video.&rdquo;</strong> Zoom only mirrors your local preview &mdash; other participants always see the background correctly.</li>
   </ol>
+  <label style="display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-size:0.85em;color:var(--primary);cursor:pointer;">
+    <input type="checkbox" id="preMirror" style="width:16px;height:16px;cursor:pointer;">
+    <span>Pre-mirror PNG for self-view <span style="color:var(--body);font-weight:400;">(only if you can&rsquo;t turn off Zoom&rsquo;s mirror &mdash; note: others will see it backwards)</span></span>
+  </label>
 </div>
 
 <div class="bg-list">
@@ -362,12 +367,16 @@ document.querySelectorAll('.btn[data-target]').forEach(btn=>{
       // Temporarily reset transform so html-to-image captures full size
       const prevTransform = target.style.transform;
       target.style.transform = 'none';
+      const mirror = document.getElementById('preMirror')?.checked;
       const dataUrl = await htmlToImage.toPng(target, {
         width: 1920,
         height: 1080,
         pixelRatio: 1,
         cacheBust: true,
-        style: { transform: 'none' }
+        style: {
+          transform: mirror ? 'scaleX(-1)' : 'none',
+          transformOrigin: 'center center'
+        }
       });
       target.style.transform = prevTransform;
       const a = document.createElement('a');
