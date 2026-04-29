@@ -253,6 +253,39 @@ body{
 .bg3 .corner.tl{top:118px;left:140px}
 .bg3 .corner.br{bottom:118px;right:140px}
 
+/* ============================================
+   BG 4 — Animated Particle Network (canvas)
+   ============================================ */
+canvas.bg-canvas{display:block;background:#0B1426}
+.live-dot{
+  display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:#22c55e;margin-left:10px;vertical-align:middle;
+  box-shadow:0 0 0 0 rgba(34,197,94,0.55);
+  animation:livePulse 2s ease-out infinite;
+}
+@keyframes livePulse{
+  0%{box-shadow:0 0 0 0 rgba(34,197,94,0.5)}
+  70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}
+  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn-ghost{
+  background:transparent;color:var(--primary);
+  border:1px solid rgba(27,42,74,0.2);
+}
+.btn-ghost:hover{background:rgba(27,42,74,0.05)}
+.rec-status{
+  margin-top:14px;font-size:0.8em;color:var(--body);
+  line-height:1.55;
+}
+.rec-status em{color:var(--primary);font-style:normal;font-weight:600}
+.rec-status .ok{color:#15803d;font-weight:600}
+.rec-status code{
+  background:#F1EFE9;color:var(--primary);
+  padding:1px 6px;border-radius:4px;font-size:0.92em;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
 @media(max-width:600px){
   body{padding:24px 16px}
   .page-header h1{font-size:1.7em}
@@ -264,15 +297,15 @@ body{
 <div class="page-header">
   <h1>ASPMG Zoom Backgrounds</h1>
   <div class="gold-bar"></div>
-  <p>Three on-brand virtual backgrounds at full HD (1920&times;1080). Click <strong>Download PNG</strong> on any design to save it, then upload as a Zoom virtual background.</p>
+  <p>Four on-brand virtual backgrounds at full HD (1920&times;1080) &mdash; three stills plus one animated <strong>video</strong> with a subtle particle network. Click <strong>Download</strong> on any design, then upload as a Zoom virtual background.</p>
 </div>
 
 <div class="steps">
   <strong>How to use in Zoom:</strong>
   <ol>
-    <li>Click <em>Download PNG</em> on the design you want.</li>
+    <li>Click <em>Download PNG</em> (still) or <em>Download Video</em> (animated) on the design you want.</li>
     <li>In Zoom, open <em>Settings &rarr; Backgrounds &amp; Effects</em>.</li>
-    <li>Click the <em>+</em> next to Virtual Backgrounds and select the downloaded PNG.</li>
+    <li>Click the <em>+</em> next to Virtual Backgrounds &rarr; <em>Add Image or Video</em>, then select the downloaded file. Zoom auto-loops video backgrounds.</li>
     <li><strong>If the logo / text looks reversed in your self-view:</strong> open <em>Settings &rarr; Video</em> and <strong>uncheck &ldquo;Mirror my video.&rdquo;</strong> Zoom only mirrors your local preview &mdash; other participants always see the background correctly.</li>
   </ol>
   <label style="display:inline-flex;align-items:center;gap:10px;margin-top:14px;font-size:0.85em;color:var(--primary);cursor:pointer;">
@@ -352,6 +385,24 @@ body{
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- BG 4 — Animated Particle Network -->
+  <div class="bg-card">
+    <div class="bg-card-header">
+      <div>
+        <h3>Particle Network &mdash; Animated <span class="live-dot" title="Live preview"></span></h3>
+        <div class="meta">1920 &times; 1080 &bull; 20-second seamless loop &bull; MP4 / WebM</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="recordVideo">Download <span class="gold">Video</span></button>
+        <button class="btn btn-ghost" data-canvas-target="bg4" data-name="ASPMG-Zoom-Particles.png">PNG frame</button>
+      </div>
+    </div>
+    <div class="preview-wrap">
+      <canvas id="bg4" class="bg-canvas" width="1920" height="1080"></canvas>
+    </div>
+    <div class="rec-status" id="recordStatus">Live preview &middot; click <em>Download Video</em> to record a 20-second seamless loop. Zoom plays it on repeat as your background.</div>
   </div>
 
 </div>
@@ -463,6 +514,301 @@ document.querySelectorAll('.btn[data-target]').forEach(btn=>{
     }
   });
 });
+
+// ----------------------------------------------------------
+// Canvas-based PNG export (used by BG 4)
+// ----------------------------------------------------------
+document.querySelectorAll('.btn[data-canvas-target]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const target = document.getElementById(btn.dataset.canvasTarget);
+    if(!target) return;
+    const mirror = document.getElementById('preMirror') && document.getElementById('preMirror').checked;
+    let sourceCanvas = target;
+    if(mirror){
+      // Draw flipped copy onto an off-screen canvas
+      const off = document.createElement('canvas');
+      off.width = target.width;
+      off.height = target.height;
+      const octx = off.getContext('2d');
+      octx.translate(off.width, 0);
+      octx.scale(-1, 1);
+      octx.drawImage(target, 0, 0);
+      sourceCanvas = off;
+    }
+    const a = document.createElement('a');
+    a.href = sourceCanvas.toDataURL('image/png');
+    a.download = btn.dataset.name || 'aspmg-zoom-particles.png';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+});
+
+// ============================================
+// BG 4 — Animated Particle Network + Video Export
+// ============================================
+(function(){
+  const canvas = document.getElementById('bg4');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d', { alpha: false });
+  const W = 1920, H = 1080;
+
+  // Loop period — Zoom auto-loops the video, so a perfect seam is required.
+  const T = 20;                       // seconds per loop (longer = slower motion)
+  const omega = 2 * Math.PI / T;      // base angular frequency
+  const N = 130;                      // particle count
+  const LINK_DIST = 200;
+  const LINK_DIST_SQ = LINK_DIST * LINK_DIST;
+
+  // Logo image (drawn into the canvas — becomes part of the recorded video)
+  const logoImg = new Image();
+  logoImg.crossOrigin = 'anonymous';
+  let logoReady = false;
+  logoImg.onload = ()=>{ logoReady = true; };
+  logoImg.src = 'logo.png';
+
+  // Particles use parametric (sum-of-sines) motion so position(t) === position(t+T).
+  const rnd = (a,b)=>a+Math.random()*(b-a);
+  const particles = [];
+  for(let i=0;i<N;i++){
+    particles.push({
+      baseX: rnd(0,W), baseY: rnd(0,H),
+      a1x: rnd(40,140), a2x: rnd(15,55),
+      a1y: rnd(40,140), a2y: rnd(15,55),
+      p1x: rnd(0,Math.PI*2), p2x: rnd(0,Math.PI*2),
+      p1y: rnd(0,Math.PI*2), p2y: rnd(0,Math.PI*2),
+      r:   rnd(1.0, 3.4),
+      a:   rnd(0.30, 0.85),
+      x:0, y:0
+    });
+  }
+
+  function drawFrame(t){
+    // ---- Background: deep navy with directional gradient
+    const bg = ctx.createLinearGradient(0, 0, W*0.6, H);
+    bg.addColorStop(0, '#1B2A4A');
+    bg.addColorStop(1, '#0B1426');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // ---- Two slowly-drifting gold radial glows
+    const gx1 = W*0.72 + 130*Math.sin(omega*t);
+    const gy1 = H*0.30 + 80*Math.sin(omega*t*2 + 1.3);
+    const r1 = ctx.createRadialGradient(gx1, gy1, 0, gx1, gy1, 950);
+    r1.addColorStop(0, 'rgba(189,168,122,0.18)');
+    r1.addColorStop(1, 'rgba(189,168,122,0)');
+    ctx.fillStyle = r1;
+    ctx.fillRect(0, 0, W, H);
+
+    const gx2 = W*0.22 + 110*Math.sin(omega*t + 2.1);
+    const gy2 = H*0.78 + 70*Math.sin(omega*t*2 + 0.8);
+    const r2 = ctx.createRadialGradient(gx2, gy2, 0, gx2, gy2, 720);
+    r2.addColorStop(0, 'rgba(168,144,96,0.10)');
+    r2.addColorStop(1, 'rgba(168,144,96,0)');
+    ctx.fillStyle = r2;
+    ctx.fillRect(0, 0, W, H);
+
+    // ---- Update particle positions (perfect loop)
+    for(const p of particles){
+      p.x = p.baseX + p.a1x*Math.sin(omega*t + p.p1x) + p.a2x*Math.sin(2*omega*t + p.p2x);
+      p.y = p.baseY + p.a1y*Math.sin(omega*t + p.p1y) + p.a2y*Math.sin(2*omega*t + p.p2y);
+    }
+
+    // ---- Connection lines (fade with distance)
+    ctx.lineWidth = 1;
+    for(let i=0;i<N;i++){
+      const a = particles[i];
+      for(let j=i+1;j<N;j++){
+        const b = particles[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const d2 = dx*dx + dy*dy;
+        if(d2 < LINK_DIST_SQ){
+          const alpha = (1 - d2/LINK_DIST_SQ) * 0.30;
+          ctx.strokeStyle = 'rgba(189,168,122,' + alpha.toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // ---- Particle dots
+    for(const p of particles){
+      ctx.fillStyle = 'rgba(212,189,138,' + p.a.toFixed(3) + ')';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    // ---- Vignette
+    const vg = ctx.createRadialGradient(W/2, H/2, H*0.42, W/2, H/2, H*0.95);
+    vg.addColorStop(0, 'rgba(0,0,0,0)');
+    vg.addColorStop(1, 'rgba(0,0,0,0.45)');
+    ctx.fillStyle = vg;
+    ctx.fillRect(0, 0, W, H);
+
+    // ---- Top text block (clear of the on-camera person)
+    const tagY      = 150;   // primary tagline
+    const dividerY  = 200;   // gold divider
+    const subY      = 240;   // sub line
+
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const hasLetterSpacing = ('letterSpacing' in ctx);
+
+    if(hasLetterSpacing) ctx.letterSpacing = '14px';
+    ctx.font = '300 38px "Sora","Inter",Arial,sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.86)';
+    ctx.fillText('A SOLID PROPERTY MANAGEMENT GROUP', W/2, tagY);
+
+    const dg = ctx.createLinearGradient(W/2-170, 0, W/2+170, 0);
+    dg.addColorStop(0,   'rgba(189,168,122,0)');
+    dg.addColorStop(0.5, 'rgba(212,189,138,0.95)');
+    dg.addColorStop(1,   'rgba(189,168,122,0)');
+    ctx.fillStyle = dg;
+    ctx.fillRect(W/2 - 170, dividerY, 340, 3);
+
+    if(hasLetterSpacing) ctx.letterSpacing = '8px';
+    ctx.font = '600 22px "Sora","Inter",Arial,sans-serif';
+    ctx.fillStyle = 'rgba(189,168,122,0.82)';
+    ctx.fillText('TRUSTED  ·  TRANSPARENT  ·  TECHNOLOGY-DRIVEN', W/2, subY);
+
+    if(hasLetterSpacing) ctx.letterSpacing = '0px';
+
+    // ---- Logo + breathing halo (bottom-right corner)
+    if(logoReady){
+      const lw = 300;
+      const lh = lw * (logoImg.naturalHeight / logoImg.naturalWidth);
+      const margin = 100;
+      const lx = W - margin - lw;
+      const ly = H - margin - lh;
+      const cx = lx + lw/2;
+      const cy = ly + lh/2;
+
+      const haloA = 0.20 + 0.08*Math.sin(omega*t*3);
+      const halo = ctx.createRadialGradient(cx, cy, 30, cx, cy, 260);
+      halo.addColorStop(0, 'rgba(189,168,122,' + haloA.toFixed(3) + ')');
+      halo.addColorStop(1, 'rgba(189,168,122,0)');
+      ctx.fillStyle = halo;
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.globalAlpha = 0.97;
+      ctx.drawImage(logoImg, lx, ly, lw, lh);
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  // ---- Animation loop
+  let t0 = performance.now();
+  function loop(now){
+    const t = ((now - t0) * 0.001) % T;
+    drawFrame(t);
+    requestAnimationFrame(loop);
+  }
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(()=>requestAnimationFrame(loop));
+  } else {
+    requestAnimationFrame(loop);
+  }
+
+  // ===========================================
+  // Video recording via MediaRecorder
+  // ===========================================
+  const recordBtn = document.getElementById('recordVideo');
+  const status = document.getElementById('recordStatus');
+  const ORIGINAL_BTN_HTML = 'Download <span class="gold">Video</span>';
+
+  function pickMime(){
+    if(!('MediaRecorder' in window)) return null;
+    const list = [
+      'video/mp4;codecs=avc1.640028',
+      'video/mp4;codecs=avc1.42E01E',
+      'video/mp4',
+      'video/webm;codecs=vp9',
+      'video/webm;codecs=vp8',
+      'video/webm'
+    ];
+    for(const m of list){
+      try{ if(MediaRecorder.isTypeSupported(m)) return m; }catch(_){}
+    }
+    return null;
+  }
+
+  if(recordBtn){
+    recordBtn.addEventListener('click', ()=>{
+      const mime = pickMime();
+      if(!mime){
+        alert('Your browser does not support in-page video recording. Try the latest Chrome, Edge, or Safari.');
+        return;
+      }
+      const isMp4 = mime.indexOf('video/mp4') === 0;
+      const ext = isMp4 ? 'mp4' : 'webm';
+
+      let stream;
+      try{ stream = canvas.captureStream(30); }
+      catch(e){ alert('Unable to capture canvas stream: ' + e.message); return; }
+
+      const chunks = [];
+      let rec;
+      try{
+        rec = new MediaRecorder(stream, { mimeType: mime, videoBitsPerSecond: 8_000_000 });
+      }catch(e){
+        alert('MediaRecorder failed: ' + e.message);
+        return;
+      }
+
+      rec.ondataavailable = e => { if(e.data && e.data.size > 0) chunks.push(e.data); };
+      rec.onstop = () => {
+        const blob = new Blob(chunks, { type: mime });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ASPMG-Zoom-Particles.' + ext;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(()=>URL.revokeObjectURL(url), 5000);
+
+        const sizeMB = (blob.size / 1048576).toFixed(1);
+        status.innerHTML = isMp4
+          ? '<span class="ok">Saved ' + sizeMB + ' MB MP4.</span> Upload directly in Zoom &rarr; Backgrounds &amp; Effects &rarr; <em>+</em> &rarr; Add Image or Video.'
+          : '<span class="ok">Saved ' + sizeMB + ' MB WebM.</span> Zoom officially wants MP4 &mdash; if it rejects this file, convert at <em>cloudconvert.com</em> or run <code>ffmpeg -i in.webm -c:v libx264 -pix_fmt yuv420p out.mp4</code>.';
+
+        recordBtn.disabled = false;
+        recordBtn.innerHTML = ORIGINAL_BTN_HTML;
+      };
+
+      // Restart the loop clock so the recording captures one full cycle starting at t=0
+      t0 = performance.now();
+
+      const seconds = T;
+      let secLeft = seconds;
+      recordBtn.disabled = true;
+      recordBtn.textContent = 'Recording… ' + secLeft + 's';
+      status.innerHTML = 'Recording <em>' + seconds + 's</em> at 1920&times;1080 &middot; keep this tab focused for best framerate.';
+
+      try{ rec.start(); }
+      catch(e){
+        alert('Failed to start recording: ' + e.message);
+        recordBtn.disabled = false;
+        recordBtn.innerHTML = ORIGINAL_BTN_HTML;
+        return;
+      }
+
+      const tick = setInterval(()=>{
+        secLeft--;
+        if(secLeft > 0) recordBtn.textContent = 'Recording… ' + secLeft + 's';
+      }, 1000);
+
+      setTimeout(()=>{
+        clearInterval(tick);
+        try{ rec.stop(); }catch(_){}
+        recordBtn.textContent = 'Encoding…';
+      }, seconds * 1000);
+    });
+  }
+})();
 </script>
 </body>
 </html>
