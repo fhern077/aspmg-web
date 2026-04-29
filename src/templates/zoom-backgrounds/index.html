@@ -554,7 +554,7 @@ document.querySelectorAll('.btn[data-canvas-target]').forEach(btn=>{
   const W = 1920, H = 1080;
 
   // Loop period — Zoom auto-loops the video, so a perfect seam is required.
-  const T = 20;                       // seconds per loop (longer = slower motion)
+  const T = 20;                       // recording length (seconds per perfect-loop cycle)
   const omega = 2 * Math.PI / T;      // base angular frequency
   const N = 130;                      // particle count
   const LINK_DIST = 200;
@@ -573,8 +573,8 @@ document.querySelectorAll('.btn[data-canvas-target]').forEach(btn=>{
   for(let i=0;i<N;i++){
     particles.push({
       baseX: rnd(0,W), baseY: rnd(0,H),
-      a1x: rnd(40,140), a2x: rnd(15,55),
-      a1y: rnd(40,140), a2y: rnd(15,55),
+      a1x: rnd(14,48),  a2x: rnd(5,18),
+      a1y: rnd(14,48),  a2y: rnd(5,18),
       p1x: rnd(0,Math.PI*2), p2x: rnd(0,Math.PI*2),
       p1y: rnd(0,Math.PI*2), p2y: rnd(0,Math.PI*2),
       r:   rnd(1.0, 3.4),
@@ -592,16 +592,16 @@ document.querySelectorAll('.btn[data-canvas-target]').forEach(btn=>{
     ctx.fillRect(0, 0, W, H);
 
     // ---- Two slowly-drifting gold radial glows
-    const gx1 = W*0.72 + 130*Math.sin(omega*t);
-    const gy1 = H*0.30 + 80*Math.sin(omega*t*2 + 1.3);
+    const gx1 = W*0.72 + 43*Math.sin(omega*t);
+    const gy1 = H*0.30 + 27*Math.sin(omega*t*2 + 1.3);
     const r1 = ctx.createRadialGradient(gx1, gy1, 0, gx1, gy1, 950);
     r1.addColorStop(0, 'rgba(189,168,122,0.18)');
     r1.addColorStop(1, 'rgba(189,168,122,0)');
     ctx.fillStyle = r1;
     ctx.fillRect(0, 0, W, H);
 
-    const gx2 = W*0.22 + 110*Math.sin(omega*t + 2.1);
-    const gy2 = H*0.78 + 70*Math.sin(omega*t*2 + 0.8);
+    const gx2 = W*0.22 + 37*Math.sin(omega*t + 2.1);
+    const gy2 = H*0.78 + 23*Math.sin(omega*t*2 + 0.8);
     const r2 = ctx.createRadialGradient(gx2, gy2, 0, gx2, gy2, 720);
     r2.addColorStop(0, 'rgba(168,144,96,0.10)');
     r2.addColorStop(1, 'rgba(168,144,96,0)');
@@ -676,26 +676,62 @@ document.querySelectorAll('.btn[data-canvas-target]').forEach(btn=>{
 
     if(hasLetterSpacing) ctx.letterSpacing = '0px';
 
-    // ---- Logo + breathing halo (bottom-right corner)
+    // ---- Bottom-right brand block: logo + stacked wordmark + underline + ASPMG.COM
     if(logoReady){
-      const lw = 300;
+      const lw = 220;
       const lh = lw * (logoImg.naturalHeight / logoImg.naturalWidth);
-      const margin = 100;
-      const lx = W - margin - lw;
-      const ly = H - margin - lh;
-      const cx = lx + lw/2;
-      const cy = ly + lh/2;
+      const rightMargin  = 100;
+      const bottomMargin = 100;
 
-      const haloA = 0.20 + 0.08*Math.sin(omega*t*3);
-      const halo = ctx.createRadialGradient(cx, cy, 30, cx, cy, 260);
+      // Build the stack bottom-up so the lowest line sits on the bottom margin
+      const stackBottom = H - bottomMargin;
+      const aspmgY      = stackBottom - 8;     // ASPMG.COM (textBaseline=middle)
+      const underlineY  = aspmgY - 22;         // gold underline top
+      const wm2Y        = underlineY - 28;     // "Management Group" baseline-middle
+      const wm1Y        = wm2Y - 44;           // "A Solid Property" baseline-middle
+      const logoBottom  = wm1Y - 38;
+      const ly          = logoBottom - lh;
+      const lx          = W - rightMargin - lw;
+      const cx          = lx + lw/2;
+      const haloCy      = ly + lh/2;
+
+      // Breathing halo behind the logo
+      const haloA = 0.18 + 0.07*Math.sin(omega*t*2);
+      const halo = ctx.createRadialGradient(cx, haloCy, 30, cx, haloCy, 260);
       halo.addColorStop(0, 'rgba(189,168,122,' + haloA.toFixed(3) + ')');
       halo.addColorStop(1, 'rgba(189,168,122,0)');
       ctx.fillStyle = halo;
       ctx.fillRect(0, 0, W, H);
 
+      // Logo
       ctx.globalAlpha = 0.97;
       ctx.drawImage(logoImg, lx, ly, lw, lh);
       ctx.globalAlpha = 1;
+
+      // Stacked serif wordmark
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = '400 34px "DM Serif Display", Georgia, serif';
+      ctx.fillStyle = 'rgba(255,255,255,0.96)';
+      ctx.fillText('A Solid Property',   cx, wm1Y);
+      ctx.fillText('Management Group',   cx, wm2Y);
+
+      // Short gold underline
+      const ulW = 90;
+      const ulG = ctx.createLinearGradient(cx - ulW/2, 0, cx + ulW/2, 0);
+      ulG.addColorStop(0,   'rgba(189,168,122,0.18)');
+      ulG.addColorStop(0.5, 'rgba(212,189,138,0.95)');
+      ulG.addColorStop(1,   'rgba(189,168,122,0.18)');
+      ctx.fillStyle = ulG;
+      ctx.fillRect(cx - ulW/2, underlineY, ulW, 3);
+
+      // ASPMG.COM (tracked-out small caps)
+      const hasLS = ('letterSpacing' in ctx);
+      if(hasLS) ctx.letterSpacing = '5px';
+      ctx.font = '600 15px "Sora", "Inter", Arial, sans-serif';
+      ctx.fillStyle = 'rgba(189,168,122,0.85)';
+      ctx.fillText('ASPMG.COM', cx, aspmgY);
+      if(hasLS) ctx.letterSpacing = '0px';
     }
   }
 
