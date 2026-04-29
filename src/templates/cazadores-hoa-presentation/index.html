@@ -53,6 +53,36 @@
         }
 
         /* ============================================
+           CRISP RENDERING
+           ============================================ */
+        html, body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: geometricPrecision;
+        }
+
+        .reveal, .reveal .slides, .reveal .slides section {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: geometricPrecision;
+        }
+
+        .reveal img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        /* Sharper photographic images (overrides crisp-edges where blocky-ness is bad) */
+        .reveal .photo-gallery img,
+        .reveal .photo-gallery-3 img,
+        .reveal .img-card img,
+        .reveal .img-compare-item img,
+        .reveal .inspection-card img,
+        .reveal .photo-full {
+            image-rendering: auto;
+        }
+
+        /* ============================================
            REVEAL.JS OVERRIDES
            ============================================ */
         .reveal-viewport {
@@ -884,7 +914,7 @@
                 <p class="title-for">Prepared exclusively for</p>
                 <h1 class="title-client" style="color: var(--accent-light) !important;">Cazadores<br>HOA</h1>
                 <div style="margin-top: 50px;">
-                    <span style="font-size: 0.65em; color: rgba(255,255,255,0.35) !important; letter-spacing: 0.15em; text-transform: uppercase;">March 2026 &nbsp;&bull;&nbsp; Miami, Florida</span>
+                    <span style="font-size: 0.65em; color: rgba(255,255,255,0.35) !important; letter-spacing: 0.15em; text-transform: uppercase;">April 2026 &nbsp;&bull;&nbsp; Miami, Florida</span>
                 </div>
             </section>
 
@@ -1745,7 +1775,7 @@
             height: 720,
             margin: 0,
             minScale: 0.2,
-            maxScale: 2.0,
+            maxScale: 3.0,
             transition: 'slide',
             transitionSpeed: 'default',
             backgroundTransition: 'fade',
