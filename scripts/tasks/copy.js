@@ -19,8 +19,8 @@ module.exports = async function copy() {
   // Favicon PNGs
   await fs.copy(path.join(SRC, 'img', 'favicon'), path.join(DIST, 'img', 'favicon'));
 
-  // Templates: docx, xlsx, png files + HTML pages (HTML handled separately in html.js)
-  const templateAssets = await glob('templates/**/*.{docx,xlsx,png,jpg,jpeg}', { cwd: SRC });
+  // Templates: docx, xlsx, pdf, pptx, png files + HTML pages (HTML handled separately in html.js)
+  const templateAssets = await glob('templates/**/*.{docx,xlsx,pdf,pptx,png,jpg,jpeg}', { cwd: SRC });
   for (const f of templateAssets) {
     await fs.copy(path.join(SRC, f), path.join(DIST, f));
   }
